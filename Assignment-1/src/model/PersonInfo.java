@@ -296,6 +296,8 @@ public class PersonInfo {
     public void setAlergy3(String Alergy3) {
         this.Alergy3 = Alergy3;
     }
+
+    
    
     
 }
