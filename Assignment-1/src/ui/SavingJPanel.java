@@ -59,20 +59,27 @@ public class SavingJPanel extends javax.swing.JPanel {
         );
 
         setBackground(new java.awt.Color(243, 197, 197));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         savinglbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         savinglbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         savinglbl.setText("Saving Account Information");
+        add(savinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 17, 533, 29));
 
         banklbl.setText("Bank Name:");
+        add(banklbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 80, -1, -1));
 
         routinglbl.setText("Routing Number:");
+        add(routinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 124, -1, -1));
 
         savacclbl.setText("Saving Account Number:");
+        add(savacclbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 169, -1, -1));
 
         accblbl.setText("Account Balance:");
+        add(accblbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 220, -1, -1));
 
         acctypelbl.setText("Account Type:");
+        add(acctypelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 263, -1, -1));
 
         savebtn1.setText("Save");
         savebtn1.addActionListener(new java.awt.event.ActionListener() {
@@ -80,75 +87,18 @@ public class SavingJPanel extends javax.swing.JPanel {
                 savebtn1ActionPerformed(evt);
             }
         });
+        add(savebtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 322, -1, -1));
+        add(banktxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 75, 179, -1));
 
         routingtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 routingtxtActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(savinglbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(banklbl)
-                            .addComponent(routinglbl)
-                            .addComponent(savacclbl)
-                            .addComponent(accblbl)
-                            .addComponent(acctypelbl))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(accbtxt)
-                            .addComponent(savacctxt)
-                            .addComponent(routingtxt)
-                            .addComponent(banktxt)
-                            .addComponent(acctypetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(savebtn1)))
-                .addContainerGap(67, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {accbtxt, acctypetxt, banktxt, routingtxt, savacctxt});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(savinglbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(banklbl)
-                    .addComponent(banktxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(routinglbl)
-                    .addComponent(routingtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(savacclbl)
-                    .addComponent(savacctxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(accbtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(accblbl))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(acctypelbl)
-                    .addComponent(acctypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(savebtn1)
-                .addContainerGap(71, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {accbtxt, acctypetxt, banktxt, routingtxt, savacctxt});
-
+        add(routingtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 119, 179, -1));
+        add(savacctxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 164, 179, -1));
+        add(accbtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 215, 179, -1));
+        add(acctypetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 258, 179, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void routingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxtActionPerformed
@@ -157,9 +107,9 @@ public class SavingJPanel extends javax.swing.JPanel {
 
     private void savebtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtn1ActionPerformed
         // TODO add your handling code here:
-        personinfo.setsBankName(savacctxt.getText());
+        personinfo.setsBankName(banktxt.getText());
         personinfo.setsRoutingNumber(routingtxt.getText());
-        personinfo.setsBnkAccountNumber(accbtxt.getText());
+        personinfo.setsBnkAccountNumber(savacctxt.getText());
         personinfo.setsAccountBalance(accbtxt.getText());
         personinfo.setsAccountType(acctypetxt.getText());
         

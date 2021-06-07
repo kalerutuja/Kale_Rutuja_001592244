@@ -29,13 +29,13 @@ public class PersonInfo {
     private String sRoutingNumber;
     private String sBnkAccountNumber;
     private String sAccountBalance;
-    private String sAccountType = "Saving";
+    private String sAccountType = "Savings";
     
     private String cBankName; 
     private String cRoutingNumber;
     private String cBankAccountNumber;
     private String cAccountBalance;
-    private String cAccountType = "checking";
+    private String cAccountType = "Checking";
     
     private String lNumber;// 
     private String dateOfIssue;

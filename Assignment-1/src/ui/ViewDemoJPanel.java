@@ -47,12 +47,16 @@ public class ViewDemoJPanel extends javax.swing.JPanel {
         hgttxt = new javax.swing.JTextField();
         wgttxt = new javax.swing.JTextField();
         ssntxt = new javax.swing.JTextField();
+        Phonenumlbl = new javax.swing.JLabel();
+        phonenumtxt = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 216, 211));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         demolbl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         demolbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         demolbl.setText("Demographic Information");
+        add(demolbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, 500, -1));
 
         fnamelbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         fnamelbl.setText("First Name:");
@@ -61,131 +65,60 @@ public class ViewDemoJPanel extends javax.swing.JPanel {
                 fnamelblComponentHidden(evt);
             }
         });
+        add(fnamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 103, 85, -1));
 
         lnamelbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lnamelbl.setText("Lastname:");
+        add(lnamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 135, 85, -1));
 
         doblbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         doblbl.setText("Date Of Birth:");
+        add(doblbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 165, -1, -1));
 
         agelbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         agelbl.setText("Age:");
+        add(agelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 197, 85, -1));
 
         hgtlbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         hgtlbl.setText("Height:");
+        add(hgtlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 233, 85, -1));
 
         wgtlbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         wgtlbl.setText("Weight:");
+        add(wgtlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 269, 85, -1));
 
         ssnlbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         ssnlbl.setText("SSN:");
+        add(ssnlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 343, 85, -1));
 
         fnametxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fnametxtActionPerformed(evt);
             }
         });
+        add(fnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 98, 104, -1));
+        add(lnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 135, 104, -1));
+        add(dobtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 161, 104, -1));
 
         agetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agetxtActionPerformed(evt);
             }
         });
+        add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 197, 104, -1));
 
         hgttxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hgttxtActionPerformed(evt);
             }
         });
+        add(hgttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 233, 104, -1));
+        add(wgttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 269, 104, -1));
+        add(ssntxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 338, 104, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
-                .addComponent(fnametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                        .addComponent(fnamelbl)
-                        .addComponent(lnamelbl)
-                        .addComponent(doblbl)
-                        .addComponent(agelbl)
-                        .addComponent(hgtlbl)
-                        .addComponent(wgtlbl)
-                        .addComponent(ssnlbl))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(lnametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(dobtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(agetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(hgttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(wgttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addComponent(ssntxt, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 0, Short.MAX_VALUE))
-                .addComponent(demolbl, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {agelbl, doblbl, fnamelbl, hgtlbl, lnamelbl, ssnlbl, wgtlbl});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {agetxt, dobtxt, hgttxt, lnametxt, ssntxt, wgttxt});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(fnametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(231, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(demolbl)
-                    .addGap(46, 46, 46)
-                    .addComponent(fnamelbl)
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lnamelbl)
-                        .addComponent(lnametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(4, 4, 4)
-                            .addComponent(doblbl))
-                        .addComponent(dobtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(10, 10, 10)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(agelbl)
-                        .addComponent(agetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(10, 10, 10)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(hgtlbl)
-                        .addComponent(hgttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(10, 10, 10)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(wgtlbl)
-                        .addComponent(wgttxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(10, 10, 10)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ssnlbl)
-                        .addComponent(ssntxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {agelbl, doblbl, fnamelbl, hgtlbl, lnamelbl, ssnlbl, wgtlbl});
-
+        Phonenumlbl.setText("Phone Number:");
+        add(Phonenumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 314, -1, -1));
+        add(phonenumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 309, 104, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void fnamelblComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_fnamelblComponentHidden
@@ -206,6 +139,7 @@ public class ViewDemoJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Phonenumlbl;
     private javax.swing.JLabel agelbl;
     private javax.swing.JTextField agetxt;
     private javax.swing.JLabel demolbl;
@@ -217,6 +151,7 @@ public class ViewDemoJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField hgttxt;
     private javax.swing.JLabel lnamelbl;
     private javax.swing.JTextField lnametxt;
+    private javax.swing.JTextField phonenumtxt;
     private javax.swing.JLabel ssnlbl;
     private javax.swing.JTextField ssntxt;
     private javax.swing.JLabel wgtlbl;
@@ -231,5 +166,8 @@ public class ViewDemoJPanel extends javax.swing.JPanel {
         hgttxt.setText(personinfo.getHeight());
         wgttxt.setText(personinfo.getWeight());
         ssntxt.setText(personinfo.getSSN());
+        phonenumtxt.setText(personinfo.getPhoneNumber());
+        
+        
     }
 }

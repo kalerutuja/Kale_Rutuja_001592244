@@ -58,29 +58,21 @@ public class MainJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         workareaPanel.setBackground(new java.awt.Color(229, 196, 196));
-
-        javax.swing.GroupLayout workareaPanelLayout = new javax.swing.GroupLayout(workareaPanel);
-        workareaPanel.setLayout(workareaPanelLayout);
-        workareaPanelLayout.setHorizontalGroup(
-            workareaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
-        );
-        workareaPanelLayout.setVerticalGroup(
-            workareaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 575, Short.MAX_VALUE)
-        );
-
+        workareaPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         splitPane.setRightComponent(workareaPanel);
 
         controlPanel.setBackground(new java.awt.Color(229, 196, 196));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 500));
+        controlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menulbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         menulbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menulbl.setText("MENU");
+        controlPanel.add(menulbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 46, 209, -1));
 
         demolbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         demolbl.setText("Demographic Information");
+        controlPanel.add(demolbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 86, 203, -1));
 
         demobtn.setText("Create");
         demobtn.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +80,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 demobtnActionPerformed(evt);
             }
         });
+        controlPanel.add(demobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 89, -1));
 
         demoviewbtn.setText("View");
         demoviewbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -95,9 +88,11 @@ public class MainJFrame extends javax.swing.JFrame {
                 demoviewbtnActionPerformed(evt);
             }
         });
+        controlPanel.add(demoviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 120, 89, -1));
 
         addrlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         addrlbl.setText("Address Information");
+        controlPanel.add(addrlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 161, 203, -1));
 
         addrbtn.setText("Create");
         addrbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -105,23 +100,57 @@ public class MainJFrame extends javax.swing.JFrame {
                 addrbtnActionPerformed(evt);
             }
         });
+        controlPanel.add(addrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 189, 89, -1));
 
         addrviewbtn.setText("View");
+        addrviewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addrviewbtnActionPerformed(evt);
+            }
+        });
+        controlPanel.add(addrviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 189, 89, -1));
 
         Savinglbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Savinglbl.setText("Saving Account Information");
+        controlPanel.add(Savinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 236, 203, -1));
 
         savingbtn.setText("Create");
+        savingbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                savingbtnActionPerformed(evt);
+            }
+        });
+        controlPanel.add(savingbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 258, 89, -1));
 
         savingviewbtn.setText("View");
+        savingviewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                savingviewbtnActionPerformed(evt);
+            }
+        });
+        controlPanel.add(savingviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 258, 89, -1));
 
         checkinglbl.setText("Checking Account Information");
+        controlPanel.add(checkinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 299, 203, -1));
 
         checkingbtn.setText("Create");
+        checkingbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkingbtnActionPerformed(evt);
+            }
+        });
+        controlPanel.add(checkingbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 321, 89, -1));
 
         checkviewbtn.setText("View");
+        checkviewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkviewbtnActionPerformed(evt);
+            }
+        });
+        controlPanel.add(checkviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 321, 89, -1));
 
         dlicencelbl.setText("Driver's Licence Information");
+        controlPanel.add(dlicencelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 362, 203, -1));
 
         driverbtn.setText("Create");
         driverbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -129,11 +158,19 @@ public class MainJFrame extends javax.swing.JFrame {
                 driverbtnActionPerformed(evt);
             }
         });
+        controlPanel.add(driverbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 89, -1));
 
         driverviewbtn.setText("View");
+        driverviewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                driverviewbtnActionPerformed(evt);
+            }
+        });
+        controlPanel.add(driverviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 390, 89, -1));
 
         medicallbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         medicallbl.setText("Medical Record Information");
+        controlPanel.add(medicallbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 431, 203, -1));
 
         medicalbtn.setText("Create");
         medicalbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -141,11 +178,19 @@ public class MainJFrame extends javax.swing.JFrame {
                 medicalbtnActionPerformed(evt);
             }
         });
+        controlPanel.add(medicalbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 459, 89, -1));
 
         medicalviewbtn.setText("View");
+        medicalviewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                medicalviewbtnActionPerformed(evt);
+            }
+        });
+        controlPanel.add(medicalviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 459, 89, -1));
 
         Reportlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Reportlbl.setText("Report");
+        controlPanel.add(Reportlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 494, 193, -1));
 
         reportbtn.setText("Report ");
         reportbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -153,111 +198,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 reportbtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
-        controlPanel.setLayout(controlPanelLayout);
-        controlPanelLayout.setHorizontalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(demobtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(demoviewbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(addrbtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addrviewbtn))
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(savingbtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(savingviewbtn))
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(checkingbtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(checkviewbtn))
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(driverbtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(driverviewbtn))
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(medicalbtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(medicalviewbtn))
-                    .addComponent(reportbtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(demolbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addrlbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Savinglbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(checkinglbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dlicencelbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(medicallbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Reportlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addComponent(menulbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(6, 6, 6))
-        );
-
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addrbtn, addrviewbtn, checkingbtn, checkviewbtn, demobtn, demoviewbtn, driverbtn, driverviewbtn, medicalbtn, medicalviewbtn, reportbtn, savingbtn, savingviewbtn});
-
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Savinglbl, addrlbl, checkinglbl, demolbl, dlicencelbl, medicallbl});
-
-        controlPanelLayout.setVerticalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(menulbl)
-                .addGap(18, 18, 18)
-                .addComponent(demolbl)
-                .addGap(18, 18, 18)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(demobtn)
-                    .addComponent(demoviewbtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addrlbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addrbtn)
-                    .addComponent(addrviewbtn))
-                .addGap(18, 18, 18)
-                .addComponent(Savinglbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(savingbtn)
-                    .addComponent(savingviewbtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(checkinglbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkingbtn)
-                    .addComponent(checkviewbtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(dlicencelbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driverbtn)
-                    .addComponent(driverviewbtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(medicallbl, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(medicalbtn)
-                    .addComponent(medicalviewbtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Reportlbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(reportbtn)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addrbtn, addrviewbtn, checkingbtn, checkviewbtn, demobtn, demoviewbtn, driverbtn, driverviewbtn, medicalbtn, medicalviewbtn, reportbtn, savingbtn, savingviewbtn});
-
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Savinglbl, addrlbl, checkinglbl, demolbl, dlicencelbl, medicallbl});
+        controlPanel.add(reportbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 522, -1, -1));
 
         splitPane.setLeftComponent(controlPanel);
 
@@ -265,7 +206,7 @@ public class MainJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,16 +237,67 @@ public class MainJFrame extends javax.swing.JFrame {
     
     private void driverbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_driverbtnActionPerformed
         // TODO add your handling code here:
+        LicenceJPanel licence= new LicenceJPanel(personinfo);
+        splitPane.setRightComponent(licence);
         
     }//GEN-LAST:event_driverbtnActionPerformed
 
     private void medicalbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicalbtnActionPerformed
         // TODO add your handling code here:
+        MedicalJPanel medical = new MedicalJPanel(personinfo);
+        splitPane.setRightComponent(medical);
     }//GEN-LAST:event_medicalbtnActionPerformed
 
     private void reportbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportbtnActionPerformed
         // TODO add your handling code here:
+        ReportJPanel report = new ReportJPanel(personinfo);
+        splitPane.setRightComponent(report);
     }//GEN-LAST:event_reportbtnActionPerformed
+
+    private void savingbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savingbtnActionPerformed
+        // TODO add your handling code here:
+        SavingJPanel saving = new SavingJPanel(personinfo);
+        splitPane.setRightComponent(saving);
+        
+    }//GEN-LAST:event_savingbtnActionPerformed
+
+    private void savingviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savingviewbtnActionPerformed
+        // TODO add your handling code here:
+        ViewSavingJPanel viewsaving = new ViewSavingJPanel(personinfo);
+        splitPane.setRightComponent(viewsaving);
+        
+    }//GEN-LAST:event_savingviewbtnActionPerformed
+
+    private void addrviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addrviewbtnActionPerformed
+        // TODO add your handling code here:
+        ViewAddressJPanel viewaddress = new ViewAddressJPanel(personinfo);
+        splitPane.setRightComponent(viewaddress);
+        
+    }//GEN-LAST:event_addrviewbtnActionPerformed
+
+    private void checkingbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkingbtnActionPerformed
+        // TODO add your handling code here:
+        CheckingJPanel checking = new CheckingJPanel(personinfo);
+        splitPane.setRightComponent(checking);
+    }//GEN-LAST:event_checkingbtnActionPerformed
+
+    private void checkviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkviewbtnActionPerformed
+        // TODO add your handling code here:
+        ViewCheckingJPanel viewchecking = new ViewCheckingJPanel(personinfo);
+        splitPane.setRightComponent(viewchecking);
+    }//GEN-LAST:event_checkviewbtnActionPerformed
+
+    private void driverviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_driverviewbtnActionPerformed
+        // TODO add your handling code here:
+        LicenceJPanel licence = new LicenceJPanel(personinfo);
+        splitPane.setRightComponent(licence);
+    }//GEN-LAST:event_driverviewbtnActionPerformed
+
+    private void medicalviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicalviewbtnActionPerformed
+        // TODO add your handling code here:
+        MedicalJPanel medical = new MedicalJPanel(personinfo);
+        splitPane.setRightComponent(medical);
+    }//GEN-LAST:event_medicalviewbtnActionPerformed
     
     
     /**

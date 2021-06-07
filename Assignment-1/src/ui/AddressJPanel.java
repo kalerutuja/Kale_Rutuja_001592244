@@ -47,33 +47,43 @@ public class AddressJPanel extends javax.swing.JPanel {
         jTextField1.setText("jTextField1");
 
         setBackground(new java.awt.Color(255, 219, 219));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Addrlbl.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         Addrlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Addrlbl.setText("Addresss Information");
+        add(Addrlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 34, 414, -1));
 
         Strlbl.setText("Street Address:");
+        add(Strlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 79, -1, -1));
 
         Citylbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Citylbl.setText("City:");
+        add(Citylbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 117, 95, -1));
 
         Statelbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Statelbl.setText("State:");
+        add(Statelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 155, 95, -1));
 
         ziplbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         ziplbl.setText("Zip:");
+        add(ziplbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 182, 95, -1));
 
         streettxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 streettxtActionPerformed(evt);
             }
         });
+        add(streettxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 74, 179, -1));
 
         citytxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 citytxtActionPerformed(evt);
             }
         });
+        add(citytxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 112, 179, -1));
+        add(statetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 179, -1));
+        add(ziptxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 182, 179, -1));
 
         savebtn.setText("SAVE");
         savebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -81,62 +91,7 @@ public class AddressJPanel extends javax.swing.JPanel {
                 savebtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Addrlbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Strlbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Citylbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Statelbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ziplbl, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(savebtn)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(streettxt)
-                    .addComponent(citytxt)
-                    .addComponent(statetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                    .addComponent(ziptxt))
-                .addContainerGap())
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Citylbl, Statelbl, Strlbl, ziplbl});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(Addrlbl)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Strlbl)
-                    .addComponent(streettxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Citylbl)
-                    .addComponent(citytxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Statelbl)
-                    .addComponent(statetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ziplbl)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ziptxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(savebtn)))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Citylbl, Statelbl, Strlbl, ziplbl});
-
+        add(savebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 234, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void streettxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streettxtActionPerformed

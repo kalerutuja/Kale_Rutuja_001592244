@@ -17,7 +17,7 @@ public class ViewCheckingJPanel extends javax.swing.JPanel {
      * Creates new form ViewCheckingJPanel
      */
     PersonInfo personinfo;
-    public ViewCheckingJPanel() {
+    public ViewCheckingJPanel(PersonInfo personinfo) {
         initComponents();
         this.personinfo= personinfo;
         this.setSize(2000,2000);

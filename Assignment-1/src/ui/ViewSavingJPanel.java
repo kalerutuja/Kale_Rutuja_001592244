@@ -17,7 +17,7 @@ public class ViewSavingJPanel extends javax.swing.JPanel {
      * Creates new form ViewSavingJPanel
      */
     PersonInfo personinfo;
-    public ViewSavingJPanel() {
+    public ViewSavingJPanel(PersonInfo personinfo) {
         initComponents();
         this.personinfo= personinfo;
         this.setSize(2000,2000);
@@ -43,6 +43,8 @@ public class ViewSavingJPanel extends javax.swing.JPanel {
         savacctxt = new javax.swing.JTextField();
         accbtxt = new javax.swing.JTextField();
         acctypetxt = new javax.swing.JTextField();
+
+        setBackground(new java.awt.Color(243, 212, 212));
 
         savinglbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         savinglbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -88,8 +90,7 @@ public class ViewSavingJPanel extends javax.swing.JPanel {
                                 .addComponent(savacctxt)
                                 .addComponent(routingtxt)
                                 .addComponent(banktxt)
-                                .addComponent(acctypetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(acctypetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))))
                     .addContainerGap()))
         );
         layout.setVerticalGroup(

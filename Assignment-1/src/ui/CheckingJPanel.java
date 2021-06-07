@@ -33,27 +33,75 @@ public class CheckingJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         checkinglbl = new javax.swing.JLabel();
-        chkaccblbl = new javax.swing.JLabel();
-        chkacctyelbl = new javax.swing.JLabel();
+        bnknamelbl = new javax.swing.JLabel();
+        routinglbl = new javax.swing.JLabel();
+        accballbl = new javax.swing.JLabel();
+        actypelbl = new javax.swing.JLabel();
+        bnknametxt = new javax.swing.JTextField();
+        routingtxt = new javax.swing.JTextField();
+        accbaltxt = new javax.swing.JTextField();
+        acctypetxt = new javax.swing.JTextField();
+        accnumlbl = new javax.swing.JLabel();
+        accnumtxt = new javax.swing.JTextField();
         chksavebtn = new javax.swing.JButton();
-        chkbnktxt = new javax.swing.JTextField();
-        chkroutingtxt = new javax.swing.JTextField();
-        chkaccnumtxt = new javax.swing.JTextField();
-        chkaccbaltxt = new javax.swing.JTextField();
-        chkacctypetxt = new javax.swing.JTextField();
-        chkbnklbl = new javax.swing.JLabel();
-        chkroutlbl = new javax.swing.JLabel();
-        chkaccnumlbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 187, 187));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         checkinglbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         checkinglbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         checkinglbl.setText("Checking Account Information");
+        add(checkinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 26, 497, -1));
 
-        chkaccblbl.setText("Account Balance:");
+        bnknamelbl.setText("Bank Name:");
+        add(bnknamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, 20));
 
-        chkacctyelbl.setText("Account Type:");
+        routinglbl.setText("Routing Number:");
+        add(routinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, 20));
+
+        accballbl.setText("Account Balance:");
+        add(accballbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, 20));
+
+        actypelbl.setText("Account Type:");
+        add(actypelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, 20));
+
+        bnknametxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnknametxtActionPerformed(evt);
+            }
+        });
+        add(bnknametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 80, -1));
+
+        routingtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                routingtxtActionPerformed(evt);
+            }
+        });
+        add(routingtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 80, -1));
+
+        accbaltxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accbaltxtActionPerformed(evt);
+            }
+        });
+        add(accbaltxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 80, -1));
+
+        acctypetxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acctypetxtActionPerformed(evt);
+            }
+        });
+        add(acctypetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 80, -1));
+
+        accnumlbl.setText("Account Number:");
+        add(accnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, 20));
+
+        accnumtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accnumtxtActionPerformed(evt);
+            }
+        });
+        add(accnumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 80, -1));
 
         chksavebtn.setText("Save");
         chksavebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -61,108 +109,54 @@ public class CheckingJPanel extends javax.swing.JPanel {
                 chksavebtnActionPerformed(evt);
             }
         });
-
-        chkroutingtxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkroutingtxtActionPerformed(evt);
-            }
-        });
-
-        chkbnklbl.setText("Bank Name:");
-
-        chkroutlbl.setText("Routing Number:");
-
-        chkaccnumlbl.setText("Checking Account Number:");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(checkinglbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(chksavebtn)
-                .addGap(248, 248, 248))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(chkbnklbl)
-                    .addComponent(chkroutlbl)
-                    .addComponent(chkaccnumlbl)
-                    .addComponent(chkaccblbl)
-                    .addComponent(chkacctyelbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(chkaccbaltxt)
-                    .addComponent(chkaccnumtxt)
-                    .addComponent(chkroutingtxt)
-                    .addComponent(chkbnktxt)
-                    .addComponent(chkacctypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(124, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(checkinglbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkbnklbl)
-                    .addComponent(chkbnktxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkroutlbl)
-                    .addComponent(chkroutingtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkaccnumlbl)
-                    .addComponent(chkaccnumtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkaccbaltxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chkaccblbl))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkacctyelbl)
-                    .addComponent(chkacctypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(chksavebtn)
-                .addGap(83, 83, 83))
-        );
+        add(chksavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void routingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_routingtxtActionPerformed
 
     private void chksavebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chksavebtnActionPerformed
         // TODO add your handling code here:
-        personinfo.setsBankName(chkaccnumtxt.getText());
-        personinfo.setsRoutingNumber(chkroutingtxt.getText());
-        personinfo.setsBnkAccountNumber(chkaccbaltxt.getText());
-        personinfo.setsAccountBalance(chkaccbaltxt.getText());
-        personinfo.setsAccountType(chkacctypetxt.getText());
+        personinfo.setcBankName(bnknametxt.getText());
+        personinfo.setcBankAccountNumber(accnumtxt.getText());
+        personinfo.setcRoutingNumber(routingtxt.getText());
+        personinfo.setcAccountBalance(accbaltxt.getText());
+        personinfo.setcAccountType(acctypetxt.getText());
+        
+        JOptionPane.showMessageDialog(this, "Checking Bank Account Information Saved.");
 
-        JOptionPane.showMessageDialog(this, "Checking Bank Account Information is Saved.");
     }//GEN-LAST:event_chksavebtnActionPerformed
 
-    private void chkroutingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkroutingtxtActionPerformed
+    private void bnknametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnknametxtActionPerformed
         // TODO add your handling code here:
-                chkacctypetxt.setText("Savings");
+    }//GEN-LAST:event_bnknametxtActionPerformed
 
-    }//GEN-LAST:event_chkroutingtxtActionPerformed
+    private void accnumtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accnumtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_accnumtxtActionPerformed
+
+    private void accbaltxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accbaltxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_accbaltxtActionPerformed
+
+    private void acctypetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acctypetxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_acctypetxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel accballbl;
+    private javax.swing.JTextField accbaltxt;
+    private javax.swing.JLabel accnumlbl;
+    private javax.swing.JTextField accnumtxt;
+    private javax.swing.JTextField acctypetxt;
+    private javax.swing.JLabel actypelbl;
+    private javax.swing.JLabel bnknamelbl;
+    private javax.swing.JTextField bnknametxt;
     private javax.swing.JLabel checkinglbl;
-    private javax.swing.JTextField chkaccbaltxt;
-    private javax.swing.JLabel chkaccblbl;
-    private javax.swing.JLabel chkaccnumlbl;
-    private javax.swing.JTextField chkaccnumtxt;
-    private javax.swing.JLabel chkacctyelbl;
-    private javax.swing.JTextField chkacctypetxt;
-    private javax.swing.JLabel chkbnklbl;
-    private javax.swing.JTextField chkbnktxt;
-    private javax.swing.JTextField chkroutingtxt;
-    private javax.swing.JLabel chkroutlbl;
     private javax.swing.JButton chksavebtn;
+    private javax.swing.JLabel routinglbl;
+    private javax.swing.JTextField routingtxt;
     // End of variables declaration//GEN-END:variables
 }

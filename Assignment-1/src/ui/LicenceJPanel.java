@@ -5,6 +5,13 @@
  */
 package ui;
 
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import model.PersonInfo;
+
 /**
  *
  * @author rutuja
@@ -14,8 +21,12 @@ public class LicenceJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LicenceJPanel
      */
-    public LicenceJPanel() {
+    PersonInfo personinfo;
+    public LicenceJPanel(PersonInfo personinfo) {
         initComponents();
+        this.personinfo= personinfo;
+        this.setSize(2000,2000);
+        
     }
 
     /**
@@ -40,95 +51,129 @@ public class LicenceJPanel extends javax.swing.JPanel {
         dsavebtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(234, 200, 200));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         drvlbl.setBackground(new java.awt.Color(231, 203, 203));
         drvlbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         drvlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         drvlbl.setText("Driver Licence Information");
+        add(drvlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 21, 486, -1));
 
         drvnumlbl.setText("Licence Number:");
+        add(drvnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 79, -1, -1));
 
         dissuelbl.setText("Date of Issue:");
+        add(dissuelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 111, -1, -1));
 
         dexpirelbl.setText("Date of expiry:");
+        add(dexpirelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 148, -1, -1));
 
         bloodtypelbl.setText("Blood Type:");
+        add(bloodtypelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 186, -1, -1));
 
         picturelbl.setText("Picture:");
+        add(picturelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 224, -1, -1));
+
+        drvnumtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drvnumtxtActionPerformed(evt);
+            }
+        });
+        add(drvnumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 79, 104, -1));
+
+        dissuetxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dissuetxtActionPerformed(evt);
+            }
+        });
+        add(dissuetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 111, 104, -1));
+
+        dexpiretxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dexpiretxtActionPerformed(evt);
+            }
+        });
+        add(dexpiretxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 143, 104, -1));
+
+        bloodtypetxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bloodtypetxtActionPerformed(evt);
+            }
+        });
+        add(bloodtypetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 181, 104, -1));
+
+        picturetxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                picturetxtActionPerformed(evt);
+            }
+        });
+        add(picturetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 219, 104, -1));
 
         dbrowsebtn.setText("Browse");
+        dbrowsebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dbrowsebtnActionPerformed(evt);
+            }
+        });
+        add(dbrowsebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 275, -1, -1));
 
         dsavebtn.setText("Save");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(drvlbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(drvnumlbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(dissuelbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(dexpirelbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(bloodtypelbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(picturelbl, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(drvnumtxt)
-                                    .addComponent(dissuetxt)
-                                    .addComponent(dexpiretxt)
-                                    .addComponent(bloodtypetxt)
-                                    .addComponent(picturetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(165, 165, 165)
-                                .addComponent(dbrowsebtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(dsavebtn)))
-                        .addGap(0, 152, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(drvlbl)
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(drvnumlbl)
-                    .addComponent(drvnumtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dissuelbl)
-                    .addComponent(dissuetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dexpirelbl)
-                    .addComponent(dexpiretxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bloodtypelbl)
-                    .addComponent(bloodtypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(picturelbl)
-                    .addComponent(picturetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dbrowsebtn)
-                    .addComponent(dsavebtn))
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {bloodtypelbl, dexpirelbl, dissuelbl, drvnumlbl, picturelbl});
-
+        dsavebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dsavebtnActionPerformed(evt);
+            }
+        });
+        add(dsavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(286, 275, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void drvnumtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drvnumtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_drvnumtxtActionPerformed
+
+    private void dissuetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dissuetxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dissuetxtActionPerformed
+
+    private void dexpiretxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dexpiretxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dexpiretxtActionPerformed
+
+    private void bloodtypetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodtypetxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bloodtypetxtActionPerformed
+
+    private void picturetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_picturetxtActionPerformed
+        // TODO add your handling code here:
+                picturetxt.setText("Select an Image using browse option");
+
+    }//GEN-LAST:event_picturetxtActionPerformed
+
+    private void dbrowsebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dbrowsebtnActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter flt = new FileNameExtensionFilter(".jpg, .png, .jpeg", "jpg", "png", "jpeg");
+        fileChooser.setFileFilter(flt);
+        int selected = fileChooser.showOpenDialog(null);
+        if(selected == JFileChooser.APPROVE_OPTION) {
+            File fle = fileChooser.getSelectedFile();
+            String getImagepath = fle.getAbsolutePath();
+            JOptionPane.showMessageDialog(null, getImagepath);
+            ImageIcon image = new ImageIcon(getImagepath);
+            picturetxt.setText(getImagepath);
+            personinfo.setPicture(picturetxt.getText());
+        
+        }
+    }//GEN-LAST:event_dbrowsebtnActionPerformed
+
+    private void dsavebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dsavebtnActionPerformed
+        // TODO add your handling code here:
+        personinfo.setlNumber(drvnumtxt.getText());
+        personinfo.setDateOfIssue(dissuetxt.getText());
+        personinfo.setDateOfExpire(dexpiretxt.getText());
+        personinfo.setBloodTyep(bloodtypetxt.getText());
+        
+        JOptionPane.showMessageDialog(this, "Drivers License Information is Saved.");
+    }//GEN-LAST:event_dsavebtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

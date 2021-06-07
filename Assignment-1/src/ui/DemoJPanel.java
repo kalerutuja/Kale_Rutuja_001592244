@@ -38,24 +38,26 @@ public class DemoJPanel extends javax.swing.JPanel {
         doblbl = new javax.swing.JLabel();
         agelbl = new javax.swing.JLabel();
         hgtlbl = new javax.swing.JLabel();
-        wgtlbl = new javax.swing.JLabel();
+        Phonenumlbl = new javax.swing.JLabel();
         ssnlbl = new javax.swing.JLabel();
         fnametxt = new javax.swing.JTextField();
         lnametxt = new javax.swing.JTextField();
         dobtxt = new javax.swing.JTextField();
         agetxt = new javax.swing.JTextField();
         hgttxt = new javax.swing.JTextField();
-        wgttxt = new javax.swing.JTextField();
+        phonenumtxt = new javax.swing.JTextField();
         ssntxt = new javax.swing.JTextField();
         savebtn = new javax.swing.JButton();
+        wgttxt1 = new javax.swing.JTextField();
+        wgtlbl1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 216, 211));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        demolbl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        demolbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         demolbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         demolbl.setText("Demographic Information");
-        add(demolbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 500, -1));
+        add(demolbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 480, -1));
 
         fnamelbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         fnamelbl.setText("First Name:");
@@ -64,50 +66,50 @@ public class DemoJPanel extends javax.swing.JPanel {
                 fnamelblComponentHidden(evt);
             }
         });
-        add(fnamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 96, 80, 20));
+        add(fnamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 80, 20));
 
         lnamelbl.setText("Lastname:");
-        add(lnamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
+        add(lnamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         doblbl.setText("Date Of Birth:");
-        add(doblbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 164, -1, -1));
+        add(doblbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         agelbl.setText("Age:");
-        add(agelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
+        add(agelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
 
         hgtlbl.setText("Height:");
-        add(hgtlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
+        add(hgtlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
 
-        wgtlbl.setText("Weight:");
-        add(wgtlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+        Phonenumlbl.setText("Phone Number:");
+        add(Phonenumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
         ssnlbl.setText("SSN:");
-        add(ssnlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
+        add(ssnlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
 
         fnametxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fnametxtActionPerformed(evt);
             }
         });
-        add(fnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 230, 30));
-        add(lnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 230, 30));
-        add(dobtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 230, 30));
+        add(fnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 230, 30));
+        add(lnametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 230, 30));
+        add(dobtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 230, 30));
 
         agetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agetxtActionPerformed(evt);
             }
         });
-        add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 230, 30));
+        add(agetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 230, 30));
 
         hgttxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hgttxtActionPerformed(evt);
             }
         });
-        add(hgttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, 30));
-        add(wgttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 230, 30));
-        add(ssntxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 230, 30));
+        add(hgttxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 230, 30));
+        add(phonenumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 230, 30));
+        add(ssntxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 230, 30));
 
         savebtn.setText("SAVE");
         savebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +117,11 @@ public class DemoJPanel extends javax.swing.JPanel {
                 savebtnActionPerformed(evt);
             }
         });
-        add(savebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 80, 30));
+        add(savebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 80, 30));
+        add(wgttxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 230, 30));
+
+        wgtlbl1.setText("Weight:");
+        add(wgtlbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void fnamelblComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_fnamelblComponentHidden
@@ -141,7 +147,8 @@ public class DemoJPanel extends javax.swing.JPanel {
         personinfo.setDOB(dobtxt.getText());
         personinfo.setAge(agetxt.getText());
         personinfo.setHeight(hgttxt.getText());
-        personinfo.setWeight(wgttxt.getText());
+        personinfo.setWeight(wgttxt1.getText());
+        personinfo.setPhoneNumber(phonenumtxt.getText());
         personinfo.setSSN(ssntxt.getText());
         
         JOptionPane.showMessageDialog(this, "Demographic Information Saved.");
@@ -149,6 +156,7 @@ public class DemoJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Phonenumlbl;
     private javax.swing.JLabel agelbl;
     private javax.swing.JTextField agetxt;
     private javax.swing.JLabel demolbl;
@@ -160,10 +168,11 @@ public class DemoJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField hgttxt;
     private javax.swing.JLabel lnamelbl;
     private javax.swing.JTextField lnametxt;
+    private javax.swing.JTextField phonenumtxt;
     private javax.swing.JButton savebtn;
     private javax.swing.JLabel ssnlbl;
     private javax.swing.JTextField ssntxt;
-    private javax.swing.JLabel wgtlbl;
-    private javax.swing.JTextField wgttxt;
+    private javax.swing.JLabel wgtlbl1;
+    private javax.swing.JTextField wgttxt1;
     // End of variables declaration//GEN-END:variables
 }
