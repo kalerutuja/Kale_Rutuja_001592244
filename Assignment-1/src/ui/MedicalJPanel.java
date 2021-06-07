@@ -43,7 +43,7 @@ public class MedicalJPanel extends javax.swing.JPanel {
         allr3lbl = new javax.swing.JLabel();
         allr3txt = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(231, 195, 195));
+        setBackground(new java.awt.Color(255, 219, 219));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         medicallbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N

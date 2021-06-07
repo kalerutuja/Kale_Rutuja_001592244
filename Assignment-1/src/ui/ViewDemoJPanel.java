@@ -50,7 +50,7 @@ public class ViewDemoJPanel extends javax.swing.JPanel {
         Phonenumlbl = new javax.swing.JLabel();
         phonenumtxt = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(255, 216, 211));
+        setBackground(new java.awt.Color(255, 219, 219));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         demolbl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N

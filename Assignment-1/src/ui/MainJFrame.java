@@ -57,11 +57,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        workareaPanel.setBackground(new java.awt.Color(229, 196, 196));
+        workareaPanel.setBackground(new java.awt.Color(255, 219, 219));
         workareaPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         splitPane.setRightComponent(workareaPanel);
 
-        controlPanel.setBackground(new java.awt.Color(229, 196, 196));
+        controlPanel.setBackground(new java.awt.Color(255, 219, 219));
         controlPanel.setPreferredSize(new java.awt.Dimension(200, 500));
         controlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -190,7 +190,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 checkingbtnActionPerformed(evt);
             }
         });
-        controlPanel.add(checkingbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+        controlPanel.add(checkingbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 90, 30));
 
         checkingviewbtn.setText("View");
         checkingviewbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -198,7 +198,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 checkingviewbtnActionPerformed(evt);
             }
         });
-        controlPanel.add(checkingviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        controlPanel.add(checkingviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 90, -1));
 
         splitPane.setLeftComponent(controlPanel);
 

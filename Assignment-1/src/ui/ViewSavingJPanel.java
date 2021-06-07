@@ -44,7 +44,7 @@ public class ViewSavingJPanel extends javax.swing.JPanel {
         accbtxt = new javax.swing.JTextField();
         acctypetxt = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(243, 212, 212));
+        setBackground(new java.awt.Color(255, 219, 219));
 
         savinglbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         savinglbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

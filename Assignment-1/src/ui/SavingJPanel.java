@@ -58,7 +58,7 @@ public class SavingJPanel extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setBackground(new java.awt.Color(243, 197, 197));
+        setBackground(new java.awt.Color(255, 219, 219));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         savinglbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N

@@ -18,9 +18,9 @@ public class CheckingJPanel extends javax.swing.JPanel {
      * Creates new form CheckingJPanel
      */
     PersonInfo personinfo;
-    public CheckingJPanel(PersonInfo personnfo) {
+    public CheckingJPanel(PersonInfo personinfo) {
         initComponents();
-        this.personinfo = personinfo;
+        this.personinfo= personinfo;
         this.setSize(2000,2000);
         
     }
@@ -45,7 +45,7 @@ public class CheckingJPanel extends javax.swing.JPanel {
         accnumtxt = new javax.swing.JTextField();
         chksavebtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(236, 187, 187));
+        setBackground(new java.awt.Color(255, 219, 219));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         checkinglbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -119,8 +119,8 @@ public class CheckingJPanel extends javax.swing.JPanel {
     private void chksavebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chksavebtnActionPerformed
         // TODO add your handling code here:
         personinfo.setcBankName(bnknametxt.getText());
-        personinfo.setcBankAccountNumber(accnumtxt.getText());
         personinfo.setcRoutingNumber(croutingtxt.getText());
+        personinfo.setcBankAccountNumber(accnumtxt.getText());
         personinfo.setcAccountBalance(accbaltxt.getText());
         personinfo.setcAccountType(cacctypetxt.getText());
         

@@ -40,7 +40,7 @@
         <Container class="javax.swing.JPanel" name="workareaPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c4" green="c4" red="e5" type="rgb"/>
+              <Color blue="db" green="db" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -56,7 +56,7 @@
         <Container class="javax.swing.JPanel" name="controlPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="c4" green="c4" red="e5" type="rgb"/>
+              <Color blue="db" green="db" red="ff" type="rgb"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[200, 500]"/>
@@ -313,7 +313,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="10" y="320" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="10" y="320" width="90" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -326,7 +326,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="110" y="320" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="110" y="320" width="90" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

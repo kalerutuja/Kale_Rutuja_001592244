@@ -45,7 +45,7 @@ public class ViewLicenceJPanel extends javax.swing.JPanel {
         dexpiretxt = new javax.swing.JTextField();
         piclbl = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(230, 183, 183));
+        setBackground(new java.awt.Color(255, 219, 219));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bloodtypetxt.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +103,8 @@ public class ViewLicenceJPanel extends javax.swing.JPanel {
             }
         });
         add(dexpiretxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 153, 104, -1));
+
+        piclbl.setBackground(new java.awt.Color(255, 219, 219));
         add(piclbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 670, 540));
     }// </editor-fold>//GEN-END:initComponents
 

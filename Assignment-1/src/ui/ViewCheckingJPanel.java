@@ -43,7 +43,7 @@ public class ViewCheckingJPanel extends javax.swing.JPanel {
         chkaccblbl = new javax.swing.JLabel();
         chkacctyelbl = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(229, 187, 187));
+        setBackground(new java.awt.Color(255, 219, 219));
 
         checkinglbl.setBackground(new java.awt.Color(234, 187, 187));
         checkinglbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N

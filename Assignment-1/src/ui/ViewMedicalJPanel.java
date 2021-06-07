@@ -42,7 +42,7 @@ public class ViewMedicalJPanel extends javax.swing.JPanel {
         mednumtxt = new javax.swing.JTextField();
         allr1txt = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(233, 193, 193));
+        setBackground(new java.awt.Color(255, 219, 219));
 
         allr2txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

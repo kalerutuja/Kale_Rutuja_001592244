@@ -85,7 +85,7 @@ public class AddressJPanel extends javax.swing.JPanel {
         add(statetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 179, -1));
         add(ziptxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 182, 179, -1));
 
-        savebtn.setText("SAVE");
+        savebtn.setText("Save");
         savebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 savebtnActionPerformed(evt);

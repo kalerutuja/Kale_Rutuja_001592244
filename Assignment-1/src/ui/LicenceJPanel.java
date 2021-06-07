@@ -50,7 +50,7 @@ public class LicenceJPanel extends javax.swing.JPanel {
         dbrowsebtn = new javax.swing.JButton();
         dsavebtn = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(234, 200, 200));
+        setBackground(new java.awt.Color(255, 219, 219));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         drvlbl.setBackground(new java.awt.Color(231, 203, 203));

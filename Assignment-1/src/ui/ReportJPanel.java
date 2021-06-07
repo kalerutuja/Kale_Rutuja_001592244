@@ -18,7 +18,7 @@ public class ReportJPanel extends javax.swing.JPanel {
      * Creates new form ReportJPanel
      */
     PersonInfo personinfo;
-    public ReportJPanel(PersonInfo Personinfo) {
+    public ReportJPanel(PersonInfo personinfo) {
         initComponents();
         this.personinfo= personinfo;
         this.setSize(2000,2000);
@@ -105,6 +105,7 @@ public class ReportJPanel extends javax.swing.JPanel {
         acctypetxt1 = new javax.swing.JTextField();
         accnumlbl = new javax.swing.JLabel();
         accnumtxt = new javax.swing.JTextField();
+        imagelbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(248, 169, 169));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -114,7 +115,7 @@ public class ReportJPanel extends javax.swing.JPanel {
         jLabel1.setText("REPORT");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 15, 1060, 25));
 
-        jPanel1.setBackground(new java.awt.Color(230, 197, 197));
+        jPanel1.setBackground(new java.awt.Color(255, 219, 219));
 
         Addrlbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         Addrlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -316,7 +317,7 @@ public class ReportJPanel extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 70, -1, 651));
 
-        jPanel2.setBackground(new java.awt.Color(235, 206, 206));
+        jPanel2.setBackground(new java.awt.Color(255, 219, 219));
 
         drvnumtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -402,7 +403,7 @@ public class ReportJPanel extends javax.swing.JPanel {
                     .addComponent(picturetxt, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 31, Short.MAX_VALUE)
+                .addGap(0, 34, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(allr3lbl, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(mednumlbl, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -473,9 +474,9 @@ public class ReportJPanel extends javax.swing.JPanel {
                 .addGap(83, 83, 83))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 70, -1, 651));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 70, 350, 651));
 
-        jPanel3.setBackground(new java.awt.Color(235, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 219, 219));
 
         savacclbl.setText("Saving Account Number:");
 
@@ -621,7 +622,7 @@ public class ReportJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(acctypelbl)
                     .addComponent(acctypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addComponent(checkinglbl)
                 .addGap(29, 29, 29)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -643,10 +644,11 @@ public class ReportJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(actypelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(acctypetxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63))
+                .addGap(49, 49, 49))
         );
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(706, 70, -1, -1));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(706, 71, 370, 650));
+        add(imagelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 90, 260, 310));
     }// </editor-fold>//GEN-END:initComponents
 
     private void streettxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streettxtActionPerformed
@@ -698,29 +700,29 @@ public class ReportJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_hgttxtActionPerformed
 
-    private void routingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxtActionPerformed
+    private void accnumtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accnumtxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_routingtxtActionPerformed
-
-    private void bnknametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnknametxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bnknametxtActionPerformed
-
-    private void routingtxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxt1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_routingtxt1ActionPerformed
-
-    private void accbaltxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accbaltxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_accbaltxtActionPerformed
+    }//GEN-LAST:event_accnumtxtActionPerformed
 
     private void acctypetxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acctypetxt1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_acctypetxt1ActionPerformed
 
-    private void accnumtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accnumtxtActionPerformed
+    private void accbaltxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accbaltxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_accnumtxtActionPerformed
+    }//GEN-LAST:event_accbaltxtActionPerformed
+
+    private void routingtxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_routingtxt1ActionPerformed
+
+    private void bnknametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnknametxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bnknametxtActionPerformed
+
+    private void routingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_routingtxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -769,6 +771,7 @@ public class ReportJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField fnametxt;
     private javax.swing.JLabel hgtlbl;
     private javax.swing.JTextField hgttxt;
+    private javax.swing.JLabel imagelbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -839,6 +842,7 @@ public class ReportJPanel extends javax.swing.JPanel {
         
         String getImagepath = picturetxt.getText();
         ImageIcon myimage = new ImageIcon(getImagepath);
-        picturelbl.setIcon(myimage);    
+        imagelbl.setIcon(myimage);
+
     }
 }

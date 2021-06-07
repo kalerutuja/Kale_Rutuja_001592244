@@ -37,7 +37,7 @@ public class PersonInfo {
     private String cAccountBalance;
     private String cAccountType = "Checking";
     
-    private String lNumber;// 
+    private String lNumber;
     private String dateOfIssue;
     private String dateOfExpire;
     private String bloodTyep;

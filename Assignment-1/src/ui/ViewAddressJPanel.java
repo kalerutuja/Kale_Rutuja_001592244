@@ -41,7 +41,7 @@ public class ViewAddressJPanel extends javax.swing.JPanel {
         Strlbl = new javax.swing.JLabel();
         statetxt = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(246, 211, 211));
+        setBackground(new java.awt.Color(255, 219, 219));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ziptxt.addActionListener(new java.awt.event.ActionListener() {

@@ -51,7 +51,7 @@ public class DemoJPanel extends javax.swing.JPanel {
         wgttxt1 = new javax.swing.JTextField();
         wgtlbl1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 216, 211));
+        setBackground(new java.awt.Color(255, 219, 219));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         demolbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -111,7 +111,7 @@ public class DemoJPanel extends javax.swing.JPanel {
         add(phonenumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 230, 30));
         add(ssntxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 230, 30));
 
-        savebtn.setText("SAVE");
+        savebtn.setText("Save");
         savebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 savebtnActionPerformed(evt);
