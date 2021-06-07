@@ -172,7 +172,7 @@ public class LicenceJPanel extends javax.swing.JPanel {
         personinfo.setDateOfExpire(dexpiretxt.getText());
         personinfo.setBloodTyep(bloodtypetxt.getText());
         
-        JOptionPane.showMessageDialog(this, "Drivers License Information is Saved.");
+        JOptionPane.showMessageDialog(this, "Drivers License Information Saved.");
     }//GEN-LAST:event_dsavebtnActionPerformed
 
 

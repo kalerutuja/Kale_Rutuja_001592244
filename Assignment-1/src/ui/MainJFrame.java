@@ -44,8 +44,6 @@ public class MainJFrame extends javax.swing.JFrame {
         savingbtn = new javax.swing.JButton();
         savingviewbtn = new javax.swing.JButton();
         checkinglbl = new javax.swing.JLabel();
-        checkingbtn = new javax.swing.JButton();
-        checkviewbtn = new javax.swing.JButton();
         dlicencelbl = new javax.swing.JLabel();
         driverbtn = new javax.swing.JButton();
         driverviewbtn = new javax.swing.JButton();
@@ -54,6 +52,8 @@ public class MainJFrame extends javax.swing.JFrame {
         medicalviewbtn = new javax.swing.JButton();
         Reportlbl = new javax.swing.JLabel();
         reportbtn = new javax.swing.JButton();
+        checkingbtn = new javax.swing.JButton();
+        checkingviewbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,22 +133,6 @@ public class MainJFrame extends javax.swing.JFrame {
         checkinglbl.setText("Checking Account Information");
         controlPanel.add(checkinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 299, 203, -1));
 
-        checkingbtn.setText("Create");
-        checkingbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkingbtnActionPerformed(evt);
-            }
-        });
-        controlPanel.add(checkingbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 321, 89, -1));
-
-        checkviewbtn.setText("View");
-        checkviewbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkviewbtnActionPerformed(evt);
-            }
-        });
-        controlPanel.add(checkviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 321, 89, -1));
-
         dlicencelbl.setText("Driver's Licence Information");
         controlPanel.add(dlicencelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 362, 203, -1));
 
@@ -200,6 +184,22 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         controlPanel.add(reportbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 522, -1, -1));
 
+        checkingbtn.setText("Create");
+        checkingbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkingbtnActionPerformed(evt);
+            }
+        });
+        controlPanel.add(checkingbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+
+        checkingviewbtn.setText("View");
+        checkingviewbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkingviewbtnActionPerformed(evt);
+            }
+        });
+        controlPanel.add(checkingviewbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+
         splitPane.setLeftComponent(controlPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -250,8 +250,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void reportbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportbtnActionPerformed
         // TODO add your handling code here:
-        ReportJPanel report = new ReportJPanel(personinfo);
-        splitPane.setRightComponent(report);
+        ReportJPanel rprt = new ReportJPanel(personinfo);
+        splitPane.setRightComponent(rprt);
     }//GEN-LAST:event_reportbtnActionPerformed
 
     private void savingbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savingbtnActionPerformed
@@ -275,29 +275,29 @@ public class MainJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_addrviewbtnActionPerformed
 
+    private void driverviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_driverviewbtnActionPerformed
+        // TODO add your handling code here:
+        ViewLicenceJPanel viewlicence = new ViewLicenceJPanel(personinfo);
+        splitPane.setRightComponent(viewlicence);
+    }//GEN-LAST:event_driverviewbtnActionPerformed
+
+    private void medicalviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicalviewbtnActionPerformed
+        // TODO add your handling code here:
+        ViewMedicalJPanel viewmedical = new ViewMedicalJPanel(personinfo);
+        splitPane.setRightComponent(viewmedical);
+    }//GEN-LAST:event_medicalviewbtnActionPerformed
+
     private void checkingbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkingbtnActionPerformed
         // TODO add your handling code here:
         CheckingJPanel checking = new CheckingJPanel(personinfo);
         splitPane.setRightComponent(checking);
     }//GEN-LAST:event_checkingbtnActionPerformed
 
-    private void checkviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkviewbtnActionPerformed
+    private void checkingviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkingviewbtnActionPerformed
         // TODO add your handling code here:
         ViewCheckingJPanel viewchecking = new ViewCheckingJPanel(personinfo);
         splitPane.setRightComponent(viewchecking);
-    }//GEN-LAST:event_checkviewbtnActionPerformed
-
-    private void driverviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_driverviewbtnActionPerformed
-        // TODO add your handling code here:
-        LicenceJPanel licence = new LicenceJPanel(personinfo);
-        splitPane.setRightComponent(licence);
-    }//GEN-LAST:event_driverviewbtnActionPerformed
-
-    private void medicalviewbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_medicalviewbtnActionPerformed
-        // TODO add your handling code here:
-        MedicalJPanel medical = new MedicalJPanel(personinfo);
-        splitPane.setRightComponent(medical);
-    }//GEN-LAST:event_medicalviewbtnActionPerformed
+    }//GEN-LAST:event_checkingviewbtnActionPerformed
     
     
     /**
@@ -343,7 +343,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton addrviewbtn;
     private javax.swing.JButton checkingbtn;
     private javax.swing.JLabel checkinglbl;
-    private javax.swing.JButton checkviewbtn;
+    private javax.swing.JButton checkingviewbtn;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JButton demobtn;
     private javax.swing.JLabel demolbl;

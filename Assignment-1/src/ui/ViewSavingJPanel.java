@@ -148,7 +148,6 @@ public class ViewSavingJPanel extends javax.swing.JPanel {
         routingtxt.setText(personinfo.getsRoutingNumber());
         savacctxt.setText(personinfo.getsBnkAccountNumber());
         accbtxt.setText(personinfo.getsAccountBalance());
-        acctypetxt.setText(personinfo.getsAccountType());
-        
+        acctypetxt.setText(personinfo.getsAccountType());       
     }
 }

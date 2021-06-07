@@ -103,7 +103,7 @@ public class ViewLicenceJPanel extends javax.swing.JPanel {
             }
         });
         add(dexpiretxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 153, 104, -1));
-        add(piclbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 273, 121, 72));
+        add(piclbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 670, 540));
     }// </editor-fold>//GEN-END:initComponents
 
     private void drvnumtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drvnumtxtActionPerformed
@@ -151,10 +151,11 @@ public class ViewLicenceJPanel extends javax.swing.JPanel {
         dissuetxt.setText(personinfo.getDateOfIssue());
         dexpiretxt.setText(personinfo.getDateOfExpire());
         bloodtypetxt.setText(personinfo.getBloodTyep());
-        
+        picturetxt.setText(personinfo.getPicture());
         String getImagepath = picturetxt.getText();
         ImageIcon myimage = new ImageIcon(getImagepath);
         piclbl.setIcon(myimage);
         
-    }
+        }
+        
 }

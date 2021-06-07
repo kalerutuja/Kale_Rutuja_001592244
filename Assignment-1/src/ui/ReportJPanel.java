@@ -22,7 +22,7 @@ public class ReportJPanel extends javax.swing.JPanel {
         initComponents();
         this.personinfo= personinfo;
         this.setSize(2000,2000);
-        displaypersoninfo();
+        displayPerson();
         
     }
 
@@ -95,16 +95,16 @@ public class ReportJPanel extends javax.swing.JPanel {
         banklbl = new javax.swing.JLabel();
         routinglbl = new javax.swing.JLabel();
         checkinglbl = new javax.swing.JLabel();
-        chkaccnumlbl = new javax.swing.JLabel();
-        chkaccblbl = new javax.swing.JLabel();
-        chkacctyelbl = new javax.swing.JLabel();
-        chkbnktxt = new javax.swing.JTextField();
-        chkroutingtxt = new javax.swing.JTextField();
-        chkaccnumtxt = new javax.swing.JTextField();
-        chkaccbaltxt = new javax.swing.JTextField();
-        chkacctypetxt = new javax.swing.JTextField();
-        chkbnklbl = new javax.swing.JLabel();
-        chkroutlbl = new javax.swing.JLabel();
+        bnknamelbl = new javax.swing.JLabel();
+        routinglbl1 = new javax.swing.JLabel();
+        accballbl = new javax.swing.JLabel();
+        actypelbl = new javax.swing.JLabel();
+        bnknametxt = new javax.swing.JTextField();
+        routingtxt1 = new javax.swing.JTextField();
+        accbaltxt = new javax.swing.JTextField();
+        acctypetxt1 = new javax.swing.JTextField();
+        accnumlbl = new javax.swing.JLabel();
+        accnumtxt = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(248, 169, 169));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -309,7 +309,7 @@ public class ReportJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ziplbl)
                     .addComponent(ziptxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {agetxt, dobtxt, fnametxt, hgttxt, lnametxt, phonenumtxt, ssntxt, wgttxt1});
@@ -452,7 +452,7 @@ public class ReportJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(picturelbl)
                     .addComponent(picturetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addComponent(medicallbl)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -501,62 +501,100 @@ public class ReportJPanel extends javax.swing.JPanel {
         checkinglbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         checkinglbl.setText("Checking Account Information");
 
-        chkaccnumlbl.setText("Checking Account Number:");
+        bnknamelbl.setText("Bank Name:");
 
-        chkaccblbl.setText("Account Balance:");
+        routinglbl1.setText("Routing Number:");
 
-        chkacctyelbl.setText("Account Type:");
+        accballbl.setText("Account Balance:");
 
-        chkroutingtxt.addActionListener(new java.awt.event.ActionListener() {
+        actypelbl.setText("Account Type:");
+
+        bnknametxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkroutingtxtActionPerformed(evt);
+                bnknametxtActionPerformed(evt);
             }
         });
 
-        chkbnklbl.setText("Bank Name:");
+        routingtxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                routingtxt1ActionPerformed(evt);
+            }
+        });
 
-        chkroutlbl.setText("Routing Number:");
+        accbaltxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accbaltxtActionPerformed(evt);
+            }
+        });
+
+        acctypetxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acctypetxt1ActionPerformed(evt);
+            }
+        });
+
+        accnumlbl.setText("Account Number:");
+
+        accnumtxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accnumtxtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(banklbl)
-                    .addComponent(routinglbl)
-                    .addComponent(savacclbl)
-                    .addComponent(accblbl)
-                    .addComponent(acctypelbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(accbtxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(savacctxt, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(routingtxt, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(banktxt, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(acctypetxt, javax.swing.GroupLayout.Alignment.LEADING)))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(savinglbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(chkbnklbl)
-                            .addComponent(chkroutlbl)
-                            .addComponent(chkaccnumlbl)
-                            .addComponent(chkaccblbl)
-                            .addComponent(chkacctyelbl))
+                            .addComponent(banklbl)
+                            .addComponent(routinglbl)
+                            .addComponent(savacclbl)
+                            .addComponent(accblbl)
+                            .addComponent(acctypelbl))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(chkaccbaltxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkaccnumtxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkroutingtxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkbnktxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(chkacctypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(checkinglbl, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)))
+                            .addComponent(accbtxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(savacctxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(routingtxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(banktxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(acctypetxt, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(bnknamelbl)
+                                .addGap(6, 6, 6)
+                                .addComponent(bnknametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(routinglbl1)
+                                .addGap(3, 3, 3)
+                                .addComponent(routingtxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(accnumlbl)
+                                .addGap(0, 0, 0)
+                                .addComponent(accnumtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(accballbl)
+                                .addGap(3, 3, 3)
+                                .addComponent(accbaltxt, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(actypelbl)
+                                .addGap(0, 0, 0)
+                                .addComponent(acctypetxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(savinglbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(checkinglbl, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -583,29 +621,29 @@ public class ReportJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(acctypelbl)
                     .addComponent(acctypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addComponent(checkinglbl)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkbnklbl)
-                    .addComponent(chkbnktxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkroutlbl)
-                    .addComponent(chkroutingtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkaccnumlbl)
-                    .addComponent(chkaccnumtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkaccbaltxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chkaccblbl))
-                .addGap(17, 17, 17)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkacctyelbl)
-                    .addComponent(chkacctypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bnknamelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bnknametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(routinglbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(routingtxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(accnumlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(accnumtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(accballbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(accbaltxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(actypelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(acctypetxt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63))
         );
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(706, 70, -1, -1));
@@ -644,15 +682,6 @@ public class ReportJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_allr1txtActionPerformed
 
-    private void routingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_routingtxtActionPerformed
-
-    private void chkroutingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkroutingtxtActionPerformed
-        // TODO add your handling code here:
-        chkacctypetxt.setText("Savings");
-    }//GEN-LAST:event_chkroutingtxtActionPerformed
-
     private void fnamelblComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_fnamelblComponentHidden
         // TODO add your handling code here:
     }//GEN-LAST:event_fnamelblComponentHidden
@@ -669,6 +698,30 @@ public class ReportJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_hgttxtActionPerformed
 
+    private void routingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_routingtxtActionPerformed
+
+    private void bnknametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnknametxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bnknametxtActionPerformed
+
+    private void routingtxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_routingtxt1ActionPerformed
+
+    private void accbaltxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accbaltxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_accbaltxtActionPerformed
+
+    private void acctypetxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acctypetxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_acctypetxt1ActionPerformed
+
+    private void accnumtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accnumtxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_accnumtxtActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Addrlbl;
@@ -676,10 +729,16 @@ public class ReportJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel Phonenumlbl;
     private javax.swing.JLabel Statelbl;
     private javax.swing.JLabel Strlbl;
+    private javax.swing.JLabel accballbl;
+    private javax.swing.JTextField accbaltxt;
     private javax.swing.JLabel accblbl;
     private javax.swing.JTextField accbtxt;
+    private javax.swing.JLabel accnumlbl;
+    private javax.swing.JTextField accnumtxt;
     private javax.swing.JLabel acctypelbl;
     private javax.swing.JTextField acctypetxt;
+    private javax.swing.JTextField acctypetxt1;
+    private javax.swing.JLabel actypelbl;
     private javax.swing.JLabel agelbl;
     private javax.swing.JTextField agetxt;
     private javax.swing.JLabel allr1lbl;
@@ -692,17 +751,9 @@ public class ReportJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField banktxt;
     private javax.swing.JLabel bloodtypelbl;
     private javax.swing.JTextField bloodtypetxt;
+    private javax.swing.JLabel bnknamelbl;
+    private javax.swing.JTextField bnknametxt;
     private javax.swing.JLabel checkinglbl;
-    private javax.swing.JTextField chkaccbaltxt;
-    private javax.swing.JLabel chkaccblbl;
-    private javax.swing.JLabel chkaccnumlbl;
-    private javax.swing.JTextField chkaccnumtxt;
-    private javax.swing.JLabel chkacctyelbl;
-    private javax.swing.JTextField chkacctypetxt;
-    private javax.swing.JLabel chkbnklbl;
-    private javax.swing.JTextField chkbnktxt;
-    private javax.swing.JTextField chkroutingtxt;
-    private javax.swing.JLabel chkroutlbl;
     private javax.swing.JTextField citytxt;
     private javax.swing.JLabel demolbl;
     private javax.swing.JLabel dexpirelbl;
@@ -731,7 +782,9 @@ public class ReportJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel picturelbl;
     private javax.swing.JTextField picturetxt;
     private javax.swing.JLabel routinglbl;
+    private javax.swing.JLabel routinglbl1;
     private javax.swing.JTextField routingtxt;
+    private javax.swing.JTextField routingtxt1;
     private javax.swing.JLabel savacclbl;
     private javax.swing.JTextField savacctxt;
     private javax.swing.JLabel savinglbl;
@@ -745,7 +798,8 @@ public class ReportJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField ziptxt;
     // End of variables declaration//GEN-END:variables
 
-    private void displaypersoninfo() {
+      private void displayPerson() {
+        System.out.println("error");
         fnametxt.setText(personinfo.getFirstName());
         lnametxt.setText(personinfo.getLastName());
         dobtxt.setText(personinfo.getDOB());
@@ -765,13 +819,7 @@ public class ReportJPanel extends javax.swing.JPanel {
         savacctxt.setText(personinfo.getsBnkAccountNumber());
         accbtxt.setText(personinfo.getsAccountBalance());
         acctypetxt.setText(personinfo.getsAccountType());
-        
-        chkbnktxt.setText(personinfo.getcBankName());
-        chkroutingtxt.setText(personinfo.getcRoutingNumber());
-        chkaccnumtxt.setText(personinfo.getcBankAccountNumber());
-        chkaccbaltxt.setText(personinfo.getcAccountBalance());
-        chkacctypetxt.setText(personinfo.getcAccountType());
-        
+              
         drvnumtxt.setText(personinfo.getlNumber());
         dissuetxt.setText(personinfo.getDateOfIssue());
         dexpiretxt.setText(personinfo.getDateOfExpire());
@@ -783,12 +831,14 @@ public class ReportJPanel extends javax.swing.JPanel {
         allr2txt.setText(personinfo.getAlergy2());
         allr3txt.setText(personinfo.getAlergy3());
         
+        bnknametxt.setText(personinfo.getcBankName());
+        routingtxt.setText(personinfo.getcRoutingNumber());
+        accnumtxt.setText(personinfo.getcBankAccountNumber());
+        accbaltxt.setText(personinfo.getcAccountBalance());
+        acctypetxt.setText(personinfo.getcAccountType());
+        
         String getImagepath = picturetxt.getText();
         ImageIcon myimage = new ImageIcon(getImagepath);
-        picturelbl.setIcon(myimage); 
-        
-        
-        
-        
+        picturelbl.setIcon(myimage);    
     }
 }

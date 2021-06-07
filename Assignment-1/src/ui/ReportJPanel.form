@@ -16,6 +16,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-47,0,0,4,70"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -195,7 +196,7 @@
                       <Component id="ziplbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="ziptxt" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="95" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -420,7 +421,7 @@
                       <Component id="picturelbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="picturetxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="151" max="32767" attributes="0"/>
                   <Component id="medicallbl" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -567,49 +568,69 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="banklbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="routinglbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="savacclbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="accblbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="acctypelbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="accbtxt" alignment="0" pref="164" max="32767" attributes="0"/>
-                      <Component id="savacctxt" alignment="0" max="32767" attributes="0"/>
-                      <Component id="routingtxt" alignment="0" max="32767" attributes="0"/>
-                      <Component id="banktxt" alignment="0" max="32767" attributes="0"/>
-                      <Component id="acctypetxt" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="savinglbl" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="chkbnklbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="chkroutlbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="chkaccnumlbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="chkaccblbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="chkacctyelbl" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="banklbl" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="routinglbl" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="savacclbl" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="accblbl" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="acctypelbl" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="chkaccbaltxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="chkaccnumtxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="chkroutingtxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="chkbnktxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="chkacctypetxt" min="-2" pref="157" max="-2" attributes="0"/>
+                              <Component id="accbtxt" alignment="0" pref="164" max="32767" attributes="0"/>
+                              <Component id="savacctxt" alignment="0" max="32767" attributes="0"/>
+                              <Component id="routingtxt" alignment="0" max="32767" attributes="0"/>
+                              <Component id="banktxt" alignment="0" max="32767" attributes="0"/>
+                              <Component id="acctypetxt" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="checkinglbl" alignment="0" pref="348" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="bnknamelbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="bnknametxt" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="routinglbl1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                                  <Component id="routingtxt1" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="accnumlbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                  <Component id="accnumtxt" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="accballbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                                  <Component id="accbaltxt" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="actypelbl" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                  <Component id="acctypetxt1" min="-2" pref="80" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="savinglbl" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="checkinglbl" min="-2" pref="450" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
           </Group>
@@ -644,34 +665,34 @@
                       <Component id="acctypelbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="acctypetxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="89" max="32767" attributes="0"/>
+                  <EmptySpace pref="99" max="32767" attributes="0"/>
                   <Component id="checkinglbl" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="chkbnklbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkbnktxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="bnknamelbl" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="bnknametxt" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="chkroutlbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkroutingtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="routinglbl1" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="routingtxt1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="chkaccnumlbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkaccnumtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="accnumlbl" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="accnumtxt" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="chkaccbaltxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkaccblbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="accballbl" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="accbaltxt" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="chkacctyelbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkacctypetxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="actypelbl" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="acctypetxt1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -733,43 +754,55 @@
             <Property name="text" type="java.lang.String" value="Checking Account Information"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="chkaccnumlbl">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Checking Account Number:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="chkaccblbl">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Account Balance:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="chkacctyelbl">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Account Type:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="chkbnktxt">
-        </Component>
-        <Component class="javax.swing.JTextField" name="chkroutingtxt">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkroutingtxtActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="chkaccnumtxt">
-        </Component>
-        <Component class="javax.swing.JTextField" name="chkaccbaltxt">
-        </Component>
-        <Component class="javax.swing.JTextField" name="chkacctypetxt">
-        </Component>
-        <Component class="javax.swing.JLabel" name="chkbnklbl">
+        <Component class="javax.swing.JLabel" name="bnknamelbl">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bank Name:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="chkroutlbl">
+        <Component class="javax.swing.JLabel" name="routinglbl1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Routing Number:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="accballbl">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Account Balance:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="actypelbl">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Account Type:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="bnknametxt">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bnknametxtActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="routingtxt1">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="routingtxt1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="accbaltxt">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="accbaltxtActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="acctypetxt1">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="acctypetxt1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="accnumlbl">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Account Number:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="accnumtxt">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="accnumtxtActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

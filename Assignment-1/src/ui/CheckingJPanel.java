@@ -38,9 +38,9 @@ public class CheckingJPanel extends javax.swing.JPanel {
         accballbl = new javax.swing.JLabel();
         actypelbl = new javax.swing.JLabel();
         bnknametxt = new javax.swing.JTextField();
-        routingtxt = new javax.swing.JTextField();
+        croutingtxt = new javax.swing.JTextField();
         accbaltxt = new javax.swing.JTextField();
-        acctypetxt = new javax.swing.JTextField();
+        cacctypetxt = new javax.swing.JTextField();
         accnumlbl = new javax.swing.JLabel();
         accnumtxt = new javax.swing.JTextField();
         chksavebtn = new javax.swing.JButton();
@@ -51,57 +51,57 @@ public class CheckingJPanel extends javax.swing.JPanel {
         checkinglbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         checkinglbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         checkinglbl.setText("Checking Account Information");
-        add(checkinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 26, 497, -1));
+        add(checkinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 450, -1));
 
         bnknamelbl.setText("Bank Name:");
-        add(bnknamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, 20));
+        add(bnknamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, -1, 20));
 
         routinglbl.setText("Routing Number:");
-        add(routinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, 20));
+        add(routinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, 20));
 
         accballbl.setText("Account Balance:");
-        add(accballbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, 20));
+        add(accballbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, 20));
 
         actypelbl.setText("Account Type:");
-        add(actypelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, 20));
+        add(actypelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, 20));
 
         bnknametxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bnknametxtActionPerformed(evt);
             }
         });
-        add(bnknametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 80, -1));
+        add(bnknametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 80, -1));
 
-        routingtxt.addActionListener(new java.awt.event.ActionListener() {
+        croutingtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                routingtxtActionPerformed(evt);
+                croutingtxtActionPerformed(evt);
             }
         });
-        add(routingtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 80, -1));
+        add(croutingtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 80, -1));
 
         accbaltxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accbaltxtActionPerformed(evt);
             }
         });
-        add(accbaltxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 80, -1));
+        add(accbaltxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 80, -1));
 
-        acctypetxt.addActionListener(new java.awt.event.ActionListener() {
+        cacctypetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                acctypetxtActionPerformed(evt);
+                cacctypetxtActionPerformed(evt);
             }
         });
-        add(acctypetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 80, -1));
+        add(cacctypetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 80, -1));
 
         accnumlbl.setText("Account Number:");
-        add(accnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, 20));
+        add(accnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, 20));
 
         accnumtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accnumtxtActionPerformed(evt);
             }
         });
-        add(accnumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 80, -1));
+        add(accnumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 80, -1));
 
         chksavebtn.setText("Save");
         chksavebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -109,23 +109,22 @@ public class CheckingJPanel extends javax.swing.JPanel {
                 chksavebtnActionPerformed(evt);
             }
         });
-        add(chksavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
+        add(chksavebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void routingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_routingtxtActionPerformed
+    private void croutingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_croutingtxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_routingtxtActionPerformed
+    }//GEN-LAST:event_croutingtxtActionPerformed
 
     private void chksavebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chksavebtnActionPerformed
         // TODO add your handling code here:
         personinfo.setcBankName(bnknametxt.getText());
         personinfo.setcBankAccountNumber(accnumtxt.getText());
-        personinfo.setcRoutingNumber(routingtxt.getText());
+        personinfo.setcRoutingNumber(croutingtxt.getText());
         personinfo.setcAccountBalance(accbaltxt.getText());
-        personinfo.setcAccountType(acctypetxt.getText());
+        personinfo.setcAccountType(cacctypetxt.getText());
         
-        JOptionPane.showMessageDialog(this, "Checking Bank Account Information Saved.");
-
+        JOptionPane.showMessageDialog(this, "Checking Bank Account Information Saved.");       
     }//GEN-LAST:event_chksavebtnActionPerformed
 
     private void bnknametxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnknametxtActionPerformed
@@ -140,9 +139,9 @@ public class CheckingJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_accbaltxtActionPerformed
 
-    private void acctypetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acctypetxtActionPerformed
+    private void cacctypetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cacctypetxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_acctypetxtActionPerformed
+    }//GEN-LAST:event_cacctypetxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -150,13 +149,13 @@ public class CheckingJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField accbaltxt;
     private javax.swing.JLabel accnumlbl;
     private javax.swing.JTextField accnumtxt;
-    private javax.swing.JTextField acctypetxt;
     private javax.swing.JLabel actypelbl;
     private javax.swing.JLabel bnknamelbl;
     private javax.swing.JTextField bnknametxt;
+    private javax.swing.JTextField cacctypetxt;
     private javax.swing.JLabel checkinglbl;
     private javax.swing.JButton chksavebtn;
+    private javax.swing.JTextField croutingtxt;
     private javax.swing.JLabel routinglbl;
-    private javax.swing.JTextField routingtxt;
     // End of variables declaration//GEN-END:variables
 }
