@@ -648,7 +648,9 @@ public class ReportJPanel extends javax.swing.JPanel {
         );
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(706, 71, 370, 650));
-        add(imagelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 90, 260, 310));
+
+        imagelbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(imagelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, 300, 300));
     }// </editor-fold>//GEN-END:initComponents
 
     private void streettxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_streettxtActionPerformed
