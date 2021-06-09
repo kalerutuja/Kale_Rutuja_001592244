@@ -202,7 +202,7 @@ public class ViewJPanel extends javax.swing.JPanel {
       VitalSigns vitals = (VitalSigns) model.getValueAt(selectedRowIndex, 0);
       viewtemptxt.setText(String.valueOf(vitals.getTemperature()));
       viewbptxt.setText(String.valueOf(vitals.getBloodPressure()));
-      viewpulsetxt.setToolTipText(String.valueOf(vitals.getPulse()));
+      viewpulsetxt.setText(String.valueOf(vitals.getPulse()));
       viewdatetxt.setText(String.valueOf(vitals.getDate()));
       
       
