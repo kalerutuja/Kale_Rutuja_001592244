@@ -133,7 +133,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         product.setAvailnum(quantitytxt.getText());
         product.setDescription(descriptiontxt.getText());
         
-        JOptionPane.showMessageDialog(this, "Product information Saved.");
+        JOptionPane.showMessageDialog(this, "Product information is Saved");
     }//GEN-LAST:event_createSavebtnActionPerformed
 
 
