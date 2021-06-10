@@ -3,9 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterfaces;
+package UserInterface;
 
+import Business.Business;
+import Business.MasterOrderCatalog;
 import Business.SupplierDirectory;
+import UserInterface.AdministrativeRole.AdminWorkAreaJPanel;
+import UserInterface.CustomerRole.CustomerWorkAreaJPanel;
+import UserInterface.SupplierRole.LoginSupplier;
+import java.awt.CardLayout;
 
 /**
  *
@@ -16,10 +22,16 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    private Business business;
     private SupplierDirectory supplierDirectory;
+    private MasterOrderCatalog masterOrderCatalog;
+    
     public MainJFrame() {
         initComponents();
-        supplierDirectory= new SupplierDirectory();
+        business = new Business();
+        supplierDirectory = business.getSupplierDirectory();
+        masterOrderCatalog = business.getMasterOrderCatalog();
+        this.setSize(2000, 2000);
     }
 
     /**
@@ -30,7 +42,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jSplitPane1 = new javax.swing.JSplitPane();
-        WorkArea = new javax.swing.JPanel();
+        userProcessContainer = new javax.swing.JPanel();
         ControlJPanel = new javax.swing.JPanel();
         RoleAdminbtn = new javax.swing.JButton();
         RoleSupplierbtn = new javax.swing.JButton();
@@ -38,20 +50,20 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        WorkArea.setBackground(new java.awt.Color(181, 181, 222));
+        userProcessContainer.setBackground(new java.awt.Color(181, 181, 222));
 
-        javax.swing.GroupLayout WorkAreaLayout = new javax.swing.GroupLayout(WorkArea);
-        WorkArea.setLayout(WorkAreaLayout);
-        WorkAreaLayout.setHorizontalGroup(
-            WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout userProcessContainerLayout = new javax.swing.GroupLayout(userProcessContainer);
+        userProcessContainer.setLayout(userProcessContainerLayout);
+        userProcessContainerLayout.setHorizontalGroup(
+            userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 255, Short.MAX_VALUE)
         );
-        WorkAreaLayout.setVerticalGroup(
-            WorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        userProcessContainerLayout.setVerticalGroup(
+            userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 435, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setRightComponent(WorkArea);
+        jSplitPane1.setRightComponent(userProcessContainer);
 
         ControlJPanel.setBackground(new java.awt.Color(181, 181, 222));
 
@@ -126,15 +138,28 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void RoleAdminbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoleAdminbtnActionPerformed
         // TODO add your handling code here:
+        AdminWorkAreaJPanel awajp = new AdminWorkAreaJPanel(userProcessContainer, supplierDirectory);
+        userProcessContainer.add("AdminWorkAreaJPanel",awajp);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
         
     }//GEN-LAST:event_RoleAdminbtnActionPerformed
 
     private void RoleSupplierbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoleSupplierbtnActionPerformed
         // TODO add your handling code here:
+         LoginSupplier ls = new LoginSupplier(userProcessContainer, supplierDirectory);
+        userProcessContainer.add("LoginSupplierJPanel", ls);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_RoleSupplierbtnActionPerformed
 
     private void RoleCustomerbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoleCustomerbtnActionPerformed
         // TODO add your handling code here:
+        CustomerWorkAreaJPanel customerPanel = new CustomerWorkAreaJPanel(userProcessContainer, supplierDirectory, masterOrderCatalog);
+        userProcessContainer.add("CustomerWorkAreaJPanel", customerPanel);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_RoleCustomerbtnActionPerformed
 
     /**
@@ -177,7 +202,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton RoleAdminbtn;
     private javax.swing.JButton RoleCustomerbtn;
     private javax.swing.JButton RoleSupplierbtn;
-    private javax.swing.JPanel WorkArea;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables
 }

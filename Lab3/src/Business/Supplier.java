@@ -33,8 +33,10 @@ public class Supplier {
     public void setProductCatalog(ProductCatalog productCatalog) {
         this.productCatalog = productCatalog;
     }
+
     @Override
-    public String toString(){
-        return supplyName;
+    public String toString() {
+        return supplyName ;
     }
+    
 }

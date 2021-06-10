@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterfaces.AdministrativeRole;
+package UserInterface.AdministrativeRole;
 
 import Business.SupplierDirectory;
 import java.awt.CardLayout;
@@ -20,12 +20,12 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private SupplierDirectory supplierDirectory;
-    
-    public AdminWorkAreaJPanel(JPanel us, SupplierDirectory sd) {
-        initComponents();
-        this.userProcessContainer = us;
-        this.supplierDirectory= sd;
+    public AdminWorkAreaJPanel(JPanel userProcessContainer,SupplierDirectory supplierDirectory) {
         
+        initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.supplierDirectory=supplierDirectory;
+        this.setSize(2000,2000);
     }
 
     /**
