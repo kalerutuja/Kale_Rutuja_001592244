@@ -48,9 +48,11 @@ public class ViewJPanel extends javax.swing.JPanel {
         viewdatetxt = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(243, 206, 206));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         viewpanellbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         viewpanellbl.setText("View Vital Sign");
+        add(viewpanellbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 15, 571, -1));
 
         tblvitalsign.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -62,6 +64,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblvitalsign);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 49, 410, 138));
+
         ViewVitalbtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         ViewVitalbtn.setText("View VitalSigns");
         ViewVitalbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -69,6 +73,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                 ViewVitalbtnActionPerformed(evt);
             }
         });
+        add(ViewVitalbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 199, 176, -1));
 
         deletebtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         deletebtn.setText("Delete VitalSIgns");
@@ -77,116 +82,51 @@ public class ViewJPanel extends javax.swing.JPanel {
                 deletebtnActionPerformed(evt);
             }
         });
+        add(deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 199, -1, -1));
 
         viewtemplbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         viewtemplbl.setText("Tempreture:");
+        add(viewtemplbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 266, -1, -1));
 
         viewbplbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         viewbplbl.setText("Blood Pressure:");
+        add(viewbplbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 304, -1, -1));
 
         viewpulselbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         viewpulselbl.setText("Pulse:");
+        add(viewpulselbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 348, -1, -1));
 
         viewdatelbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         viewdatelbl.setText("Date:");
+        add(viewdatelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 386, -1, -1));
 
         viewtemptxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewtemptxtActionPerformed(evt);
             }
         });
+        add(viewtemptxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 264, 93, -1));
 
         viewbptxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewbptxtActionPerformed(evt);
             }
         });
+        add(viewbptxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 302, 93, -1));
 
         viewpulsetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewpulsetxtActionPerformed(evt);
             }
         });
+        add(viewpulsetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 346, 93, -1));
 
         viewdatetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewdatetxtActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewpanellbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(126, Short.MAX_VALUE)
-                                .addComponent(ViewVitalbtn)
-                                .addGap(31, 31, 31)
-                                .addComponent(deletebtn))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 62, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewtemplbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(viewbplbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(viewpulselbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(viewdatelbl, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(viewpulsetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-                    .addComponent(viewdatetxt)
-                    .addComponent(viewbptxt)
-                    .addComponent(viewtemptxt))
-                .addGap(167, 167, 167))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ViewVitalbtn, deletebtn});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {viewbptxt, viewdatetxt, viewpulsetxt, viewtemptxt});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(viewpanellbl)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ViewVitalbtn)
-                    .addComponent(deletebtn))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewtemplbl)
-                    .addComponent(viewtemptxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewbplbl)
-                    .addComponent(viewbptxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewpulselbl)
-                    .addComponent(viewpulsetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewdatelbl)
-                    .addComponent(viewdatetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {ViewVitalbtn, deletebtn});
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {viewbptxt, viewdatetxt, viewpulsetxt, viewtemptxt});
-
+        add(viewdatetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 384, 93, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void ViewVitalbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewVitalbtnActionPerformed

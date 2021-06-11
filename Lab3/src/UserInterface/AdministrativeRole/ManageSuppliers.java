@@ -24,10 +24,10 @@ public class ManageSuppliers extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private SupplierDirectory supplierDirectory;
     
-    public ManageSuppliers(JPanel uc,SupplierDirectory sd) {
+    public ManageSuppliers(JPanel userProcessContainer,SupplierDirectory supplierDirectory) {
         initComponents();
-        this.userProcessContainer = uc;
-        this.supplierDirectory = sd;
+        this.userProcessContainer = userProcessContainer;
+        this.supplierDirectory = supplierDirectory;
         refreshTable();
     }
 
@@ -44,6 +44,9 @@ public class ManageSuppliers extends javax.swing.JPanel {
         btnRemove = new javax.swing.JButton();
         btnViewSupplier = new javax.swing.JButton();
         btnAddSupplier = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
@@ -72,6 +75,8 @@ public class ManageSuppliers extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(supplierTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 46, 422, 133));
+
         btnBack.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnBack.setText(">>Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +84,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 205, 150, -1));
 
         btnRemove.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnRemove.setText("Remove");
@@ -87,6 +93,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
                 btnRemoveActionPerformed(evt);
             }
         });
+        add(btnRemove, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 205, 150, -1));
 
         btnViewSupplier.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnViewSupplier.setText("View Supplier");
@@ -95,6 +102,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
                 btnViewSupplierActionPerformed(evt);
             }
         });
+        add(btnViewSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 275, -1, -1));
 
         btnAddSupplier.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnAddSupplier.setText("Add Supplier");
@@ -103,47 +111,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
                 btnAddSupplierActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnBack)
-                                .addGap(52, 52, 52)
-                                .addComponent(btnRemove))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnViewSupplier)
-                                .addGap(52, 52, 52)
-                                .addComponent(btnAddSupplier)))))
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAddSupplier, btnBack, btnRemove, btnViewSupplier});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRemove)
-                    .addComponent(btnBack))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewSupplier)
-                    .addComponent(btnAddSupplier))
-                .addContainerGap(119, Short.MAX_VALUE))
-        );
+        add(btnAddSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 275, 150, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jScrollPane1ComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jScrollPane1ComponentHidden

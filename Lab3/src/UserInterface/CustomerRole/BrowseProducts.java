@@ -147,6 +147,7 @@ public class BrowseProducts extends javax.swing.JPanel {
         txtNewQuantity = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         viewProdjButton2.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         viewProdjButton2.setText("View Product Detail");
@@ -155,6 +156,7 @@ public class BrowseProducts extends javax.swing.JPanel {
                 viewProdjButton2ActionPerformed(evt);
             }
         });
+        add(viewProdjButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(593, 310, 179, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
@@ -163,6 +165,7 @@ public class BrowseProducts extends javax.swing.JPanel {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/CustomerRole/bestbuy.gif"))); // NOI18N
         jLabel4.setText("Have a wonderful shopping experience !");
         jLabel4.setIconTextGap(7);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 16, 588, -1));
 
         addtoCartButton6.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         addtoCartButton6.setText("Add To Cart");
@@ -171,11 +174,14 @@ public class BrowseProducts extends javax.swing.JPanel {
                 addtoCartButton6ActionPerformed(evt);
             }
         });
+        add(addtoCartButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 310, 179, -1));
 
         quantitySpinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        add(quantitySpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 311, 69, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel5.setText("Quantity:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 312, -1, -1));
 
         productTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         productTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -199,6 +205,8 @@ public class BrowseProducts extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(productTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 175, 708, 110));
+
         btnSearchProduct.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnSearchProduct.setText("Search Product");
         btnSearchProduct.addActionListener(new java.awt.event.ActionListener() {
@@ -206,24 +214,31 @@ public class BrowseProducts extends javax.swing.JPanel {
                 btnSearchProductActionPerformed(evt);
             }
         });
+        add(btnSearchProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 82, 152, -1));
 
         jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel6.setText("Sales Price:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 312, -1, -1));
 
         suppComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 suppComboBox1ActionPerformed(evt);
             }
         });
+        add(suppComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 84, 206, -1));
+        add(txtSalesPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 69, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Supplier");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 79, 80, 30));
 
         jLabel7.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel7.setText("Item in Cart:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 367, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setText("Product Catalog");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 143, 240, -1));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -246,6 +261,8 @@ public class BrowseProducts extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(orderTable);
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 405, 708, 110));
+
         btnBack.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -253,6 +270,7 @@ public class BrowseProducts extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 28, -1, -1));
 
         btnViewOrderItem.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnViewOrderItem.setText("View Item");
@@ -261,6 +279,7 @@ public class BrowseProducts extends javax.swing.JPanel {
                 btnViewOrderItemActionPerformed(evt);
             }
         });
+        add(btnViewOrderItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 533, 168, -1));
 
         btnModifyQuantity.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnModifyQuantity.setText("Modify Quantity");
@@ -269,6 +288,7 @@ public class BrowseProducts extends javax.swing.JPanel {
                 btnModifyQuantityActionPerformed(evt);
             }
         });
+        add(btnModifyQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 533, -1, -1));
 
         btnRemoveOrderItem.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnRemoveOrderItem.setText("Remove");
@@ -277,6 +297,7 @@ public class BrowseProducts extends javax.swing.JPanel {
                 btnRemoveOrderItemActionPerformed(evt);
             }
         });
+        add(btnRemoveOrderItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(566, 533, 168, -1));
 
         btnCheckOut.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btnCheckOut.setText("Check out");
@@ -285,126 +306,9 @@ public class BrowseProducts extends javax.swing.JPanel {
                 btnCheckOutActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 708, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(suppComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                .addComponent(txtSearchKeyWord, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSearchProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(btnModifyQuantity)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNewQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnViewOrderItem)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnRemoveOrderItem, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSalesPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(quantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(addtoCartButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(viewProdjButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {suppComboBox1, txtSearchKeyWord});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {quantitySpinner, txtSalesPrice});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jScrollPane1, jScrollPane2});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnModifyQuantity, btnRemoveOrderItem, btnViewOrderItem});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addtoCartButton6, viewProdjButton2});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBack)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(suppComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearchProduct)
-                    .addComponent(txtSearchKeyWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(txtSalesPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(viewProdjButton2)
-                        .addComponent(quantitySpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(addtoCartButton6)))
-                .addGap(28, 28, 28)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnModifyQuantity)
-                    .addComponent(txtNewQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewOrderItem)
-                    .addComponent(btnRemoveOrderItem))
-                .addGap(18, 18, 18)
-                .addComponent(btnCheckOut)
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jScrollPane1, jScrollPane2});
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {addtoCartButton6, viewProdjButton2});
-
+        add(btnCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 580, 217, -1));
+        add(txtSearchKeyWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 83, 206, -1));
+        add(txtNewQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 534, 98, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewProdjButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewProdjButton2ActionPerformed

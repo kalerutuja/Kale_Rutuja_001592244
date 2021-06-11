@@ -22,11 +22,11 @@ public class ViewSupplier extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private Supplier supplier;
-    public ViewSupplier(JPanel upc,Supplier s) {
+    public ViewSupplier(JPanel userProcessContainer,Supplier supplier) {
         initComponents();
-        userProcessContainer = upc;
-        supplier = s;
-        supplierName.setText(s.getSupplyName());
+        this.userProcessContainer = userProcessContainer;
+        this.supplier = supplier;
+        supplierName.setText(supplier.getSupplyName());
         refreshTable();
     }
 
@@ -43,10 +43,12 @@ public class ViewSupplier extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         supplierName.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         supplierName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         supplierName.setText("Supplier Information");
+        add(supplierName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 32, 536, -1));
 
         productCatalog.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -72,6 +74,8 @@ public class ViewSupplier extends javax.swing.JPanel {
             productCatalog.getColumnModel().getColumn(1).setResizable(false);
         }
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 102, 398, 140));
+
         btnBack.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -79,33 +83,7 @@ public class ViewSupplier extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(supplierName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(btnBack)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(supplierName)
-                .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(btnBack)
-                .addContainerGap(120, Short.MAX_VALUE))
-        );
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 270, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

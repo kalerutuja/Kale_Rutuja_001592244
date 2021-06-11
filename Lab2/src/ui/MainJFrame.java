@@ -56,6 +56,7 @@ public class MainJFrame extends javax.swing.JFrame {
         splitPane.setRightComponent(workArea);
 
         controlPanel.setBackground(new java.awt.Color(249, 209, 209));
+        controlPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         createbtn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         createbtn.setText("Create Vital Signs");
@@ -64,6 +65,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 createbtnActionPerformed(evt);
             }
         });
+        controlPanel.add(createbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 91, -1, -1));
 
         viewtbn.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         viewtbn.setText("View Vital Signs");
@@ -72,32 +74,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 viewtbnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
-        controlPanel.setLayout(controlPanelLayout);
-        controlPanelLayout.setHorizontalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(createbtn)
-                    .addComponent(viewtbn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {createbtn, viewtbn});
-
-        controlPanelLayout.setVerticalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(createbtn)
-                .addGap(69, 69, 69)
-                .addComponent(viewtbn)
-                .addContainerGap(241, Short.MAX_VALUE))
-        );
-
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createbtn, viewtbn});
+        controlPanel.add(viewtbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 189, 186, -1));
 
         splitPane.setLeftComponent(controlPanel);
 

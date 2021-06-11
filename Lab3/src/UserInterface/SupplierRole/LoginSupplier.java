@@ -22,10 +22,11 @@ public class LoginSupplier extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private SupplierDirectory supplierDirectory;
     
-    public LoginSupplier(JPanel upc, SupplierDirectory sd) {
+    public LoginSupplier(JPanel userProcessContainer, SupplierDirectory supplierDirectory) {
         initComponents();
-        userProcessContainer = upc;
-        supplierDirectory = sd;
+        this.userProcessContainer = userProcessContainer;
+        this.supplierDirectory = supplierDirectory;
+        this.setSize(2000,2000);
         
         supplierComboBox.removeAllItems();;
         for (Supplier supplier : supplierDirectory.getSupplierList()) {
@@ -49,14 +50,17 @@ public class LoginSupplier extends javax.swing.JPanel {
         supplierComboBox = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbllogin.setBackground(new java.awt.Color(144, 177, 177));
         lbllogin.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         lbllogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbllogin.setText("Supplier Login");
+        add(lbllogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 426, -1));
 
         lblSupplierName.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblSupplierName.setText("Supplier Name:");
+        add(lblSupplierName, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 105, -1, -1));
 
         btnGo.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnGo.setText("GO>>");
@@ -65,6 +69,8 @@ public class LoginSupplier extends javax.swing.JPanel {
                 btnGoActionPerformed(evt);
             }
         });
+        add(btnGo, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 102, -1, -1));
+        add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 144, 96, -1));
 
         supplierComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         supplierComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -72,40 +78,7 @@ public class LoginSupplier extends javax.swing.JPanel {
                 supplierComboBoxActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbllogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(lblSupplierName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(supplierComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnGo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lbllogin)
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSupplierName)
-                    .addComponent(btnGo)
-                    .addComponent(supplierComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
-        );
+        add(supplierComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 102, 115, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoActionPerformed
@@ -118,7 +91,7 @@ public class LoginSupplier extends javax.swing.JPanel {
     }//GEN-LAST:event_btnGoActionPerformed
 
     private void supplierComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supplierComboBoxActionPerformed
-
+//
     }//GEN-LAST:event_supplierComboBoxActionPerformed
 
 

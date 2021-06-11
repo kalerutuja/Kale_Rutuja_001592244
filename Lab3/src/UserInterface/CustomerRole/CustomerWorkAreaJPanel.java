@@ -43,6 +43,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         browseProducts = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
@@ -51,9 +52,11 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/CustomerRole/bestbuy.gif"))); // NOI18N
         jLabel4.setText("Have a wonderful shopping experience !");
         jLabel4.setIconTextGap(7);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 21, 593, -1));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel1.setText("Customer (WorkArea)");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 96, -1, -1));
 
         browseProducts.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         browseProducts.setText("Browse Product Catalog >>");
@@ -62,30 +65,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 browseProductsActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(219, 219, 219)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(browseProducts)
-                    .addComponent(jLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel4)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addGap(29, 29, 29)
-                .addComponent(browseProducts)
-                .addContainerGap(184, Short.MAX_VALUE))
-        );
+        add(browseProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 145, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void browseProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseProductsActionPerformed

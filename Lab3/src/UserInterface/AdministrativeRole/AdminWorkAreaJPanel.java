@@ -40,14 +40,17 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         btnManagerSupplier = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblworkarea.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lblworkarea.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblworkarea.setText("WORKAREA");
+        add(lblworkarea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 355, -1));
 
         lbladminworkrole.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lbladminworkrole.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbladminworkrole.setText("Administrative Work");
+        add(lbladminworkrole, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 55, 349, -1));
 
         btnManagerSupplier.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnManagerSupplier.setText("Manage Suppliers >>");
@@ -56,39 +59,15 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnManagerSupplierActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblworkarea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbladminworkrole, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
-                .addComponent(btnManagerSupplier)
-                .addGap(66, 66, 66))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblworkarea)
-                .addGap(27, 27, 27)
-                .addComponent(lbladminworkrole)
-                .addGap(74, 74, 74)
-                .addComponent(btnManagerSupplier)
-                .addContainerGap(140, Short.MAX_VALUE))
-        );
+        add(btnManagerSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 151, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManagerSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagerSupplierActionPerformed
         // TODO add your handling code here:
     ManageSuppliers ms = new ManageSuppliers(userProcessContainer , supplierDirectory);
     userProcessContainer.add("ManageSuppliersAdministrative",ms);
-    CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-    layout.next(userProcessContainer);
+    CardLayout c = (CardLayout) userProcessContainer.getLayout();
+    c.next(userProcessContainer);
     }//GEN-LAST:event_btnManagerSupplierActionPerformed
 
 

@@ -23,10 +23,11 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     Supplier supplier;
-    public CreateNewProductJPanel(JPanel upc, Supplier s) {
+    public CreateNewProductJPanel(JPanel userProcessContainer, Supplier supplier) {
         initComponents();
-        userProcessContainer = upc;
-        supplier = s;
+        this.userProcessContainer = userProcessContainer;
+        this.supplier = supplier;
+        this.setSize(2000,2000);
     }
 
     /**
@@ -47,19 +48,27 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         btnAddproduct = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCreateNewProduct.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         lblCreateNewProduct.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCreateNewProduct.setText("Create New Product");
+        add(lblCreateNewProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, 423, -1));
 
         lblProductName.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblProductName.setText("Product Name:");
+        add(lblProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 95, -1, -1));
 
         lblProductID.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblProductID.setText("Product ID:");
+        add(lblProductID, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 137, -1, -1));
 
         lblProductPrice.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblProductPrice.setText("Product Price:");
+        add(lblProductPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 179, -1, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 93, 108, -1));
+        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 135, 108, -1));
+        add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 177, 108, -1));
 
         btnBack.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnBack.setText("<<Back");
@@ -68,6 +77,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 247, 140, -1));
 
         btnAddproduct.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnAddproduct.setText("Add Product");
@@ -76,60 +86,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
                 btnAddproductActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblCreateNewProduct, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblProductName, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblProductID, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblProductPrice, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtName)
-                    .addComponent(txtID, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(txtPrice))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
-                .addComponent(btnBack)
-                .addGap(18, 18, 18)
-                .addComponent(btnAddproduct)
-                .addGap(62, 62, 62))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAddproduct, btnBack});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblCreateNewProduct)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblProductName)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblProductID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblProductPrice)
-                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddproduct)
-                    .addComponent(btnBack))
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAddproduct, btnBack});
-
+        add(btnAddproduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 247, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

@@ -24,10 +24,11 @@ public class AddSupplierJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private SupplierDirectory supplierDirectory;
 
-    public AddSupplierJPanel(JPanel uc, SupplierDirectory sd) {
+    public AddSupplierJPanel(JPanel userProcessContainer, SupplierDirectory supplierDirectory) {
         initComponents();
-        userProcessContainer = uc;
-        supplierDirectory = sd;
+        this.userProcessContainer = userProcessContainer;
+        this.supplierDirectory = supplierDirectory;
+        this.setSize(2000,2000);
         
     }
 
@@ -45,13 +46,16 @@ public class AddSupplierJPanel extends javax.swing.JPanel {
         txtname = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         addlbl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         addlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         addlbl.setText("Add Supplier");
+        add(addlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 33, 400, -1));
 
         namelbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         namelbl.setText("Name:");
+        add(namelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 93, -1, -1));
 
         btnback.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnback.setText("<<Back");
@@ -60,6 +64,7 @@ public class AddSupplierJPanel extends javax.swing.JPanel {
                 btnbackActionPerformed(evt);
             }
         });
+        add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 145, -1, -1));
 
         btnaddsupplier.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnaddsupplier.setText("Add Supplier");
@@ -68,47 +73,14 @@ public class AddSupplierJPanel extends javax.swing.JPanel {
                 btnaddsupplierActionPerformed(evt);
             }
         });
+        add(btnaddsupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 145, -1, -1));
 
         txtname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnameActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(addlbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(namelbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(btnback)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnaddsupplier)))
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(addlbl)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(namelbl)
-                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnback)
-                    .addComponent(btnaddsupplier))
-                .addContainerGap(126, Short.MAX_VALUE))
-        );
+        add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 91, 161, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed

@@ -44,101 +44,63 @@ public class ViewCheckingJPanel extends javax.swing.JPanel {
         chkacctyelbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 219, 219));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         checkinglbl.setBackground(new java.awt.Color(234, 187, 187));
         checkinglbl.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         checkinglbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         checkinglbl.setText("Checking Account Information");
+        add(checkinglbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 503, -1));
 
         bnknametxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bnknametxtActionPerformed(evt);
             }
         });
+        add(bnknametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 94, 240, -1));
 
         croutingtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 croutingtxtActionPerformed(evt);
             }
         });
+        add(croutingtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 138, 240, -1));
 
         accnumtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accnumtxtActionPerformed(evt);
             }
         });
+        add(accnumtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 183, 240, -1));
 
         accbaltxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accbaltxtActionPerformed(evt);
             }
         });
+        add(accbaltxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 234, 240, -1));
 
         cacctypetxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cacctypetxtActionPerformed(evt);
             }
         });
+        add(cacctypetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 277, 240, -1));
 
         chkbnklbl.setText("Bank Name:");
+        add(chkbnklbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 99, -1, -1));
 
         chkroutlbl.setText("Routing Number:");
+        add(chkroutlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 143, -1, -1));
 
         chkaccnumlbl.setText("Checking Account Number:");
+        add(chkaccnumlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 188, -1, -1));
 
         chkaccblbl.setText("Account Balance:");
+        add(chkaccblbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 239, -1, -1));
 
         chkacctyelbl.setText("Account Type:");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(checkinglbl, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(chkbnklbl)
-                    .addComponent(chkroutlbl)
-                    .addComponent(chkaccnumlbl)
-                    .addComponent(chkaccblbl)
-                    .addComponent(chkacctyelbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(accbaltxt)
-                    .addComponent(accnumtxt)
-                    .addComponent(croutingtxt)
-                    .addComponent(bnknametxt)
-                    .addComponent(cacctypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(checkinglbl)
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkbnklbl)
-                    .addComponent(bnknametxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkroutlbl)
-                    .addComponent(croutingtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkaccnumlbl)
-                    .addComponent(accnumtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(accbaltxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chkaccblbl))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(chkacctyelbl)
-                    .addComponent(cacctypetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(99, Short.MAX_VALUE))
-        );
+        add(chkacctyelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 282, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void croutingtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_croutingtxtActionPerformed

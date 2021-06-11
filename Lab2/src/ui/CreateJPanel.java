@@ -43,22 +43,32 @@ public class CreateJPanel extends javax.swing.JPanel {
         CreateSavetbn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(243, 206, 206));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Createlbl.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         Createlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Createlbl.setText("Create Vital Sign");
+        add(Createlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 16, 421, -1));
 
         templbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         templbl.setText("Temperature:");
+        add(templbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 80, -1, -1));
 
         Bplbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         Bplbl.setText("Blood Pressure:");
+        add(Bplbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 127, -1, -1));
 
         pulselbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         pulselbl.setText("Pulse:");
+        add(pulselbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 174, -1, -1));
 
         datelbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         datelbl.setText("Date:");
+        add(datelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 221, -1, -1));
+        add(temptxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 78, 105, -1));
+        add(BPtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 125, 105, -1));
+        add(pulsetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 172, 105, -1));
+        add(datetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 219, 105, -1));
 
         CreateSavetbn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         CreateSavetbn.setText("Save");
@@ -67,60 +77,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                 CreateSavetbnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Createlbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(templbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Bplbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(pulselbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(datelbl, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(temptxt, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BPtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pulsetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(datetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(CreateSavetbn)))
-                .addContainerGap(95, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {BPtxt, datetxt, pulsetxt, temptxt});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(Createlbl)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(templbl)
-                    .addComponent(temptxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Bplbl)
-                    .addComponent(BPtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pulselbl)
-                    .addComponent(pulsetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(datelbl)
-                    .addComponent(datetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(CreateSavetbn)
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
+        add(CreateSavetbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 263, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void CreateSavetbnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateSavetbnActionPerformed

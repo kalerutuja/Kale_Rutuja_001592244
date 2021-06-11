@@ -23,10 +23,11 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     Supplier supplier;
-    public SearchForProductJPanel(JPanel upc, Supplier s) {
+    public SearchForProductJPanel(JPanel userProcessContainer, Supplier supplier) {
         initComponents();
-        userProcessContainer = upc;
-        supplier =s;
+        this.userProcessContainer = userProcessContainer;
+        this.supplier =supplier;
+        this.setSize(2000,2000);
     }
 
     /**
@@ -43,13 +44,17 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
         btnBackID = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Search Product");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 400, -1));
 
         lblProductID.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblProductID.setText("Product ID");
+        add(lblProductID, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 96, 88, -1));
+        add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 94, 159, -1));
 
         btnSearchID.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnSearchID.setText("Search >>");
@@ -58,6 +63,7 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
                 btnSearchIDActionPerformed(evt);
             }
         });
+        add(btnSearchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 136, -1, -1));
 
         btnBackID.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnBackID.setText("<< Back");
@@ -66,45 +72,7 @@ public class SearchForProductJPanel extends javax.swing.JPanel {
                 btnBackIDActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblProductID, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSearchID)
-                            .addComponent(btnBackID))
-                        .addGap(35, 35, 35)))
-                .addContainerGap(82, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnBackID, btnSearchID});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblProductID)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addComponent(btnSearchID)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBackID)
-                .addContainerGap(100, Short.MAX_VALUE))
-        );
+        add(btnBackID, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 171, 127, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchIDActionPerformed

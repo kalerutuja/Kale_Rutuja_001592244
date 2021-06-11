@@ -20,11 +20,12 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
      */
     private JPanel userProcessContainer;
     private Supplier supplier;
-    public SupplierWorkAreaJPanel(JPanel upc, Supplier s) {
+    public SupplierWorkAreaJPanel(JPanel userProcessContainer, Supplier supplier) {
         initComponents();
         initComponents();
-        userProcessContainer = upc;
-        supplier = s;
+        this.userProcessContainer = userProcessContainer;
+        this.supplier = supplier;
+        this.setSize(2000,2000);
     }
 
     /**
@@ -41,10 +42,12 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
         btnManageStaff = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(144, 177, 177));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Product Manager Role (MyWorkArea)");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 19, 476, -1));
 
         btnManageProductCatalog.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnManageProductCatalog.setText("Manage Product Catalog >>");
@@ -53,6 +56,7 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageProductCatalogActionPerformed(evt);
             }
         });
+        add(btnManageProductCatalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 87, 297, -1));
 
         btnReviewProductPerform.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnReviewProductPerform.setText("Review Product Performance >>");
@@ -61,6 +65,7 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
                 btnReviewProductPerformActionPerformed(evt);
             }
         });
+        add(btnReviewProductPerform, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 134, -1, -1));
 
         btnUpdateProfile.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnUpdateProfile.setText("Update Personal Profile >>");
@@ -69,6 +74,7 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
                 btnUpdateProfileActionPerformed(evt);
             }
         });
+        add(btnUpdateProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 228, 297, -1));
 
         btnManageStaff.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnManageStaff.setText("Manage Staff");
@@ -77,42 +83,7 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageStaffActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnManageProductCatalog)
-                    .addComponent(btnReviewProductPerform)
-                    .addComponent(btnManageStaff)
-                    .addComponent(btnUpdateProfile))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnManageProductCatalog, btnManageStaff, btnReviewProductPerform, btnUpdateProfile});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addGap(38, 38, 38)
-                .addComponent(btnManageProductCatalog)
-                .addGap(18, 18, 18)
-                .addComponent(btnReviewProductPerform)
-                .addGap(18, 18, 18)
-                .addComponent(btnManageStaff)
-                .addGap(18, 18, 18)
-                .addComponent(btnUpdateProfile)
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnManageProductCatalog, btnManageStaff, btnReviewProductPerform, btnUpdateProfile});
-
+        add(btnManageStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 181, 297, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageProductCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageProductCatalogActionPerformed
