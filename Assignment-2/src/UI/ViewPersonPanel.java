@@ -5,17 +5,25 @@
  */
 package UI;
 
+import Model.Person;
+import javax.swing.JPanel;
+
 /**
  *
  * @author rutuja
  */
-public class CreateVitalHistoryJPanel extends javax.swing.JPanel {
+public class ViewPersonPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form CreateVital
+     * Creates new form ViewPersonPanel
      */
-    public CreateVitalHistoryJPanel() {
+    public ViewPersonPanel() {
         initComponents();
+        this.setSize(3000,3000);
+    }
+
+    ViewPersonPanel(Person person, JPanel userProcessContainer, ManageProfilePanel aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

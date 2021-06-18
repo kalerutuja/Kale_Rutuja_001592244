@@ -14,31 +14,70 @@ import java.util.Random;
  */
 public class Patient {
     
-    public String patientName;
-    public String patientID;
+    private String pName;
+    private int pID;
+    private int AgeGroup;
+    private String docName;
+    private String pharmacy;
+    
+    VitalSignHistory vitalSignHistory = new VitalSignHistory();
 
-    public String getPatientName() {
-        return patientName;
+    public VitalSignHistory getVitalSignHistory() {
+        return vitalSignHistory;
     }
 
-    public void setPatientName(String patientName) {
-        this.patientName = patientName;
+    public void setVitalSignHistory(VitalSignHistory vitalSignHistory) {
+        this.vitalSignHistory = vitalSignHistory;
     }
-    
-    private Date patientntime = new Date();
 
-    public static int gen() {
-        Random r = new Random( System.currentTimeMillis() );
-        return ((1 + r.nextInt(2)) * 10000 + r.nextInt(10000));
-    } 
-    
-    public static Patient newPatient(){ //Method to create a new Vital Sign object
-        Patient ptn = new Patient();
-        return ptn;
+    public String getpName() {
+        return pName;
+    }
+
+    public void setpName(String pName) {
+        this.pName = pName;
+    }
+
+    public int getpID() {
+        return pID;
+    }
+
+    public void setpID(int pID) {
+        this.pID = pID;
+    }
+    public String getDocName() {
+        return docName;
+    }
+
+    public void setDocName(String docName) {
+        this.docName = docName;
+    }
+
+    public String getPharmacy() {
+        return pharmacy;
+    }
+
+    public void setPharmacy(String pharmacy) {
+        this.pharmacy = pharmacy;
+    }
+
+    public int getAgeGroup() {
+        return AgeGroup;
+    }
+
+    public void setAgeGroup(int AgeGroup) {
+        this.AgeGroup = AgeGroup;
     }
     
-    public Boolean isPatientnormal(VitalsSign vs){
-        
-    }
     
+    @Override
+    public String toString()    {
+        return getpName();
+    }
 }
+
+    
+    
+
+
+

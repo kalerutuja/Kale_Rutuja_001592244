@@ -5,17 +5,25 @@
  */
 package UI;
 
+import Model.Person;
+import javax.swing.JPanel;
+
 /**
  *
  * @author rutuja
  */
-public class CreatePatientJPanel extends javax.swing.JPanel {
+public class SearchResultPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form CreatePatient
+     * Creates new form SearchResultPanel
      */
-    public CreatePatientJPanel() {
+    public SearchResultPanel() {
         initComponents();
+        this.setSize(3000,3000);
+    }
+
+    SearchResultPanel(Person person, JPanel userProcessContainer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

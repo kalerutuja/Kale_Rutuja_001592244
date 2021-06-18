@@ -3,10 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UI;
-
-import Model.PersonDirectory;
-import java.awt.CardLayout;
+package ui;
 
 /**
  *
@@ -17,12 +14,8 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
-    private PersonDirectory personDirectory;
-
     public MainJFrame() {
         initComponents();
-        personDirectory = new PersonDirectory();
-        this.setSize(3000,3000);
     }
 
     /**
@@ -32,55 +25,21 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SplitPane = new javax.swing.JSplitPane();
-        controlPanel = new javax.swing.JPanel();
-        BtnPersonProfile = new javax.swing.JButton();
-        userProcessContainer = new javax.swing.JPanel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.CardLayout());
 
-        BtnPersonProfile.setText("Person Profile");
-        BtnPersonProfile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnPersonProfileActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
-        controlPanel.setLayout(controlPanelLayout);
-        controlPanelLayout.setHorizontalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(BtnPersonProfile)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
-        controlPanelLayout.setVerticalGroup(
-            controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(169, 169, 169)
-                .addComponent(BtnPersonProfile)
-                .addContainerGap(189, Short.MAX_VALUE))
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
-
-        SplitPane.setLeftComponent(controlPanel);
-
-        userProcessContainer.setLayout(new java.awt.CardLayout());
-        SplitPane.setRightComponent(userProcessContainer);
-
-        getContentPane().add(SplitPane, "card2");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BtnPersonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPersonProfileActionPerformed
-        // TODO add your handling code here:
-        ProfileWorkAreaJPanel pmwap = new ProfileWorkAreaJPanel(personDirectory, userProcessContainer);
-        userProcessContainer.add("ProfileManagerWorkAreaJPanel",pmwap);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_BtnPersonProfileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,9 +77,5 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnPersonProfile;
-    private javax.swing.JSplitPane SplitPane;
-    private javax.swing.JPanel controlPanel;
-    private javax.swing.JPanel userProcessContainer;
     // End of variables declaration//GEN-END:variables
 }
