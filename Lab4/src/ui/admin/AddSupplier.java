@@ -5,6 +5,10 @@
  */
 package ui.admin;
 
+import javax.swing.JOptionPane;
+import model.Supplier;
+import model.SupplierDirectory;
+
 /**
  *
  * @author rutuja
@@ -149,7 +153,7 @@ public class AddSupplier extends javax.swing.JPanel {
 
     private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
         // TODO add your handling code here:
-        Supplier supplier = supplierDirectory.addSupplier();
+        Supplier supplier = SupplierDirectory.addSupplier();
         supplier.setSupplyName(txtName.getText());
         supplier.setLogoImage(logoImage);
 
@@ -187,4 +191,8 @@ public class AddSupplier extends javax.swing.JPanel {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
+
+    private void backAction() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

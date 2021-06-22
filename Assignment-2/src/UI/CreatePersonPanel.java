@@ -73,103 +73,105 @@ public class CreatePersonPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         communityTextField = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(241, 199, 199));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(middleNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 124, 149, -1));
+        add(middleNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 118, 149, -1));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel6.setText("Middle Name:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 129, -1, -1));
-        add(dobTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 346, 149, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 123, -1, -1));
+        add(dobTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 340, 149, -1));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel12.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel12.setText("Date of Birth (YYYY/MM/DD):");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 351, -1, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 345, -1, -1));
 
         houseNumberTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 houseNumberTextFieldActionPerformed(evt);
             }
         });
-        add(houseNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 200, 149, -1));
+        add(houseNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 194, 149, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel7.setText("House Number:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 200, -1, -1));
-        add(cityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 238, 149, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 194, -1, -1));
+        add(cityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 232, 149, -1));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel8.setText("City:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 243, -1, -1));
-        add(zipCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 308, 149, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 237, -1, -1));
+        add(zipCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 302, 149, -1));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel9.setText("Zip Code:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 313, -1, -1));
-        add(occupationTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 384, 149, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 307, -1, -1));
+        add(occupationTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 378, 149, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel10.setText("Occupation:");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 389, -1, -1));
-        add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 422, 149, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 383, -1, -1));
+        add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 416, 149, -1));
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel11.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel11.setText("Email ID:");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 427, -1, -1));
-        add(phoneNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 462, 149, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 421, -1, -1));
+        add(phoneNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 456, 149, -1));
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel14.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel14.setText("Phone Number:");
-        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 467, -1, -1));
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 461, -1, -1));
 
         createBtn.setBackground(new java.awt.Color(255, 255, 204));
-        createBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        createBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         createBtn.setText("Create");
         createBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createBtnActionPerformed(evt);
             }
         });
-        add(createBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, -1, -1));
+        add(createBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 509, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(241, 199, 199));
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CREATE PERSON PROFILE");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 34, 703, -1));
-        add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 86, 149, -1));
+        jLabel1.setText("Create Person Profile");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 750, -1));
+        add(firstNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 80, 149, -1));
 
         backBtn.setBackground(new java.awt.Color(255, 255, 204));
-        backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        backBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         backBtn.setText("<< Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
-        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, -1, -1));
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 509, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel4.setText("First Name:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 91, -1, -1));
-        add(lastNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 162, 149, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 85, -1, -1));
+        add(lastNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 156, 149, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel5.setText("Last Name:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 167, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 161, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel2.setText("Community:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 281, -1, -1));
-        add(communityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 276, 149, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 275, -1, -1));
+        add(communityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 270, 149, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed

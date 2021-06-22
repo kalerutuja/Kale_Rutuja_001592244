@@ -68,30 +68,34 @@ public class AddVitalSign extends javax.swing.JPanel {
         HRatelbl = new javax.swing.JLabel();
         BPlbl = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(241, 199, 199));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblpatientrecord.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        lblpatientrecord.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         lblpatientrecord.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblpatientrecord.setText("Patient Vital Sign Record");
-        add(lblpatientrecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 680, -1));
+        add(lblpatientrecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, -1));
 
+        rratelbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         rratelbl.setText("Respiration rate:");
-        add(rratelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
+        add(rratelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 130, -1));
 
+        hratelbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         hratelbl.setText("Heart rate:");
-        add(hratelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, -1));
+        add(hratelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 90, -1));
 
+        bplbl.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         bplbl.setText("Blood pressure:");
-        add(bplbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, -1, -1));
+        add(bplbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 130, -1));
 
         txtRrate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRrateActionPerformed(evt);
             }
         });
-        add(txtRrate, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 100, -1));
-        add(txtHrate, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 100, -1));
-        add(txtBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 100, -1));
+        add(txtRrate, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 100, -1));
+        add(txtHrate, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 100, -1));
+        add(txtBP, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 100, -1));
 
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +103,7 @@ public class AddVitalSign extends javax.swing.JPanel {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, -1, -1));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
 
         btnHint.setText("Hint");
         btnHint.addActionListener(new java.awt.event.ActionListener() {
@@ -107,15 +111,16 @@ public class AddVitalSign extends javax.swing.JPanel {
                 btnHintActionPerformed(evt);
             }
         });
-        add(btnHint, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, -1, -1));
+        add(btnHint, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, -1, -1));
 
+        lbltimeStamp.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lbltimeStamp.setText("Time of detail entered:");
-        add(lbltimeStamp, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
-        add(timeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 200, 20));
-        add(Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 90, 20));
-        add(RRatelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 100, 20));
-        add(HRatelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 100, 20));
-        add(BPlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 100, 20));
+        add(lbltimeStamp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
+        add(timeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, 200, 20));
+        add(Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 100, 20));
+        add(RRatelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 100, 20));
+        add(HRatelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 100, 20));
+        add(BPlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 100, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed

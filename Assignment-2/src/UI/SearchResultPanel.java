@@ -5,8 +5,21 @@
  */
 package UI;
 
+import Model.Patient;
 import Model.Person;
+import Model.VitalSign;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -17,13 +30,97 @@ public class SearchResultPanel extends javax.swing.JPanel {
     /**
      * Creates new form SearchResultPanel
      */
-    public SearchResultPanel() {
+    
+    private JPanel userProcessContainer;
+    private Person person;
+    private Patient patient;
+    private int age;
+    private VitalSign vs;
+    private DefaultCategoryDataset vitalSignDataSet;
+
+
+    
+    public SearchResultPanel(Person person, JPanel userProcessContainer) {
         initComponents();
         this.setSize(3000,3000);
+        this.userProcessContainer = userProcessContainer;
+        this.person = person;
+        
+        patient = person.getPatientList().get(0);
+        
+        age = patient.getAgeGroup();
+        
+        name.setText(person.getFirstName());
+        
+        pIDTextField.setText(String.valueOf(patient.getpID()));
+        nameTextField.setText(patient.getpName());
+        ageTextField.setText(String.valueOf(patient.getAgeGroup()));
+        docNameTextField.setText(patient.getDocName());
+        pharmacyTextField.setText(patient.getPharmacy());
+        
+        populateTable();
     }
-
-    SearchResultPanel(Person person, JPanel userProcessContainer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void populateTable() {
+        DefaultTableModel dtm = (DefaultTableModel)vitalSignTable.getModel();
+        
+        dtm.setRowCount(0);
+        
+        for(VitalSign vs :  patient.getVitalSignHistory().getVitalSignList())   {   
+            Object row[] = new Object[6];
+            
+            row[0] = vs.getRespRate();
+            row[1] = vs.getHeartRate();
+            row[2] = vs.getBp();
+            row[3] = vs;
+            
+            if(age >= 1 && age <= 3)   {
+                if( ((vs.getRespRate() < 20) || (vs.getRespRate() > 30)) ||
+                     (vs.getHeartRate() < 80) || (vs.getHeartRate() > 130) ||
+                     (vs.getBp() < 80) || (vs.getBp() > 110))
+                {
+                    row[4] = "Abnormal";
+                }
+                else    {
+                    row[4] = "Normal";
+                }
+            }
+            else if(age >= 4 && age <= 5)   {
+                if( ((vs.getRespRate() < 20) || (vs.getRespRate() > 30)) ||
+                     (vs.getHeartRate() < 80) || (vs.getHeartRate() > 120) ||
+                     (vs.getBp() < 80) || (vs.getBp() >= 110))
+                {
+                    row[4] = "Abormal";
+                }
+                else    {
+                    row[4] = "Normal";
+                }
+            }
+            else if(age >= 6 && age <= 12)   {
+                if( ((vs.getRespRate() < 20) || (vs.getRespRate() > 30)) ||
+                     (vs.getHeartRate() < 70) || (vs.getHeartRate() > 110) ||
+                     (vs.getBp() < 80) || (vs.getBp() >= 120))
+                {
+                    row[4] = "Abnormal";
+                }
+                else    {
+                    row[4] = "Normal";
+                }
+            }
+            else {
+                if( ((vs.getRespRate() < 12) || (vs.getRespRate() > 20)) ||
+                     (vs.getHeartRate() < 55) || (vs.getHeartRate() > 105) ||
+                     (vs.getBp() < 110) || (vs.getBp() >= 120))
+                {
+                    row[4] = "Abnormal";
+                }
+                else    {
+                    row[4] = "Normal";
+                }
+            }
+       
+            //add each person to the table for dispalay
+            dtm.addRow(row);
+        }
     }
 
     /**
@@ -33,19 +130,294 @@ public class SearchResultPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel4 = new javax.swing.JLabel();
+        respRate = new javax.swing.JLabel();
+        nameTextField = new javax.swing.JTextField();
+        name = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        pIDTextField = new javax.swing.JTextField();
+        backBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        vitalSignTable = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        status = new javax.swing.JLabel();
+        docNameTextField = new javax.swing.JTextField();
+        Hint = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        weight = new javax.swing.JLabel();
+        pharmacyTextField = new javax.swing.JTextField();
+        bp = new javax.swing.JLabel();
+        ageTextField = new javax.swing.JTextField();
+        heartRate = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        graphBtn = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(241, 199, 199));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        jLabel4.setText("Age:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 106, -1, -1));
+
+        respRate.setBackground(new java.awt.Color(255, 255, 204));
+        respRate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        add(respRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 272, 83, 18));
+
+        nameTextField.setEditable(false);
+        nameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameTextFieldActionPerformed(evt);
+            }
+        });
+        add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 142, 130, -1));
+
+        name.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 44, 114, 19));
+
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Search Result for Patient");
+        jLabel1.setToolTipText("");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 35, -1, -1));
+
+        pIDTextField.setEditable(false);
+        add(pIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 104, 130, -1));
+
+        backBtn.setBackground(new java.awt.Color(255, 255, 204));
+        backBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        backBtn.setText("<< Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 40, -1, -1));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        jLabel3.setText("Patient ID:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(159, 104, -1, -1));
+
+        vitalSignTable.setBackground(new java.awt.Color(204, 255, 255));
+        vitalSignTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "RespRate", "HeartRate", "Blood Pressure", "Timestamp", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(vitalSignTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 224, 578, 237));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        jLabel5.setText("Primary Doctor Name:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 182, -1, -1));
+
+        status.setBackground(new java.awt.Color(255, 255, 204));
+        status.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 224, 103, 22));
+
+        docNameTextField.setEditable(false);
+        add(docNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 180, 130, -1));
+
+        Hint.setBackground(new java.awt.Color(255, 255, 204));
+        Hint.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        Hint.setText("Hint");
+        Hint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HintActionPerformed(evt);
+            }
+        });
+        add(Hint, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, -1, -1));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        jLabel6.setText("Preffered Pharmacy:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 144, -1, -1));
+
+        weight.setBackground(new java.awt.Color(255, 255, 204));
+        weight.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 380, 83, 18));
+
+        pharmacyTextField.setEditable(false);
+        add(pharmacyTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(561, 104, 130, -1));
+
+        bp.setBackground(new java.awt.Color(255, 255, 204));
+        bp.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        add(bp, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 344, 83, 18));
+
+        ageTextField.setEditable(false);
+        add(ageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(561, 142, 126, -1));
+
+        heartRate.setBackground(new java.awt.Color(255, 255, 204));
+        heartRate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        add(heartRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 308, 83, 18));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 204));
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        jLabel2.setText("Patient Name:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 144, -1, -1));
+
+        graphBtn.setBackground(new java.awt.Color(255, 255, 204));
+        graphBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        graphBtn.setText("View Graphical Representation");
+        graphBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphBtnActionPerformed(evt);
+            }
+        });
+        add(graphBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTextFieldActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // TODO add your handling code here:
+
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void HintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HintActionPerformed
+        // TODO add your handling code here:
+
+        status.setText("Normal Status");
+
+        if((age >= 1) && (age <= 3)) {
+            respRate.setText(" 20-30");
+            heartRate.setText("80-130");
+            bp.setText("80-110");
+        }
+        else if((age >= 4) && (age <= 5)) {
+            respRate.setText("20-30");
+            heartRate.setText("80-120");
+            bp.setText("80-110");
+        }
+        else if((age >= 6) && (age <= 12)) {
+            respRate.setText("20-30");
+            heartRate.setText("70-110");
+            bp.setText("80-120");
+        }
+        else  {
+            respRate.setText("12-20");
+            heartRate.setText("55-105");
+            bp.setText("110-120");
+        }
+    }//GEN-LAST:event_HintActionPerformed
+
+    private void graphBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphBtnActionPerformed
+        // 
+
+        populateGraph();
+
+    }//GEN-LAST:event_graphBtnActionPerformed
+    private void populateGraph() {
+        try   {
+        vitalSignDataSet = new DefaultCategoryDataset();
+          
+        for(VitalSign vs : patient.getVitalSignHistory().getVitalSignList())   {
+            
+            vitalSignDataSet.addValue(vs.getRespRate(), "Respiration Rate", vs.getTime());
+            vitalSignDataSet.addValue(vs.getHeartRate(), "Heart Rate", vs.getTime());
+            vitalSignDataSet.addValue(vs.getBp(), "Blood Pressure", vs.getTime());
+        }
+        
+        JFreeChart chartFactory = ChartFactory.createBarChart3D("VitalSign Pattern", "Timestamp", "VitalSign", vitalSignDataSet, PlotOrientation.VERTICAL, true, true, false);      
+        BarRenderer renderer = null;
+        CategoryPlot plot = chartFactory.getCategoryPlot();
+        plot.setRangeGridlinePaint(Color.BLUE);
+        renderer = new BarRenderer();
+        
+        ChartFrame frame = new ChartFrame("Bar Chart for VitalSign", chartFactory);
+        frame.setVisible(true);
+        frame.setSize(700, 700);
+        
+
+        
+        int length = (patient.getVitalSignHistory().getVitalSignList().size() - 1) ;
+        
+        vs = patient.getVitalSignHistory().getVitalSignList().get(length);
+        
+        if(age >= 1 && age <= 3)   {
+                if( ((vs.getRespRate() < 20) || (vs.getRespRate() > 30)) ||
+                     (vs.getHeartRate() < 80) || (vs.getHeartRate() > 130) ||
+                     (vs.getBp() < 80) || (vs.getBp() > 110))
+                {
+                    JOptionPane.showMessageDialog(this, "The last vital sign of the Patient is Abnormal!\n Please take a good look on the graph", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            }
+            else if(age >= 4 && age <= 5)   {
+                if( ((vs.getRespRate() < 20) || (vs.getRespRate() > 30)) ||
+                     (vs.getHeartRate() < 80) || (vs.getHeartRate() > 120) ||
+                     (vs.getBp() < 80) || (vs.getBp() >= 110))                {
+                    JOptionPane.showMessageDialog(this, "The last vital sign of the Patient is Abnormal!\n Please take a good look on the graph", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            }
+            else if(age >= 6 && age <= 12)   {
+                if( ((vs.getRespRate() < 20) || (vs.getRespRate() > 30)) ||
+                     (vs.getHeartRate() < 70) || (vs.getHeartRate() > 110) ||
+                     (vs.getBp() < 80) || (vs.getBp() >= 120))                {
+                    JOptionPane.showMessageDialog(this, "The last vital sign of the Patient is Abnormal!\n Please take a good look on the graph", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            }
+            else {
+                if( ((vs.getRespRate() < 12) || (vs.getRespRate() > 20)) ||
+                     (vs.getHeartRate() < 55) || (vs.getHeartRate() > 105) ||
+                     (vs.getBp() < 110) || (vs.getBp() >= 120))
+                {
+                    JOptionPane.showMessageDialog(this, "The last vital sign of the Patient is Abnormal!\n Please take a good look on the graph", "INFORMATION", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            }
+      }
+      catch(Exception e)    {
+          System.out.println(e);
+      }   
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Hint;
+    private javax.swing.JTextField ageTextField;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JLabel bp;
+    private javax.swing.JTextField docNameTextField;
+    private javax.swing.JButton graphBtn;
+    private javax.swing.JLabel heartRate;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel name;
+    private javax.swing.JTextField nameTextField;
+    private javax.swing.JTextField pIDTextField;
+    private javax.swing.JTextField pharmacyTextField;
+    private javax.swing.JLabel respRate;
+    private javax.swing.JLabel status;
+    private javax.swing.JTable vitalSignTable;
+    private javax.swing.JLabel weight;
     // End of variables declaration//GEN-END:variables
+   
 }
+

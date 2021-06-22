@@ -40,6 +40,9 @@ public class MainJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
 
+        controlPanel.setBackground(new java.awt.Color(241, 199, 199));
+
+        BtnPersonProfile.setFont(new java.awt.Font("Lucida Grande", 1, 22)); // NOI18N
         BtnPersonProfile.setText("Person Profile");
         BtnPersonProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,20 +55,21 @@ public class MainJFrame extends javax.swing.JFrame {
         controlPanelLayout.setHorizontalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap()
                 .addComponent(BtnPersonProfile)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(169, 169, 169)
+                .addGap(120, 120, 120)
                 .addComponent(BtnPersonProfile)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         SplitPane.setLeftComponent(controlPanel);
 
+        userProcessContainer.setBackground(new java.awt.Color(241, 199, 199));
         userProcessContainer.setLayout(new java.awt.CardLayout());
         SplitPane.setRightComponent(userProcessContainer);
 

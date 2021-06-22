@@ -62,170 +62,90 @@ public class EditVitalSignPanel extends javax.swing.JPanel {
         respRate = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         timeTextField = new javax.swing.JLabel();
-        Status = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(241, 199, 199));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         respRateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 respRateTextFieldActionPerformed(evt);
             }
         });
+        add(respRateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 94, -1));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel6.setText("Time of detail entered:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel2.setText("Respiration Rate:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
+        add(bpTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 94, -1));
 
         Hint.setBackground(new java.awt.Color(255, 255, 204));
-        Hint.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        Hint.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         Hint.setText("Hint");
         Hint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HintActionPerformed(evt);
             }
         });
+        add(Hint, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, -1, -1));
 
         backBtn.setBackground(new java.awt.Color(255, 255, 204));
-        backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        backBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         backBtn.setText("<< Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
 
         saveBtn.setBackground(new java.awt.Color(255, 255, 204));
-        saveBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        saveBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         saveBtn.setText("Save");
         saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveBtnActionPerformed(evt);
             }
         });
+        add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
 
         status.setBackground(new java.awt.Color(255, 255, 204));
         status.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 86, 22));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel4.setText("Blood Pressure:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel3.setText("Heart Rate:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, -1, -1));
 
         bp.setBackground(new java.awt.Color(255, 255, 204));
         bp.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        add(bp, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 83, 18));
+        add(heartRateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 94, -1));
 
         heartRate.setBackground(new java.awt.Color(255, 255, 204));
         heartRate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        add(heartRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 83, 18));
 
         respRate.setBackground(new java.awt.Color(255, 255, 204));
         respRate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        add(respRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 86, 18));
 
-        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Update Patient VitalSign Record");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(378, 378, 378)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(bp, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(respRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addComponent(heartRate, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(bpTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(respRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(heartRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(backBtn)
-                                .addGap(18, 18, 18)
-                                .addComponent(saveBtn)
-                                .addGap(18, 18, 18)
-                                .addComponent(Hint))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(timeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(54, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(respRate, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(status, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(Status))
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(heartRate, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(8, 8, 8)
-                                .addComponent(bp, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(respRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(heartRateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(bpTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(saveBtn)
-                    .addComponent(backBtn)
-                    .addComponent(Hint))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(timeTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addContainerGap(91, Short.MAX_VALUE))
-        );
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 28, 700, -1));
+        add(timeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 182, 16));
     }// </editor-fold>//GEN-END:initComponents
 
     private void respRateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_respRateTextFieldActionPerformed
@@ -338,7 +258,6 @@ public class EditVitalSignPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Hint;
-    private javax.swing.JLabel Status;
     private javax.swing.JButton backBtn;
     private javax.swing.JLabel bp;
     private javax.swing.JTextField bpTextField;

@@ -43,44 +43,28 @@ public class ProfileWorkAreaJPanel extends javax.swing.JPanel {
         createProfileBtn = new javax.swing.JButton();
         manageProfileBtn = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(241, 199, 199));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         createProfileBtn.setBackground(new java.awt.Color(255, 255, 204));
-        createProfileBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        createProfileBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         createProfileBtn.setText("Create Profile");
         createProfileBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createProfileBtnActionPerformed(evt);
             }
         });
+        add(createProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 80, -1, -1));
 
         manageProfileBtn.setBackground(new java.awt.Color(255, 255, 204));
-        manageProfileBtn.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        manageProfileBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         manageProfileBtn.setText("Manage Profile");
         manageProfileBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageProfileBtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(manageProfileBtn)
-                    .addComponent(createProfileBtn))
-                .addContainerGap(189, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(createProfileBtn)
-                .addGap(80, 80, 80)
-                .addComponent(manageProfileBtn)
-                .addContainerGap(82, Short.MAX_VALUE))
-        );
+        add(manageProfileBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 195, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createProfileBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createProfileBtnActionPerformed

@@ -52,50 +52,59 @@ public class ManageProfilePanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         profileTable = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(241, 199, 199));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         viewPatientBtn.setBackground(new java.awt.Color(255, 255, 204));
-        viewPatientBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        viewPatientBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         viewPatientBtn.setText("View Patient Record");
         viewPatientBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewPatientBtnActionPerformed(evt);
             }
         });
+        add(viewPatientBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 272, -1, -1));
 
         backBtn.setBackground(new java.awt.Color(255, 255, 204));
-        backBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        backBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         backBtn.setText("<< Back");
         backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backBtnActionPerformed(evt);
             }
         });
+        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 16, -1, -1));
 
         searchBtn.setBackground(new java.awt.Color(255, 255, 204));
-        searchBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        searchBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         searchBtn.setText("Search Person by Person Name");
         searchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchBtnActionPerformed(evt);
             }
         });
+        add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 231, -1, -1));
+        add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 232, 89, -1));
 
         editBtn.setBackground(new java.awt.Color(255, 255, 204));
-        editBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        editBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         editBtn.setText("Edit Person Profile");
         editBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editBtnActionPerformed(evt);
             }
         });
+        add(editBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 272, 198, -1));
 
         deleteBtn.setBackground(new java.awt.Color(255, 255, 204));
-        deleteBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        deleteBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         deleteBtn.setText("Delete Person");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteBtnActionPerformed(evt);
             }
         });
+        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 231, 198, -1));
 
         profileTable.setBackground(new java.awt.Color(204, 255, 255));
         profileTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -116,48 +125,7 @@ public class ManageProfilePanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(profileTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(backBtn)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(editBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(viewPatientBtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(deleteBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteBtn, editBtn, viewPatientBtn});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(backBtn)
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deleteBtn)
-                    .addComponent(searchBtn)
-                    .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editBtn)
-                    .addComponent(viewPatientBtn))
-                .addGap(122, 122, 122))
-        );
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 71, 584, 125));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewPatientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPatientBtnActionPerformed
@@ -275,7 +243,7 @@ public class ManageProfilePanel extends javax.swing.JPanel {
     private javax.swing.JButton viewPatientBtn;
     // End of variables declaration//GEN-END:variables
 
-    private void populateTable() {
+    void populateTable() {
         DefaultTableModel dtm = (DefaultTableModel)profileTable.getModel();
         
         dtm.setRowCount(0);

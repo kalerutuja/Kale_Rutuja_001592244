@@ -61,34 +61,46 @@ public class CreatePatientPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         pIDTextField = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(241, 199, 199));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel4.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel4.setText("Age:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 233, -1, -1));
+        add(ageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 231, 130, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel5.setText("Primary Doctor Name:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 203, -1, -1));
+        add(docNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 201, 130, -1));
+        add(pharmacyTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 275, 130, -1));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel6.setText("Preffered Pharmacy:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 277, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CREATE PATIENT INFORMATION");
+        jLabel1.setText("Create Patient Information");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 22, 711, -1));
 
         addBtn.setBackground(new java.awt.Color(255, 255, 204));
-        addBtn.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        addBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         addBtn.setText("Add");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
+        add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 332, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel2.setText("Patient Name:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 159, -1, -1));
 
         pNameTextField.setEditable(false);
         pNameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -96,74 +108,19 @@ public class CreatePatientPanel extends javax.swing.JPanel {
                 pNameTextFieldActionPerformed(evt);
             }
         });
+        add(pNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 157, 130, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 204));
-        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel3.setText("Patient ID:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 115, -1, -1));
 
         pIDTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pIDTextFieldActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addBtn)
-                    .addComponent(pIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(docNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pharmacyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(357, 357, 357))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ageTextField, docNameTextField, pIDTextField, pNameTextField, pharmacyTextField});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(pNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(docNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ageTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(pharmacyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(addBtn)
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
+        add(pIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 113, 130, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed

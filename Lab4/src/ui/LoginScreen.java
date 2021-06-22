@@ -5,6 +5,8 @@
  */
 package ui;
 
+import model.Supplier;
+
 /**
  *
  * @author rutuja
@@ -39,29 +41,29 @@ public class LoginScreen extends javax.swing.JPanel {
                 btnLoginActionPerformed(evt);
             }
         });
-        add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 275, -1, -1));
+        add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
 
         cmbSuppliers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbSuppliersActionPerformed(evt);
             }
         });
-        add(cmbSuppliers, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 225, 134, -1));
+        add(cmbSuppliers, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 134, -1));
 
         lblSupplier.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblSupplier.setText("Select Supplier:");
-        add(lblSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 229, -1, -1));
+        add(lblSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         cmbRoles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbRolesActionPerformed(evt);
             }
         });
-        add(cmbRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 180, 134, -1));
+        add(cmbRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 134, -1));
 
         lblRole.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblRole.setText("Choose Role:");
-        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 184, -1, -1));
+        add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
