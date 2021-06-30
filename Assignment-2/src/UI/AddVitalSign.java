@@ -163,7 +163,7 @@ public class AddVitalSign extends javax.swing.JPanel {
 
                 VitalSign vitalSign = vitalSignHistory.addVitalSign();
 
-                vitalSign.setRespRate(Float.parseFloat(txtHrate.getText()));
+                vitalSign.setRespRate(Float.parseFloat(txtRrate.getText()));
                 vitalSign.setHeartRate(Float.parseFloat(txtHrate.getText()));
                 vitalSign.setBp(Float.parseFloat(txtBP.getText()));
                 vitalSign.setTime(time);

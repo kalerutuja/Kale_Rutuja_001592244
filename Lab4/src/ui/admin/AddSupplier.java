@@ -5,9 +5,25 @@
  */
 package ui.admin;
 
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.filechooser.FileFilter;
+import java.io.File;
+import java.awt.Image;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.JLabel;
 import model.Supplier;
 import model.SupplierDirectory;
+
 
 /**
  *
@@ -18,8 +34,22 @@ public class AddSupplier extends javax.swing.JPanel {
     /**
      * Creates new form AddSupplier
      */
-    public AddSupplier() {
+    private JPanel workArea;
+    private SupplierDirectory supplierDirectory;
+    private final JFileChooser fileChooser = new JFileChooser();
+    ImageIcon logoImage;
+    
+    public AddSupplier(JPanel workArea, SupplierDirectory supplierDirectory) {
         initComponents();
+        this.workArea = workArea;
+        this.supplierDirectory = supplierDirectory;
+        FileFilter jpegFilter = new FileNameExtensionFilter("JPEG file" , "jpg" , "jpeg");
+        FileFilter pngFilter = new FileNameExtensionFilter("PNG file" , "png" , "png");
+        fileChooser.addChoosableFileFilter(jpegFilter);
+        fileChooser.addChoosableFileFilter(pngFilter);
+        fileChooser.setFileFilter(pngFilter);
+
+        
     }
 
     /**
@@ -42,8 +72,12 @@ public class AddSupplier extends javax.swing.JPanel {
         btnRemove = new javax.swing.JButton();
         txtName = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(208, 228, 249));
+
+        lblTitle.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         lblTitle.setText("New Supplier Information:");
 
+        btnAddSupplier.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnAddSupplier.setText("Add");
         btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +85,7 @@ public class AddSupplier extends javax.swing.JPanel {
             }
         });
 
+        backButton.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         backButton.setText("<< Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,18 +93,22 @@ public class AddSupplier extends javax.swing.JPanel {
             }
         });
 
+        lblDescription.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblDescription.setText("Description:");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        lblLogo.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblLogo.setText("Logo:");
 
+        imgLogo.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         imgLogo.setText("<No Image>");
         imgLogo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         imgLogo.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
+        btnAttach.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnAttach.setText("Attach");
         btnAttach.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,8 +116,10 @@ public class AddSupplier extends javax.swing.JPanel {
             }
         });
 
+        lblName.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblName.setText("Name:");
 
+        btnRemove.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnRemove.setText("Remove");
         btnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +161,7 @@ public class AddSupplier extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(btnAddSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,27 +193,41 @@ public class AddSupplier extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
-        // TODO add your handling code here:
-        Supplier supplier = SupplierDirectory.addSupplier();
+        Supplier supplier = supplierDirectory.addSupplier();
         supplier.setSupplyName(txtName.getText());
         supplier.setLogoImage(logoImage);
-
         JOptionPane.showMessageDialog(this, "Supplier successfully added", "Warning", JOptionPane.INFORMATION_MESSAGE);
         backAction();
     }//GEN-LAST:event_btnAddSupplierActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
         backAction();
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void btnAttachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAttachActionPerformed
-        // TODO add your handling code here:
+        int returnVal = fileChooser.showOpenDialog(this);
+        
+        if(returnVal == JFileChooser.APPROVE_OPTION){
+            File file = fileChooser.getSelectedFile();
+            URL url;
+            try{
+                url = file.toURI().toURL();
+                logoImage = new ImageIcon(url);
+                logoImage = new ImageIcon(logoImage.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH));
+                
+                imgLogo.setIcon(logoImage);
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(AddSupplier.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
 
     }//GEN-LAST:event_btnAttachActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-        // TODO add your handling code here:
+        
+        logoImage = null;
+        lblLogo.setIcon(new ImageIcon("E:\\new.png"));
 
     }//GEN-LAST:event_btnRemoveActionPerformed
 
@@ -193,6 +248,16 @@ public class AddSupplier extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void backAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        workArea.remove(this);
+        Component[] componentArray = workArea.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        ManageSuppliers manageSuppliersJPanel = (ManageSuppliers) component;
+        manageSuppliersJPanel.refreshTable();
+        CardLayout layout = (CardLayout) workArea.getLayout();
+        layout.previous(workArea);
     }
+
+    
+
+
 }

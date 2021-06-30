@@ -5,6 +5,14 @@
  */
 package ui.supplier;
 
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import model.Product;
+import model.ProductCatalog;
+import model.Supplier;
+
 /**
  *
  * @author rutuja
@@ -14,8 +22,18 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageProductCatalogJPanel
      */
-    public ManageProductCatalogJPanel() {
+    JPanel WorkArea;
+    Supplier Supplier;
+    Product Product;
+    
+    public ManageProductCatalogJPanel(JPanel workArea, Supplier supplier) {
         initComponents();
+        this.WorkArea = workArea;
+        this.Supplier = supplier;
+       if (supplier.getLogoImage() != null) imgLogo.setIcon(supplier.getLogoImage());
+       else imgLogo.setText("No Logo");
+        refreshTable();
+        
     }
 
     /**
@@ -33,6 +51,8 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         btnView = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(208, 228, 249));
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -124,24 +144,40 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-
+        int row = tblProducts.getSelectedRow();
+        if(row < 0) {
+            JOptionPane.showMessageDialog(null, "please select arow from table first", "warning" ,JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Product selectedProduct = (Product) tblProducts.getValueAt(row, 0);
+        Supplier.deleteproduct(selectedProduct);
+        Supplier.getProductCatalog().removeProduct(selectedProduct);      //deleted function in
+        refreshTable();
+        
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-
+        Product=null;
+        ViewProductDetailJPanel vpdjp = new ViewProductDetailJPanel (WorkArea,Product);
+        WorkArea.add("ViewSupplier", vpdjp);
+        CardLayout layout = (CardLayout) WorkArea.getLayout();
+        layout.next(WorkArea);
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        CreateNewProductJPanel cnpjp = new CreateNewProductJPanel(workArea, supplier);
-        workArea.add("SupplierWorkAreaJPanel", cnpjp);
-        CardLayout layout = (CardLayout) workArea.getLayout();
-        layout.next(workArea);
+        CreateNewProductJPanel cnpjp = new CreateNewProductJPanel(WorkArea, Supplier);
+        WorkArea.add("SupplierWorkAreaJPanel", cnpjp);
+        CardLayout layout = (CardLayout) WorkArea.getLayout();
+        layout.next(WorkArea);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-
+        SearchForProductJPanel sfpjp = new SearchForProductJPanel(WorkArea, Supplier);
+        WorkArea.add("SearchForProductJPanel", sfpjp);
+        CardLayout layout = (CardLayout) WorkArea.getLayout();
+        layout.next(WorkArea);
     }//GEN-LAST:event_btnSearchActionPerformed
 
 
@@ -155,4 +191,16 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTable tblProducts;
     // End of variables declaration//GEN-END:variables
+
+    public void refreshTable() {
+        DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
+        model.setRowCount(0);
+        for (Product p : Supplier.getProductCatalog().getProductCatalog()) {
+            Object row[] = new Object[3];
+            row[0] = p;
+            row[1] = p.getId();
+            row[2] = p.getPrice();
+            model.addRow(row);
+        }
+    }
 }

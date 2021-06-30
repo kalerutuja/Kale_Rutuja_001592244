@@ -5,6 +5,12 @@
  */
 package ui.supplier;
 
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JPanel;
+import model.Supplier;
+import ui.LoginScreen;
+
 /**
  *
  * @author rutuja
@@ -14,8 +20,14 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form SupplierWorkAreaJPanel
      */
-    public SupplierWorkAreaJPanel() {
+    JPanel WorkArea;
+    Supplier supplier;
+    
+    public SupplierWorkAreaJPanel(JPanel WorkArea, Supplier supplier) {
         initComponents();
+        this.WorkArea = WorkArea;
+        this.supplier = supplier;
+        if (supplier != null) lblWelcome.setText("Welcome, "+supplier.getSupplyName());
     }
 
     /**
@@ -29,13 +41,16 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
         btnLogOut = new javax.swing.JButton();
         lblWelcome = new javax.swing.JLabel();
         btnManageProductCatalog = new javax.swing.JButton();
-        btnSupplierProfile = new javax.swing.JButton();
-        btnManageStaff = new javax.swing.JButton();
         Performance = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
+        btnManageStaff = new javax.swing.JButton();
+        btnSupplierProfile = new javax.swing.JButton();
 
-        menuBar.setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(208, 228, 249));
 
+        menuBar.setBackground(new java.awt.Color(175, 175, 244));
+
+        btnLogOut.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnLogOut.setText("Log Out");
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,8 +58,10 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblWelcome.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblWelcome.setText("<WelcomeMsg>");
 
+        btnManageProductCatalog.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnManageProductCatalog.setText("Product Catalog");
         btnManageProductCatalog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,17 +69,7 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSupplierProfile.setText("Update Profile");
-        btnSupplierProfile.setEnabled(false);
-        btnSupplierProfile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSupplierProfileActionPerformed(evt);
-            }
-        });
-
-        btnManageStaff.setText("Manage Staff");
-        btnManageStaff.setEnabled(false);
-
+        Performance.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         Performance.setText("Performance");
         Performance.setEnabled(false);
         Performance.addActionListener(new java.awt.event.ActionListener() {
@@ -74,82 +81,100 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
         workArea.setBackground(new java.awt.Color(255, 255, 255));
         workArea.setLayout(new java.awt.CardLayout());
 
+        btnManageStaff.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        btnManageStaff.setText("Manage Staff");
+        btnManageStaff.setEnabled(false);
+
         javax.swing.GroupLayout menuBarLayout = new javax.swing.GroupLayout(menuBar);
         menuBar.setLayout(menuBarLayout);
         menuBarLayout.setHorizontalGroup(
             menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuBarLayout.createSequentialGroup()
-                .addGroup(menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(menuBarLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(workArea, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(menuBarLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(lblWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(menuBarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuBarLayout.createSequentialGroup()
+                        .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
                         .addComponent(btnManageProductCatalog)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSupplierProfile)))
-                .addGap(18, 18, 18)
-                .addComponent(btnManageStaff)
-                .addGap(18, 18, 18)
-                .addComponent(Performance)
-                .addGap(18, 18, 18)
-                .addComponent(btnLogOut)
-                .addContainerGap())
+                        .addComponent(Performance)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnManageStaff)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnLogOut)
+                        .addGap(369, 369, 369))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuBarLayout.createSequentialGroup()
+                        .addComponent(workArea, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(673, 673, 673))))
         );
         menuBarLayout.setVerticalGroup(
             menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuBarLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogOut)
-                    .addComponent(lblWelcome)
-                    .addComponent(btnManageProductCatalog)
-                    .addComponent(btnSupplierProfile)
-                    .addComponent(Performance)
-                    .addComponent(btnManageStaff))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(workArea, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(menuBarLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(menuBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Performance)
+                            .addComponent(btnManageStaff)
+                            .addComponent(btnManageProductCatalog)
+                            .addComponent(btnLogOut)))
+                    .addComponent(lblWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(workArea, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
+
+        btnSupplierProfile.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        btnSupplierProfile.setText("Update Profile");
+        btnSupplierProfile.setEnabled(false);
+        btnSupplierProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSupplierProfileActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addComponent(menuBar, javax.swing.GroupLayout.PREFERRED_SIZE, 1006, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(menuBar, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnSupplierProfile)
+                .addGap(278, 278, 278))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(menuBar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 573, Short.MAX_VALUE))
+                .addComponent(menuBar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(btnSupplierProfile)
+                .addContainerGap(357, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
         // TODO add your handling code here:
 
-        mainWorkArea.remove(this);
-
-        Component[] componentArray = mainWorkArea.getComponents();
+        WorkArea.remove(this);
+        Component[] componentArray = WorkArea.getComponents();
         Component component = componentArray[componentArray.length - 1];
         LoginScreen loginPanel = (LoginScreen) component;
         loginPanel.populateSupplierCombo();
-
-        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
-        layout.previous(mainWorkArea);
+        CardLayout layout = (CardLayout) WorkArea.getLayout();
+        layout.previous(WorkArea);
+    }
+    public String toString() {
+        return "Supplier";
     }//GEN-LAST:event_btnLogOutActionPerformed
 
     private void btnManageProductCatalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageProductCatalogActionPerformed
         // TODO add your handling code here:
-        ManageProductCatalogJPanel mpcjp = new ManageProductCatalogJPanel(workArea, supplier);
-        workArea.add("ManageProductCatalogJPanel", mpcjp);
-        CardLayout layout = (CardLayout) workArea.getLayout();
-        layout.next(workArea);
+        ManageProductCatalogJPanel mpcjp = new ManageProductCatalogJPanel(WorkArea, supplier);
+        WorkArea.add("ManageProductCatalogJPanel", mpcjp);
+        CardLayout layout = (CardLayout) WorkArea.getLayout();
+        layout.next(WorkArea);
     }//GEN-LAST:event_btnManageProductCatalogActionPerformed
 
     private void btnSupplierProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierProfileActionPerformed
@@ -158,10 +183,7 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
 
     private void PerformanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerformanceActionPerformed
         // TODO add your handling code here:
-        //        ProductReportJPanel prjp = new workArea(userProcessContainer, supplier);
-        //        workArea.add("ProductReportJPanelSupplier", prjp);
-        //        CardLayout layout = (CardLayout)workArea.getLayout();
-        //        layout.next(userProcessContainer);
+        
     }//GEN-LAST:event_PerformanceActionPerformed
 
 

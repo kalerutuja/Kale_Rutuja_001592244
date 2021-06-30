@@ -5,7 +5,13 @@
  */
 package ui;
 
+import java.awt.CardLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import model.Supplier;
+import model.SupplierDirectory;
+import ui.admin.AdminWorkAreaJPanel;
+import ui.supplier.SupplierWorkAreaJPanel;
 
 /**
  *
@@ -16,8 +22,19 @@ public class LoginScreen extends javax.swing.JPanel {
     /**
      * Creates new form LoginScreen
      */
-    public LoginScreen() {
+    JPanel mainWorkArea;
+    SupplierDirectory supplierDirectory;
+    Supplier SelectedSupplier = null;
+    
+    public LoginScreen(JPanel mainWorkArea, SupplierDirectory supplierDirectory) {
         initComponents();
+        this.setSize(2000,2000);
+        this.mainWorkArea = mainWorkArea;
+        this.supplierDirectory = supplierDirectory;
+        
+        populateRoleCombo();
+        populateSupplierCombo();
+        
     }
 
     /**
@@ -33,6 +50,7 @@ public class LoginScreen extends javax.swing.JPanel {
         cmbRoles = new javax.swing.JComboBox<>();
         lblRole = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(208, 228, 249));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnLogin.setText("Login");
@@ -41,15 +59,16 @@ public class LoginScreen extends javax.swing.JPanel {
                 btnLoginActionPerformed(evt);
             }
         });
-        add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, -1));
+        add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, -1, -1));
 
         cmbSuppliers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbSuppliersActionPerformed(evt);
             }
         });
-        add(cmbSuppliers, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 134, -1));
+        add(cmbSuppliers, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 134, -1));
 
+        lblSupplier.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblSupplier.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblSupplier.setText("Select Supplier:");
         add(lblSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
@@ -59,8 +78,9 @@ public class LoginScreen extends javax.swing.JPanel {
                 cmbRolesActionPerformed(evt);
             }
         });
-        add(cmbRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 134, -1));
+        add(cmbRoles, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 134, -1));
 
+        lblRole.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblRole.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblRole.setText("Choose Role:");
         add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
@@ -68,12 +88,28 @@ public class LoginScreen extends javax.swing.JPanel {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-
+       
+       JPanel selectedPanel = (JPanel) cmbRoles.getSelectedItem();
+       if (selectedPanel.getClass() == SupplierWorkAreaJPanel.class){
+           if (SelectedSupplier == null){
+               JOptionPane.showMessageDialog(this,"Please select a supplier to login under supplier Role.");
+               return;
+               
+           }else{
+               selectedPanel = new SupplierWorkAreaJPanel(mainWorkArea,SelectedSupplier);
+           }
+       }
+       mainWorkArea.add("WorkAreaPanel",selectedPanel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
+ 
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void cmbSuppliersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSuppliersActionPerformed
         // TODO add your handling code here:
-
+       if (cmbSuppliers.getSelectedItem() == null)
+           return;
+       SelectedSupplier = (Supplier) cmbSuppliers.getSelectedItem();
     }//GEN-LAST:event_cmbSuppliersActionPerformed
 
     private void cmbRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbRolesActionPerformed
@@ -91,6 +127,34 @@ public class LoginScreen extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void updateSupplierVisibility() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if((cmbRoles.getSelectedItem()== null) || (cmbRoles.getSelectedItem().getClass() == AdminWorkAreaJPanel.class)){
+            lblSupplier.setVisible(false);
+            cmbSuppliers.setVisible(false);
+            return;
+        }
+        else if(cmbRoles.getSelectedItem().getClass() == SupplierWorkAreaJPanel.class){
+            lblSupplier.setVisible(true);
+            cmbSuppliers.setVisible(true);            
+        }
+    }
+
+    private void populateRoleCombo() {
+        cmbRoles.removeAllItems();
+        
+        AdminWorkAreaJPanel adminPanel = new AdminWorkAreaJPanel(mainWorkArea, supplierDirectory);
+        SupplierWorkAreaJPanel supplierPanel = new SupplierWorkAreaJPanel(mainWorkArea,SelectedSupplier) ;
+        
+        cmbRoles.addItem(adminPanel);
+        cmbRoles.addItem(supplierPanel);
+        
+    }
+
+    public void populateSupplierCombo() {
+        cmbSuppliers.removeAllItems();
+        
+        for(Supplier supplier : supplierDirectory.getSupplierList()){
+            cmbSuppliers.addItem(supplier);
+            //System.out.println("Printling suppliers: "+supplier);
+        }
     }
 }

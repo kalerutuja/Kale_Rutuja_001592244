@@ -47,7 +47,6 @@ public class ViewVitalSignPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         updateBtn = new javax.swing.JButton();
-        backBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         saveBtn = new javax.swing.JButton();
@@ -79,16 +78,6 @@ public class ViewVitalSignPanel extends javax.swing.JPanel {
             }
         });
         add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 245, -1, -1));
-
-        backBtn.setBackground(new java.awt.Color(255, 255, 204));
-        backBtn.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
-        backBtn.setText("<< Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
-            }
-        });
-        add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 245, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -139,21 +128,6 @@ public class ViewVitalSignPanel extends javax.swing.JPanel {
 
         saveBtn.setEnabled(true);
     }//GEN-LAST:event_updateBtnActionPerformed
-
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length  - 1];
-        
-        ViewPatientPanel viewPatientPanel = (ViewPatientPanel)component;
-        viewPatientPanel.populateTable();
-        
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-
-    
-    }//GEN-LAST:event_backBtnActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
 
@@ -213,7 +187,6 @@ public class ViewVitalSignPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backBtn;
     private javax.swing.JTextField bpTextField;
     private javax.swing.JTextField heartRateTextField;
     private javax.swing.JLabel jLabel1;

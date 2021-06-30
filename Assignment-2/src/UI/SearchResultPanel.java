@@ -87,7 +87,7 @@ public class SearchResultPanel extends javax.swing.JPanel {
             else if(age >= 4 && age <= 5)   {
                 if( ((vs.getRespRate() < 20) || (vs.getRespRate() > 30)) ||
                      (vs.getHeartRate() < 80) || (vs.getHeartRate() > 120) ||
-                     (vs.getBp() < 80) || (vs.getBp() >= 110))
+                     (vs.getBp() < 80) || (vs.getBp() > 110))
                 {
                     row[4] = "Abormal";
                 }
@@ -98,7 +98,7 @@ public class SearchResultPanel extends javax.swing.JPanel {
             else if(age >= 6 && age <= 12)   {
                 if( ((vs.getRespRate() < 20) || (vs.getRespRate() > 30)) ||
                      (vs.getHeartRate() < 70) || (vs.getHeartRate() > 110) ||
-                     (vs.getBp() < 80) || (vs.getBp() >= 120))
+                     (vs.getBp() < 80) || (vs.getBp() > 120))
                 {
                     row[4] = "Abnormal";
                 }
@@ -109,7 +109,7 @@ public class SearchResultPanel extends javax.swing.JPanel {
             else {
                 if( ((vs.getRespRate() < 12) || (vs.getRespRate() > 20)) ||
                      (vs.getHeartRate() < 55) || (vs.getHeartRate() > 105) ||
-                     (vs.getBp() < 110) || (vs.getBp() >= 120))
+                     (vs.getBp() < 110) || (vs.getBp() > 120))
                 {
                     row[4] = "Abnormal";
                 }
@@ -174,7 +174,7 @@ public class SearchResultPanel extends javax.swing.JPanel {
         add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 142, 130, -1));
 
         name.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 44, 114, 19));
+        add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 114, 19));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -210,7 +210,7 @@ public class SearchResultPanel extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                true, true, true, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -253,14 +253,14 @@ public class SearchResultPanel extends javax.swing.JPanel {
         add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 380, 83, 18));
 
         pharmacyTextField.setEditable(false);
-        add(pharmacyTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(561, 104, 130, -1));
+        add(pharmacyTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 130, -1));
 
         bp.setBackground(new java.awt.Color(255, 255, 204));
         bp.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         add(bp, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 344, 83, 18));
 
         ageTextField.setEditable(false);
-        add(ageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(561, 142, 126, -1));
+        add(ageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 126, -1));
 
         heartRate.setBackground(new java.awt.Color(255, 255, 204));
         heartRate.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N

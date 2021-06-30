@@ -7,7 +7,10 @@ package ui.admin;
 
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 import model.Supplier;
+import model.SupplierDirectory;
 
 /**
  *
@@ -18,8 +21,13 @@ public class ManageSuppliers extends javax.swing.JPanel {
     /**
      * Creates new form ManageSuppliers
      */
-    public ManageSuppliers() {
+    JPanel workArea;
+    SupplierDirectory supplierDirectory;
+    
+    public ManageSuppliers(JPanel workArea,SupplierDirectory supplierDirectory) {
         initComponents();
+        this.workArea= workArea;
+        this.supplierDirectory= supplierDirectory;
     }
 
     /**
@@ -35,6 +43,9 @@ public class ManageSuppliers extends javax.swing.JPanel {
         btnView = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         lblSupplierList = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(208, 228, 249));
 
         tblSuppliers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -57,6 +68,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblSuppliers);
 
+        btnRemove.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnRemove.setText("Remove");
         btnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +76,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
             }
         });
 
+        btnView.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnView.setText("View Supplier");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +84,7 @@ public class ManageSuppliers extends javax.swing.JPanel {
             }
         });
 
+        btnAdd.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnAdd.setText("Add Supplier");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +92,16 @@ public class ManageSuppliers extends javax.swing.JPanel {
             }
         });
 
+        lblSupplierList.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
         lblSupplierList.setText("Manage Suppliers:");
+
+        jButton1.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        jButton1.setText("<< Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,7 +117,9 @@ public class ManageSuppliers extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(btnView)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRemove)))
+                        .addComponent(btnRemove)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -108,15 +133,15 @@ public class ManageSuppliers extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
                     .addComponent(btnView)
-                    .addComponent(btnRemove))
-                .addContainerGap(278, Short.MAX_VALUE))
+                    .addComponent(btnRemove)
+                    .addComponent(jButton1))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
         // TODO add your handling code here:
         int row = tblSuppliers.getSelectedRow();
-
         if(row<0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -128,40 +153,54 @@ public class ManageSuppliers extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
+        
         int row = tblSuppliers.getSelectedRow();
         if(row<0) {
             JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
         Supplier s = (Supplier)tblSuppliers.getValueAt(row, 0);
-        ViewSupplier vs = new ViewSupplier(userProcessContainer, s);
-        userProcessContainer.add("ViewSupplier", vs);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        ViewSupplier vs = new ViewSupplier(s,workArea);
+        workArea.add("ViewSupplier", vs);
+        CardLayout layout = (CardLayout)workArea.getLayout();
+        layout.next(workArea);
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
 
-        //int i=1;
-        AddSupplier as = new AddSupplier(userProcessContainer, supplierDirectory);
-        userProcessContainer.add("AddSupplier", as);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+        AddSupplier as = new AddSupplier(workArea, supplierDirectory);
+        workArea.add("AddSupplier", as);
+        CardLayout layout = (CardLayout)workArea.getLayout();
+        layout.next(workArea);
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        workArea.remove(this);
+        CardLayout layout = (CardLayout)workArea.getLayout();
+        layout.previous(workArea);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnRemove;
     private javax.swing.JButton btnView;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblSupplierList;
     private javax.swing.JTable tblSuppliers;
     // End of variables declaration//GEN-END:variables
 
-    private void refreshTable() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    void refreshTable() {
+        
+      DefaultTableModel model = (DefaultTableModel)tblSuppliers.getModel();
+        model.setRowCount(0);
+        for(Supplier s : supplierDirectory.getSupplierList()) {
+            Object row[] = new Object[1];
+            row[0] = s;
+            model.addRow(row);
+        }
     }
 }

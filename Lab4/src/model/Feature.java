@@ -12,7 +12,7 @@ package model;
 public class Feature {
     private Product owner;
     private String name;
-    private String value;
+    private Object value;
 
     public Feature(Product owner, String name, String value) {
         this.owner = owner;
@@ -36,11 +36,11 @@ public class Feature {
         this.name = name;
     }
 
-    public String getValue() {
+    public Object getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Object value) {
         this.value = value;
     }
 

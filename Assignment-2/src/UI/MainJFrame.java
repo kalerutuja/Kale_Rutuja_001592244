@@ -64,7 +64,7 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(120, 120, 120)
                 .addComponent(BtnPersonProfile)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
 
         SplitPane.setLeftComponent(controlPanel);

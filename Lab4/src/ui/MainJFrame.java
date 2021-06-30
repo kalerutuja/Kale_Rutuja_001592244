@@ -5,6 +5,10 @@
  */
 package ui;
 
+import java.awt.CardLayout;
+import model.Supplier;
+import model.SupplierDirectory;
+
 /**
  *
  * @author rutuja
@@ -14,8 +18,14 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    SupplierDirectory supplierDirectory;
     public MainJFrame() {
         initComponents();
+        this.supplierDirectory = new SupplierDirectory();
+        this.setSize(2000,2000);
+        
+        setLoginScreen();
+       //populateDemoData();
     }
 
     /**
@@ -25,17 +35,22 @@ public class MainJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mainWorkArea = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        mainWorkArea.setBackground(new java.awt.Color(208, 228, 249));
+        mainWorkArea.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(mainWorkArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(mainWorkArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -75,7 +90,16 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
     }
+    private void setLoginScreen(){
+        LoginScreen ls = new LoginScreen(mainWorkArea, supplierDirectory);
+        mainWorkArea.add("LoginScreen",ls);
+        CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+        layout.next(mainWorkArea);
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel mainWorkArea;
     // End of variables declaration//GEN-END:variables
+
 }

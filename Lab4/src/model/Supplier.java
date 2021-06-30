@@ -45,5 +45,9 @@ public class Supplier {
     public String toString() {
         return supplyName;
     }
+
+    public void deleteproduct(Product selectedProduct) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

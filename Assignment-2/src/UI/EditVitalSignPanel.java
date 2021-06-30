@@ -200,7 +200,7 @@ public class EditVitalSignPanel extends javax.swing.JPanel {
         time = String.valueOf(timeStamp);
         timeTextField.setText(String.valueOf(time));
 
-        if(AgeGroup == 0)    {
+        if(AgeGroup ==0)    {
             JOptionPane.showMessageDialog(this, "Please Enter Patient details!!", "Error", JOptionPane.OK_OPTION);
             resetFields();
         }

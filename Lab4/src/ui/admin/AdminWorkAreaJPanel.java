@@ -5,6 +5,12 @@
  */
 package ui.admin;
 
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JPanel;
+import model.SupplierDirectory;
+import ui.LoginScreen;
+
 /**
  *
  * @author rutuja
@@ -14,8 +20,16 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AdminWorkAreaJPanel
      */
-    public AdminWorkAreaJPanel() {
+    JPanel mainWorkArea;
+    SupplierDirectory supplierDirectory;
+    
+    public AdminWorkAreaJPanel(JPanel mainWorkArea, SupplierDirectory supplierDirectory) {
         initComponents();
+        this.mainWorkArea = mainWorkArea;
+        this.supplierDirectory = supplierDirectory;
+        
+        lblWelcome.setText("Welcome");
+        
     }
 
     /**
@@ -30,8 +44,11 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         btnLogOut = new javax.swing.JButton();
         lblWelcome = new javax.swing.JLabel();
 
-        menuBar.setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(208, 228, 249));
 
+        menuBar.setBackground(new java.awt.Color(160, 202, 216));
+
+        btnManageSuppliers.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnManageSuppliers.setText("Manage Suppliers");
         btnManageSuppliers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -39,6 +56,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnLogOut.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         btnLogOut.setText("Log Out");
         btnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,6 +64,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblWelcome.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         lblWelcome.setText("<WelcomeMsg>");
 
         javax.swing.GroupLayout menuBarLayout = new javax.swing.GroupLayout(menuBar);
@@ -90,14 +109,33 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnManageSuppliersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageSuppliersActionPerformed
         // TODO add your handling code here:
-
+        
+       ManageSuppliers panel = new ManageSuppliers(mainWorkArea, supplierDirectory);
+       mainWorkArea.add("ManageSupplierAdministartive",panel);
+       CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+       layout.next(mainWorkArea);
+      
     }//GEN-LAST:event_btnManageSuppliersActionPerformed
 
     private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
         // TODO add your handling code here:
+        mainWorkArea.remove(this);
+         Component[] componentArray = mainWorkArea.getComponents();
+         Component component = componentArray[componentArray.length -1];
+         LoginScreen loginpanel = (LoginScreen) component;
+         loginpanel.populateSupplierCombo();
+         
+         CardLayout layout = (CardLayout) mainWorkArea.getLayout();
+         layout.previous(mainWorkArea);
+         
 
     }//GEN-LAST:event_btnLogOutActionPerformed
 
+    @Override
+    public String toString() {
+        return "Administartor";
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogOut;
