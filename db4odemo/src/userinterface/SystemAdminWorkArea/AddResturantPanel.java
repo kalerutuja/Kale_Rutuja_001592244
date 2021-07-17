@@ -54,15 +54,21 @@ public class AddResturantPanel extends javax.swing.JPanel {
         jLabel5.setText("Restaurant Category: ");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
 
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
         add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 140, -1));
+
+        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 140, -1));
+
+        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 140, -1));
 
+        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
