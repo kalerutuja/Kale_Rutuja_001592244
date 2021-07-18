@@ -14,7 +14,7 @@ import java.util.ArrayList;
  *
  * @author harold
  */
-public class Customer {
+public class Customer extends Organization {
     private int CustomerID;
     private String CustomerName;
     private String CustomerAddress;
@@ -53,7 +53,7 @@ public class Customer {
     }
     
     public Customer() {
-       super(Organization.Type.Customer.getValue());
+        super(Organization.Type.Customer.getValue());
     }
     
     public ArrayList<Role> getSupportedRole() {
