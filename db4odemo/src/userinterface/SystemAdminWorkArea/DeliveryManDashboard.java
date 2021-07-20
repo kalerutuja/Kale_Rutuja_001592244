@@ -5,6 +5,10 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.EcoSystem;
+import Business.Organization;
+import javax.swing.JPanel;
+
 /**
  *
  * @author rutuja
@@ -14,7 +18,7 @@ public class DeliveryManDashboard extends javax.swing.JPanel {
     /**
      * Creates new form DeliveryManDashboard
      */
-    public DeliveryManDashboard() {
+    public DeliveryManDashboard(JPanel WorkArea,EcoSystem ecosystem) {
         initComponents();
     }
 

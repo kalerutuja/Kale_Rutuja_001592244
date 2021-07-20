@@ -5,6 +5,10 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.EcoSystem;
+import Business.Organization;
+import javax.swing.JPanel;
+
 /**
  *
  * @author rutuja
@@ -16,6 +20,10 @@ public class RestaurantDashboard extends javax.swing.JPanel {
      */
     public RestaurantDashboard() {
         initComponents();
+    }
+
+    RestaurantDashboard(JPanel WorkArea, EcoSystem ecosystem, Organization customerOrg) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

@@ -29,7 +29,7 @@ public class AssignDeliveryManPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         logoImage = new javax.swing.JLabel();
@@ -40,7 +40,7 @@ public class AssignDeliveryManPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Select Deliveryman:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Person" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Person" }));
 
         jButton2.setText("Assign");
 
@@ -101,7 +101,7 @@ public class AssignDeliveryManPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

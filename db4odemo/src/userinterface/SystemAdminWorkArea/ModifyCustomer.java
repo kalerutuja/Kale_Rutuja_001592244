@@ -5,6 +5,9 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author rutuja
@@ -16,6 +19,10 @@ public class ModifyCustomer extends javax.swing.JPanel {
      */
     public ModifyCustomer() {
         initComponents();
+    }
+
+    ModifyCustomer(JPanel WorkArea, UserAccount ua, String customers) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
