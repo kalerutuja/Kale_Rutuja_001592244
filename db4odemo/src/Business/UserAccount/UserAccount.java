@@ -4,9 +4,13 @@
  */
 package Business.UserAccount;
 
+import Business.Customer.Customer;
+import Business.DeliveryMan.DeliveryMan;
 import Business.Employee.Employee;
 import Business.Role.Role;
 import Business.WorkQueue.WorkQueue;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -19,12 +23,23 @@ public class UserAccount {
     private Employee employee;
     private Role role;
     private WorkQueue workQueue;
-
+    private Customer customer;
+    
     public UserAccount() {
         workQueue = new WorkQueue();
+       
+    }
+
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
     
-    
+        
     
     public String getUsername() {
         return username;
@@ -66,7 +81,7 @@ public class UserAccount {
     
     @Override
     public String toString() {
-        return username;
+        return this.getUsername();
     }
     
     

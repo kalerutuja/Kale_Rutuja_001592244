@@ -4,9 +4,11 @@
  */
 package Business.UserAccount;
 
+import Business.Customer.Customer;
 import Business.Employee.Employee;
 import Business.Role.Role;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  *
@@ -41,6 +43,14 @@ public class UserAccountDirectory {
         userAccountList.add(userAccount);
         return userAccount;
     }
+     public UserAccount createUserAccount(String username, String password, Role role){
+        UserAccount userAccount = new UserAccount();
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
+        userAccount.setRole(role);
+        userAccountList.add(userAccount);
+        return userAccount;
+    }
     
     public boolean checkIfUsernameIsUnique(String username){
         for (UserAccount ua : userAccountList){
@@ -49,7 +59,10 @@ public class UserAccountDirectory {
         }
         return true;
     }
-    public void deleteUserAccount(UserAccount userAccount){
-        userAccountList.remove(userAccount); 
+    
+    public void deleteUserAccount(UserAccount ua)
+    {
+        userAccountList.remove(ua);
     }
+
 }

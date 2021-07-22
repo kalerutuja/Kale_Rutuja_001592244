@@ -5,51 +5,60 @@
  */
 package Business.DeliveryMan;
 
+import Business.Order.Order;
+import Business.Organization;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author harold
  */
-public class DeliveryMan {
-    String deliveryManName;
-    String deliAdd;
-    int ratings;
-    boolean status = true;
+public class DeliveryMan extends Organization{
+    
+    private String name;
+    private String username;
+    private Order order;
 
-    public boolean isStatus() {
-        return status;
+    public DeliveryMan(String name, String username) {
+        super(name);
+        this.name = name;
+        this.username = username;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
     
-    
-    public String getDeliveryManName() {
-        return deliveryManName;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setDeliveryManName(String deliveryManName) {
-        this.deliveryManName = deliveryManName;
-    }
-
-    public String getDeliAdd() {
-        return deliAdd;
-    }
-
-    public void setDeliAdd(String deliAdd) {
-        this.deliAdd = deliAdd;
-    }
-
-    public int getRatings() {
-        return ratings;
-    }
-
-    public void setRatings(int ratings) {
-        this.ratings = ratings;
+    public void setUsername(String username) {
+        this.username = username;
     }
     
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
-    public String toString(){
-        return deliveryManName;
-}
+    public String toString() {
+        return this.getUsername();
+    }    
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    } 
+
 }

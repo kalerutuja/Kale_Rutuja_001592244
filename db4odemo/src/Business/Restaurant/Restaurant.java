@@ -5,18 +5,33 @@
  */
 package Business.Restaurant;
 
-import Business.Menu.MenuDirectory;
+import Business.Order.Order;
+import Business.Organization;
+import Business.Role.Role;
+import com.db4o.collections.ArrayList4;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author harold
  */
-public class Restaurant {
+public class Restaurant extends Organization{
+    
     String name;
     String address;
-    String type;
-    String manager;
-    MenuDirectory md;
+    String restaurantAdminUsername;
+    List<Menu> menu;
+    List<Order> restOrders;
+
+    
+    public Restaurant(String name, String restaurantAdminUsername, String address) {
+        super(name);
+        this.name = name;
+        this.address = address;
+        this.restaurantAdminUsername = restaurantAdminUsername;
+        this.menu = new ArrayList();
+    }
 
     public String getName() {
         return name;
@@ -29,39 +44,52 @@ public class Restaurant {
     public String getAddress() {
         return address;
     }
-
-    public void setAddress(String address) {
+    
+    public void setAddress() {
         this.address = address;
     }
 
-    public String getType() {
-        return type;
+    public String getRestaurantAdminUsername() {
+        return restaurantAdminUsername;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setRestaurantAdminUsername(String restaurantAdminUsername) {
+        this.restaurantAdminUsername = restaurantAdminUsername;
     }
 
-    public String getManager() {
-        return manager;
+    public List<Menu> getMenu() {
+        if(menu == null)
+        {
+            menu = new ArrayList();
+        }
+        return menu;
     }
 
-    public void setManager(String manager) {
-        this.manager = manager;
+    public void setMenu(List<Menu> menu) {
+        this.menu = menu;
     }
 
-    public MenuDirectory getMd() {
-        return md;
+    public List<Order> getRestOrders() {
+        if(this.restOrders == null)
+        {
+            restOrders = new ArrayList();
+        }
+        return restOrders;
     }
 
-    public void setMd(MenuDirectory md) {
-        this.md = md;
+    public void setRestOrders(List<Order> restOrders) {
+        this.restOrders = restOrders;
+    }
+       
+    
+    @Override
+    public String toString() {
+        return this.getRestaurantAdminUsername();
     }
 
     @Override
-    public String toString() {
-        return "Restaurant{" + "name=" + name + '}';
+    public ArrayList<Role> getSupportedRole() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
     
 }

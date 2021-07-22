@@ -5,49 +5,39 @@
  */
 package Business.DeliveryMan;
 
+import Business.Customer.Customer;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author harold
  */
 public class DeliveryManDirectory {
-   ArrayList<DeliveryMan> deliveryman;
     
-    public DeliveryManDirectory(){
-        this.deliveryman = new ArrayList();
+    private List<DeliveryMan> deliverymanList;
+
+    public DeliveryManDirectory() {
+        deliverymanList = new ArrayList();
     }
 
-    public ArrayList<DeliveryMan> getDeliveryman() {
-        return deliveryman;
+    public List<DeliveryMan> getDeliverymanList() {
+        return deliverymanList;
     }
 
-    public void setDeliveryman(ArrayList<DeliveryMan> deliveryman) {
-        this.deliveryman = deliveryman;
+    public void setDeliverymanList(List<DeliveryMan> deliverymanList) {
+        this.deliverymanList = deliverymanList;
+    }
+
+ 
+    public DeliveryMan createDeliveryman(String name, String username){
+       
+      DeliveryMan deliveryman = new DeliveryMan(name, username);
+        deliverymanList.add(deliveryman);
+      return deliveryman;
     }
     
-   public DeliveryMan createDeliveryMan(String name, String add){
-       
-       DeliveryMan dm = new DeliveryMan();
-       dm.setDeliveryManName(name);
-       dm.setDeliAdd(add);
-       deliveryman.add(dm);
-       
-       return dm;      
-       
-   }
-   
-   public DeliveryMan findDeliveryMan(String name){
-       for(DeliveryMan dm :deliveryman ){
-           
-           if(dm.getDeliveryManName().equals(name)){
-               return dm;
-           }
-       }
-       return null;
-   }
-   
-   public void deleteDeliveryMan(DeliveryMan deliveryMan){
-       deliveryman.remove(deliveryMan);
-   } 
+    public void deleteDeliveryman(DeliveryMan d) {
+        deliverymanList.remove(d);
+    }
 }

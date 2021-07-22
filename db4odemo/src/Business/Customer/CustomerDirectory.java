@@ -7,65 +7,39 @@ package Business.Customer;
 
 import Business.Organization;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author harold
  */
 public class CustomerDirectory {
-    private ArrayList<Organization> organizationList;
+    
+    private List<Customer> customerList;
 
-      private ArrayList<Customer> customerList;
-
-    public ArrayList<Customer> getCustomerList() {
-        return customerList;
-    }
-
-    public void setCustomerList(ArrayList<Customer> customerList) {
-        this.customerList = customerList;
-    }
     public CustomerDirectory() {
-        organizationList = new ArrayList();
         customerList = new ArrayList();
     }
 
-    public ArrayList<Organization> getOrganizationList() {
-        return organizationList;
+    public List<Customer> getCustomerList() {
+        return customerList;
     }
 
-    public Organization createOrganization(Organization.Type type){
-        Organization organization = null;
-      if (type.getValue().equals(Organization.Type.Customer.getValue())){
-            organization = new Customer();
-            organizationList.add(organization);
-    }
-
-        return organization;
-    }
-    public void deleteCustomer(Customer customer){
-        organizationList.remove(customer); 
-        customerList.remove(customer);
+    public void setCustomerList(List<Customer> customerList) {
+        this.customerList = customerList;
     }
     
-        public Organization searchOrganization(String organizationName){
-        for (Organization organization: organizationList) {
-            if (organization.getName().equals(organizationName)) {
-                return organization;
-            }
-        }
-        return null;
+    public Customer createCustomer(String name){
+         Customer customer = new Customer(name);
+      if(!customerList.contains(customer)){
+          System.out.println("adding ------customer"+name);
+      customerList.add(customer);
+      }
+      System.out.println("using existing ------customer"+name);
+      return customer;
     }
-        
-    public Customer createCustomer(String cname, int phone, String email, String add){
-        
-        Customer customer = new Customer();
-        customer.setCustomerName(cname);
-        customer.setcustomerConatctNo(phone);
-        customer.setCustomerEmail(email);
-        customer.setCustomerAddress(add);
-        customerList.add(customer);
-        
-        return customer;
-        
+    
+    public void deleteCustomer(Customer c) {
+        customerList.remove(c);
     }
 }

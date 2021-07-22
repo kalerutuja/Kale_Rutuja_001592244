@@ -14,7 +14,8 @@ public class Employee {
     private int id;
     private static int count = 1;
 
-    public Employee() {
+    public Employee(String name) {
+        this.name = name;
         id = count;
         count++;
     }
@@ -23,18 +24,17 @@ public class Employee {
         return id;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
-
     
-    public String getName() {
-        return name;
-    }
-
     @Override
     public String toString() {
-        return name;
+        return this.getName();
     }
     
     

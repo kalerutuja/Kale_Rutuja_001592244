@@ -5,70 +5,59 @@
  */
 package Business.Customer;
 
+import Business.Order.Order;
 import Business.Organization;
 import Business.Role.CustomerRole;
 import Business.Role.Role;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author harold
  */
-public class Customer extends Organization {
-    String customerName;
-    String customerAddress;
-    int customerConatctNo;
-    String customerEmail;
-
-    public String getCustomerName() {
-        return customerName;
+public class Customer {
+    
+    private String name;
+    private String Username;
+    private List<Order> custOrders;
+    
+    public Customer(String name) {
+        this.name = name;
+    }
+    
+    public String getName() {
+        return name;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCustomerAddress() {
-        return customerAddress;
+    public List<Order> getCustOrders() {
+        if(custOrders == null)
+        {
+            custOrders = new ArrayList();
+        }
+        return custOrders;
     }
 
-    public void setCustomerAddress(String customerAddress) {
-        this.customerAddress = customerAddress;
+    public void setCustOrders(List<Order> custOrders) {
+        this.custOrders = custOrders;
     }
 
-    public int getcustomerConatctNo() {
-        return customerConatctNo;
+    public String getUsername() {
+        return Username;
     }
 
-    public void setcustomerConatctNo(int customerPhone) {
-        this.customerConatctNo = customerPhone;
+    public void setUsername(String Username) {
+        this.Username = Username;
     }
-
-    public String getCustomerEmail() {
-        return customerEmail;
-    }
-
-    public void setCustomerEmail(String customerEmail) {
-        this.customerEmail = customerEmail;
-    }
-
     
     
-       public Customer() {
-        super(Organization.Type.Customer.getValue());
-       
-    }
-       
+
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
-        roles.add(new CustomerRole());
-        return roles;
+    public String toString() {
+        return this.getName();
     }
-    
-    @Override
-    public String toString(){
-        return customerName;
-    }
-    
 }

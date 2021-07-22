@@ -3,121 +3,71 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Orders;
+package Business.Order;
 
-import Business.Customer.Customer;
-import Business.DeliveryMan.DeliveryMan;
-import Business.Menu.MenuDirectory;
+import Business.Restaurant.Menu;
 import Business.Restaurant.Restaurant;
-import Business.UserAccount.UserAccount;
+import java.security.Timestamp;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author rutuja
  */
 public class Order {
-    private int orderID;
-    HashMap<String, Integer> itemName ;
-    String orderStatus;
-    UserAccount userAccount;
-    Restaurant restaurant;
-    MenuDirectory menuDirectory;
-    DeliveryMan deliveryMan;
-    String comments;
-    Double amount;
-    Customer customer;
-
-    public Double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
-            
-    public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
     
-    public DeliveryMan getDeliveryMan() {
-        return deliveryMan;
-    }
-
-    public void setDeliveryMan(DeliveryMan deliveryMan) {
-        this.deliveryMan = deliveryMan;
-    }
+    int orderId;
+    List<Menu> orderItems;
+    Map<String, Float> orderMap;
+    float total;
     private static int count = 1;
 
-    public int getOrderID() {
-        return orderID;
-    }
-
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
-    }
-
-    public HashMap<String, Integer> getItemName() {
-        return itemName;
-    }
-
-    public void setItemName(HashMap<String, Integer> itemName) {
-        this.itemName = itemName;
-    }
-
-    public String getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-
-    public UserAccount getUserAccount() {
-        return userAccount;
-    }
-
-    public void setUserAccount(UserAccount userAccount) {
-        this.userAccount = userAccount;
-    }
-
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
-
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
-    }
-
-    public MenuDirectory getMenuDirectory() {
-        return menuDirectory;
-    }
-
-    public void setMenuDirectory(MenuDirectory menuDirectory) {
-        this.menuDirectory = menuDirectory;
-    }
-
-    public static int getCount() {
-        return count;
-    }
-
-    public static void setCount(int count) {
-        Order.count = count;
+    public Order(Map<String, Float> orderMap, float total) {
+        this.orderMap = orderMap;
+        this.total = total;
     }
     
-    public Order(){
-        orderID = count;
+    public int getOrderId() {
+        return orderId;
+    }
+    
+    public void setOrderId()
+    {
+        //long id = System.currentTimeMillis();
+       
+        this.orderId = count;
         count++;
-        orderStatus = "Ordered";
     }
+
+    public List<Menu> getOrderItems() {
+        return orderItems;
+    }
+
+    public Map<String, Float> getOrderMap() {
+        if(this.orderMap == null)
+        {
+           return new HashMap();
+        }
+        return this.orderMap;
+    }
+
+    public void setOrderMap(Map<String, Float> orderMap) {
+        this.orderMap = orderMap;
+    }
+ 
     
-    
-    @Override
-    public String toString() {
-        return orderStatus;
+    public void setOrderItems(List<Menu> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
     }
 }

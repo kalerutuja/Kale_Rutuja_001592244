@@ -5,86 +5,45 @@
  */
 package Business;
 
-
+import Business.Customer.Customer;
 import Business.Customer.CustomerDirectory;
+import Business.DeliveryMan.DeliveryMan;
 import Business.DeliveryMan.DeliveryManDirectory;
-import Business.Menu.MenuDirectory;
-import Business.Orders.OrderHistory;
+import Business.Employee.Employee;
+import Business.Restaurant.Restaurant;
 import Business.Restaurant.RestaurantDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
+import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author MyPC1
  */
-public class EcoSystem extends Organization{
-    
+public class EcoSystem extends Organization {
+
     private static EcoSystem business;
     private RestaurantDirectory restaurantDirectory;
     private CustomerDirectory customerDirectory;
     private DeliveryManDirectory deliveryManDirectory;
-    private OrderHistory orderHistory;
-    private MenuDirectory menuDirectory;
+    private Map<UserAccount, Customer> userCust;
 
-    public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory,
-                        OrderHistory orderHistory, MenuDirectory menuDirectory) {
-
-        this.restaurantDirectory = restaurantDirectory;
-        this.customerDirectory = customerDirectory;
-        this.deliveryManDirectory = deliveryManDirectory;
-        this.orderHistory = orderHistory;
-        this.menuDirectory = menuDirectory;
-    }
-
-    
-    
-    public static EcoSystem getInstance(){
-        if(business==null){
-            business=new EcoSystem();
-        }
-        return business;
-    }
-    
-    @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roleList=new ArrayList<Role>();
-        roleList.add(new SystemAdminRole());
-        return roleList;
-    }
-    private EcoSystem(){
+    private EcoSystem() {
         super(null);
+        userCust = new HashMap();
         customerDirectory = new CustomerDirectory();
-        deliveryManDirectory = new DeliveryManDirectory();
         restaurantDirectory = new RestaurantDirectory();
-        orderHistory = new OrderHistory();
-        
-    }
-
-    
-    public boolean checkIfUserIsUnique(String userName){
-       //
-       return false;
-    }
-
-    public RestaurantDirectory getRestaurantDirectory() {
-        return restaurantDirectory;
-    }
-
-    public void setRestaurantDirectory(RestaurantDirectory restaurantDirectory) {
-        this.restaurantDirectory = restaurantDirectory;
-    }
-
-    public CustomerDirectory getCustomerDirectory() {
-        return customerDirectory;
-    }
-
-    public void setCustomerDirectory(CustomerDirectory customerDirectory) {
-        this.customerDirectory = customerDirectory;
+        deliveryManDirectory = new DeliveryManDirectory();
     }
 
     public DeliveryManDirectory getDeliveryManDirectory() {
+        if (deliveryManDirectory == null) {
+            deliveryManDirectory = new DeliveryManDirectory();
+        }
         return deliveryManDirectory;
     }
 
@@ -92,21 +51,64 @@ public class EcoSystem extends Organization{
         this.deliveryManDirectory = deliveryManDirectory;
     }
 
-    public OrderHistory getOrderHistory() {
-        return orderHistory;
+    public Map<UserAccount, Customer> getUserCust() {
+        if (userCust == null) {
+            userCust = new HashMap();
+        }
+        return userCust;
     }
 
-    public void setOrderHistory(OrderHistory orderHistory) {
-        this.orderHistory = orderHistory;
+    public void setUserCust(Map<UserAccount, Customer> userCust) {
+        this.userCust = userCust;
     }
 
-    public MenuDirectory getMenuDirectory() {
-        return menuDirectory;
+    public CustomerDirectory getCustomerDirectory() {
+        if (customerDirectory == null) {
+            customerDirectory = new CustomerDirectory();
+        }
+        return customerDirectory;
     }
 
-    public void setMenuDirectory(MenuDirectory menuDirectory) {
-        this.menuDirectory = menuDirectory;
+    public void setCustomerDirectory(CustomerDirectory customerDirectory) {
+        this.customerDirectory = customerDirectory;
     }
-    
-    
+
+    public Restaurant createRestaurant(String name, String address, String username) {
+        Restaurant restaurant = new Restaurant(name, address, username);
+        restaurantDirectory.addRestaurant(restaurant);
+        return restaurant;
+    }
+
+    public RestaurantDirectory getRestaurantDirectory() {
+        if (restaurantDirectory == null) {
+            restaurantDirectory = new RestaurantDirectory();
+        }
+        return restaurantDirectory;
+    }
+
+    public void setRestaurantDirectory(RestaurantDirectory restaurantDirectory) {
+        this.restaurantDirectory = restaurantDirectory;
+    }
+
+    public static EcoSystem getInstance() {
+        if (business == null) {
+            business = new EcoSystem();
+        }
+        return business;
+    }
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roleList = new ArrayList<Role>();
+        roleList.add(new SystemAdminRole());
+        return roleList;
+    }
+
+    public boolean checkIfUserIsUnique(String userName) {
+        if (this.getUserAccountDirectory().checkIfUsernameIsUnique(userName)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

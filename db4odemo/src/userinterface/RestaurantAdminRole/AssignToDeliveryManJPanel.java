@@ -6,15 +6,44 @@
 
 package userinterface.RestaurantAdminRole;
 
+import Business.DeliveryMan.DeliveryMan;
+import Business.DeliveryMan.DeliveryManDirectory;
+import Business.Order.Order;
+import Business.Restaurant.Restaurant;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.WorkRequest;
+import javax.swing.JPanel;
+
 /**
  *
  * @author rutuja
  */
-public class AssignDeliveryManPanel extends javax.swing.JPanel {
+public class AssignToDeliveryManJPanel extends javax.swing.JPanel {
 
     /** Creates new form AssignDeliveryManPanel */
-    public AssignDeliveryManPanel() {
+    JPanel userProcessContainer;
+    Order order;
+    UserAccount userAccount;
+    Restaurant restaurant;
+    DeliveryManDirectory deliveryManDirectory;
+    public AssignToDeliveryManJPanel(JPanel userProcessContainer, Order order, DeliveryManDirectory deliveryManDirectory, Restaurant restaurant, UserAccount userAccount) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.order = order;
+        this.deliveryManDirectory = deliveryManDirectory;
+        this.restaurant = restaurant;
+        this.userAccount = userAccount;
+        dpdDeliveryman.removeAllItems();
+        this.populateDeliveryMan();
+        orderIdTextField.setEditable(false);
+        orderIdTextField.setText(Integer.toString(this.order.getOrderId()));
+    }
+    private void populateDeliveryMan()
+    {
+        for(DeliveryMan d: this.deliveryManDirectory.getDeliverymanList())
+        {
+            dpdDeliveryman.addItem(d.getName());
+        }
     }
 
     /** This method is called from within the constructor to
@@ -28,84 +57,139 @@ public class AssignDeliveryManPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         logoImage = new javax.swing.JLabel();
+        btnAssign = new javax.swing.JButton();
+        orderIdTextField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        dpdDeliveryman = new javax.swing.JComboBox();
+        jLabel5 = new javax.swing.JLabel();
 
-        jLabel1.setText("Assign DeliveryMan");
+        setBackground(new java.awt.Color(183, 183, 229));
+
+        jLabel1.setFont(new java.awt.Font("Silom", 1, 24)); // NOI18N
+        jLabel1.setText("Assign Delivery Man");
+        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButton1.setText("<< Back");
 
-        jLabel2.setText("Select Deliveryman:");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Person" }));
-
-        jButton2.setText("Assign");
-
         jLabel3.setText("Available Delivery person list");
+
+        logoImage.setText("Photo");
+
+        btnAssign.setText("Assign");
+        btnAssign.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Order id:");
+
+        dpdDeliveryman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dpdDeliverymanActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Select DeliveryMan:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 86, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(orderIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnAssign)
+                        .addGap(75, 75, 75))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(dpdDeliveryman, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(30, 30, 30)
                 .addComponent(jButton1)
-                .addGap(84, 84, 84)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49)
-                        .addComponent(logoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jButton1))
-                .addGap(38, 38, 38)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel3)
-                .addGap(57, 57, 57)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(69, 69, 69)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(logoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                            .addComponent(jLabel5)
+                            .addComponent(dpdDeliveryman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(orderIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
+                        .addComponent(btnAssign))
+                    .addComponent(logoImage, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAssignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignActionPerformed
+        // TODO add your h)andling code here:
+        DeliveryMan dm = null;
+        String d1 = (String)dpdDeliveryman.getSelectedItem();
+        for(DeliveryMan d: this.deliveryManDirectory.getDeliverymanList())
+        {
+            if(d.getName().equals(d1))
+            {
+                dm = d;
+            }
+        }
+        for (WorkRequest w : this.restaurant.getWorkQueue().getWorkRequestList()) 
+            {
+                if((w.getOrder() != null) && (w.getOrder().getOrderId() == order.getOrderId()))
+                {
+                   w.setSender(this.userAccount);
+                   w.setStatus("Assinged to delivery Man");
+                   dm.getWorkQueue().getWorkRequestList().add(w);
+                   System.out.println("d work " + dm.getWorkQueue().getWorkRequestList());
+                   break;
+                }
+  
+            }
+    }//GEN-LAST:event_btnAssignActionPerformed
+
+    private void dpdDeliverymanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dpdDeliverymanActionPerformed
+
+    }//GEN-LAST:event_dpdDeliverymanActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAssign;
+    private javax.swing.JComboBox dpdDeliveryman;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel logoImage;
+    private javax.swing.JTextField orderIdTextField;
     // End of variables declaration//GEN-END:variables
 
 }

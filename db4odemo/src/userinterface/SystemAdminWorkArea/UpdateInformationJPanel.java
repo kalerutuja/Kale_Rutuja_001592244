@@ -5,17 +5,38 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.Customer.Customer;
+import Business.DeliveryMan.DeliveryMan;
+import Business.EcoSystem;
+import Business.Employee.Employee;
+import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author rutuja
  */
-public class ModifyRestaurant extends javax.swing.JPanel {
+public class UpdateInformationJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ModifyRestaurant
      */
-    public ModifyRestaurant() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    String user;
+    String username;
+    
+    public UpdateInformationJPanel(JPanel userProcessContainer, EcoSystem system, String user, String username) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.user = user;
+        this.username = username;
+        this.populateData();
+        this.usernameTextField.setEnabled(false);
     }
 
     /**
@@ -26,88 +47,249 @@ public class ModifyRestaurant extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        nameTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        submitJButton = new javax.swing.JButton();
+        backJButton = new javax.swing.JButton();
+        usernameTextField = new javax.swing.JTextField();
+        passwordTextField = new javax.swing.JPasswordField();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
+        jLabel1.setFont(new java.awt.Font("Silom", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Update Restaurant Details");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 28, 531, -1));
+        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setText("Restaurant Name:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, 20));
+        jLabel2.setText("Name");
 
-        jLabel3.setText("Restaurant Address:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, -1));
+        jLabel3.setText("Password ");
 
-        jLabel4.setText("Restaurant Type:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+        jLabel6.setText("Username");
 
-        jLabel5.setText("Restaurant Category: ");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
-
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        submitJButton.setText("Submit");
+        submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                submitJButtonActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 140, -1));
 
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 140, -1));
-
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 140, -1));
-
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        backJButton.setText("<< Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                backJButtonActionPerformed(evt);
             }
         });
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 140, -1));
 
-        jButton1.setText("Update Restaurant");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        passwordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                passwordTextFieldActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(backJButton)
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(17, 17, 17)
+                                        .addComponent(jLabel2)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(submitJButton)))))
+                .addGap(0, 150, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(backJButton))
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
+                .addComponent(submitJButton)
+                .addContainerGap(119, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
+        String name = nameTextField.getText();
+        String password = String.valueOf(passwordTextField.getPassword());
+        if(this.user.equals("Customer"))
+        {
+                       for(Customer c: system.getCustomerDirectory().getCustomerList())
+                        {
+                                if(c.getUsername().equals(this.username))
+                                {
+                                        Customer cust = c;
+                                        cust.setName(nameTextField.getText());
+                                    }
+                            }
+            
+                        for(UserAccount ua: system.getUserAccountDirectory().getUserAccountList())
+                        {
+                                if(ua.getUsername().equals(this.username))
+                                {
+                                        UserAccount userAccount = ua;
+                                        ua.setPassword(password);
+                                    }
+                            }
+                        JOptionPane.showMessageDialog(null, "Customer updated succesfully");
+                        nameTextField.setText("");
+                        passwordTextField.setText("");
+                        usernameTextField.setText("");
+        }
+        else if(this.user.equals("DeliveryMan"))
+        {
+            DeliveryMan d = null;
+            for(DeliveryMan dm: system.getDeliveryManDirectory().getDeliverymanList())
+            {
+                if(dm.getUsername().equals(this.username))
+                {
+                    d = dm;
+                    d.setName(name);
+                    break;
+                }
+            }
+            for(UserAccount ua: system.getUserAccountDirectory().getUserAccountList())
+            {
+                if(ua.getUsername().equals(this.username))
+                {
+                    UserAccount userAccount = ua;
+                    userAccount.setPassword(password);
+                    break;
+                }
+            }
+            String name1 = d.getName();
+            for(Employee emp: system.getEmployeeDirectory().getEmployeeList())
+            {
+                if(name1.equals(emp.getName()))
+                {
+                    emp.setName(name);
+                }
+            }
+            JOptionPane.showMessageDialog(null, "Delivery Man updated successfully");
+        }
+        else
+        {
+            //
+        }
+        nameTextField.setText("");
+        passwordTextField.setText("");
+        usernameTextField.setText("");
+        System.out.println("Print" + system.getEmployeeDirectory().getEmployeeList());
+    }//GEN-LAST:event_submitJButtonActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        if(this.user.equals("DeliveryMan"))
+        {
+            ManageDeliveryManJPanel manageDeliveryManJPanel = (ManageDeliveryManJPanel) component;
+            manageDeliveryManJPanel.populateTable();
+        }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+
+    }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_passwordTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField nameTextField;
+    private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JButton submitJButton;
+    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
+
+    private void populateData() {usernameTextField.setText(this.username);
+        if(this.user.equals("Customer"))
+        {
+            for(Customer c: system.getCustomerDirectory().getCustomerList())
+            {
+                if(c.getUsername().equals(this.username))
+                {
+                    Customer cust = c;
+                    nameTextField.setText(cust.getName());
+                }
+            }
+            
+            for(UserAccount ua: system.getUserAccountDirectory().getUserAccountList())
+            {
+                if(ua.getUsername().equals(this.username))
+                {
+                    UserAccount userAccount = ua;
+                    passwordTextField.setText(userAccount.getPassword());
+                }
+         }
+        }
+        else if(this.user.equals("DeliveryMan"))
+        {
+           for(DeliveryMan d: system.getDeliveryManDirectory().getDeliverymanList())
+            {
+                if(d.getUsername().equals(this.username))
+                {
+                    DeliveryMan dm = d;
+                    nameTextField.setText(dm.getName());
+                }
+            }
+            
+            for(UserAccount ua: system.getUserAccountDirectory().getUserAccountList())
+            {
+                if(ua.getUsername().equals(this.username))
+                {
+                    UserAccount userAccount = ua;
+                    passwordTextField.setText(userAccount.getPassword());
+                }
+            }
+        }
+        else
+        {
+           //
+        }
+
+    }
 }

@@ -18,9 +18,9 @@ public class DB4OUtil {
 
     private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
     private static DB4OUtil dB4OUtil;
-    
-    public synchronized static DB4OUtil getInstance(){
-        if (dB4OUtil == null){
+
+    public synchronized static DB4OUtil getInstance() {
+        if (dB4OUtil == null) {
             dB4OUtil = new DB4OUtil();
         }
         return dB4OUtil;
@@ -34,7 +34,6 @@ public class DB4OUtil {
 
     private ObjectContainer createConnection() {
         try {
-
             EmbeddedConfiguration config = Db4oEmbedded.newConfiguration();
             config.common().add(new TransparentPersistenceSupport());
             //Controls the number of objects in memory
@@ -44,11 +43,10 @@ public class DB4OUtil {
 
             //Register your top most Class here
             config.common().objectClass(EcoSystem.class).cascadeOnUpdate(true); // Change to the object you want to save
-
             ObjectContainer db = Db4oEmbedded.openFile(config, FILENAME);
             return db;
-        } catch (Exception ex) {
-            System.out.print(ex.getMessage());
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
         }
         return null;
     }
@@ -59,16 +57,19 @@ public class DB4OUtil {
         conn.commit();
         conn.close();
     }
-    
-    public EcoSystem retrieveSystem(){
+
+    public EcoSystem retrieveSystem() {
         ObjectContainer conn = createConnection();
         ObjectSet<EcoSystem> systems = conn.query(EcoSystem.class); // Change to the object you want to save
         EcoSystem system;
-        if (systems.size() == 0){
+        if (systems.isEmpty()) {
             system = ConfigureASystem.configure();  // If there's no System in the record, create a new one
-        }
-        else{
+            System.out.println("no System in the record, creating a new one");
+
+        } else {
             system = systems.get(systems.size() - 1);
+            System.out.println("Using existing System records.");
+
         }
         conn.close();
         return system;

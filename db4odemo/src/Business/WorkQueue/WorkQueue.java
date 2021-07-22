@@ -5,6 +5,7 @@
 package Business.WorkQueue;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -12,13 +13,16 @@ import java.util.ArrayList;
  */
 public class WorkQueue {
     
-    private ArrayList<WorkRequest> workRequestList;
+    private List<WorkRequest> workRequestList;
 
     public WorkQueue() {
         workRequestList = new ArrayList();
     }
 
-    public ArrayList<WorkRequest> getWorkRequestList() {
+    public List<WorkRequest> getWorkRequestList() {
+        if(workRequestList == null){
+            workRequestList = new ArrayList();
+        }
         return workRequestList;
     }
 }
