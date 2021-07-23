@@ -96,7 +96,8 @@ public class NewOrderJPanel extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(183, 183, 229));
+        setBackground(new java.awt.Color(204, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         dpdRestaurant.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Restaurent" }));
         dpdRestaurant.addActionListener(new java.awt.event.ActionListener() {
@@ -104,10 +105,13 @@ public class NewOrderJPanel extends javax.swing.JPanel {
                 dpdRestaurantActionPerformed(evt);
             }
         });
+        add(dpdRestaurant, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 113, 199, -1));
 
         jLabel4.setText("Select Restaurant:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 117, -1, -1));
 
         jLabel3.setText("View Cart:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 299, -1, -1));
 
         btnAddToCart.setText("Add to Cart");
         btnAddToCart.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +119,7 @@ public class NewOrderJPanel extends javax.swing.JPanel {
                 btnAddToCartActionPerformed(evt);
             }
         });
+        add(btnAddToCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 264, -1, -1));
 
         viewCartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,11 +142,16 @@ public class NewOrderJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(viewCartTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 333, 399, 148));
+
         jLabel2.setText("Quantity:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 211, -1, -1));
 
         dpdQuantity.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5" }));
+        add(dpdQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 207, 199, -1));
 
         jLabel1.setText("Food item:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 162, -1, -1));
 
         btnBack.setText("Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -149,8 +159,10 @@ public class NewOrderJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 30, -1, -1));
 
         dpdFoodItem.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Food" }));
+        add(dpdFoodItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 158, 199, -1));
 
         btnRemoveItem.setText("Remove Item");
         btnRemoveItem.addActionListener(new java.awt.event.ActionListener() {
@@ -158,6 +170,7 @@ public class NewOrderJPanel extends javax.swing.JPanel {
                 btnRemoveItemActionPerformed(evt);
             }
         });
+        add(btnRemoveItem, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 487, -1, -1));
 
         btnConfirmOrder.setText("Confirm Order");
         btnConfirmOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -165,100 +178,22 @@ public class NewOrderJPanel extends javax.swing.JPanel {
                 btnConfirmOrderActionPerformed(evt);
             }
         });
+        add(btnConfirmOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 487, -1, -1));
 
         jLabel5.setText("Add Comment");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 269, -1, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
-        jLabel6.setFont(new java.awt.Font("Silom", 1, 24)); // NOI18N
-        jLabel6.setText("Place Order");
-        jLabel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(473, 113, 146, 121));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(btnBack)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(97, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(dpdFoodItem, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(73, 73, 73)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnAddToCart)
-                                    .addComponent(dpdQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(btnConfirmOrder)
-                                .addGap(43, 43, 43)
-                                .addComponent(btnRemoveItem))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(dpdRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(119, 119, 119))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(btnBack))
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(dpdRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(dpdFoodItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(dpdQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAddToCart)
-                    .addComponent(jLabel5))
-                .addGap(52, 52, 52)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConfirmOrder)
-                    .addComponent(btnRemoveItem))
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Place Order");
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 28, 209, 29));
     }// </editor-fold>//GEN-END:initComponents
 
     private void dpdRestaurantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dpdRestaurantActionPerformed

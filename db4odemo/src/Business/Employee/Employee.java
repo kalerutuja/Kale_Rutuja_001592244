@@ -19,6 +19,10 @@ public class Employee {
         id = count;
         count++;
     }
+    
+    public Employee(){
+        
+    }
 
     public int getId() {
         return id;

@@ -18,7 +18,7 @@ import userinterface.DeliveryManRole.DeliveryManWorkAreaJPanel;
  *
  * @author harold
  */
-public abstract class DeliverManRole extends Role {
+public class DeliverManRole extends Role {
 
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Restaurant restaurant, Customer customer, DeliveryMan dm,RestaurantDirectory restaurantDirectory, EcoSystem business) {
         return new DeliveryManWorkAreaJPanel(userProcessContainer,account,dm, business);//To change body of generated methods, choose Tools | Templates.

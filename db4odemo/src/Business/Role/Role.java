@@ -30,7 +30,9 @@ public abstract class Role {
         private RoleType(String value){
             this.value = value;
         }
-
+        private RoleType(){
+            
+        }
         public String getValue() {
             return value;
         }

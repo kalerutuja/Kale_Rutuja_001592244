@@ -29,8 +29,9 @@ public class CustomerDirectory {
         this.customerList = customerList;
     }
     
-    public Customer createCustomer(String name){
-         Customer customer = new Customer(name);
+    public Customer createCustomer(String name,String Username){
+         Customer customer = new Customer(name,Username);
+         customerList.add(customer);
       if(!customerList.contains(customer)){
           System.out.println("adding ------customer"+name);
       customerList.add(customer);
@@ -39,7 +40,21 @@ public class CustomerDirectory {
       return customer;
     }
     
+//    public Customer createCustomer(String name){
+//         Customer customer = new Customer(name);
+//      if(!customerList.contains(customer)){
+//          System.out.println("adding ------customer"+name);
+//      customerList.add(customer);
+//      }
+//      System.out.println("using existing ------customer"+name);
+//      return customer;
+//    }
+//    
     public void deleteCustomer(Customer c) {
         customerList.remove(c);
     }
-}
+    }
+
+
+
+

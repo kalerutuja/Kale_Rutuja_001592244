@@ -16,7 +16,9 @@ import java.nio.file.Paths;
  */
 public class DB4OUtil {
 
-    private static final String FILENAME = Paths.get("Databank.db4o").toAbsolutePath().toString();// path to the data store
+    private static final String FILENAME = Paths.get("Database.db4o").toAbsolutePath().toString();// path to the data store
+//        private static final String FILENAME = "lib\\db4o-8.0.249.16098-all-java5.db4o"; // path to the data store
+
     private static DB4OUtil dB4OUtil;
 
     public synchronized static DB4OUtil getInstance() {
@@ -52,10 +54,14 @@ public class DB4OUtil {
     }
 
     public synchronized void storeSystem(EcoSystem system) {
-        ObjectContainer conn = createConnection();
-        conn.store(system);
-        conn.commit();
-        conn.close();
+        try {
+            ObjectContainer conn = createConnection();
+            conn.store(system);
+            conn.commit();
+            conn.close();
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
     }
 
     public EcoSystem retrieveSystem() {

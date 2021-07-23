@@ -19,7 +19,7 @@ import javax.swing.JPanel;
  *
  * @author raunak
  */
-public abstract class AdminRole extends Role{
+public class AdminRole extends Role{
 
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Restaurant restaurant, Customer customer, DeliveryMan dm, RestaurantDirectory restaurantDirectory, EcoSystem business) {
         return new AdminWorkAreaJPanel(userProcessContainer, account, restaurant, business);

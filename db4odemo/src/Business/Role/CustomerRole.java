@@ -19,7 +19,7 @@ import javax.swing.JPanel;
  *
  * @author raunak
  */
-public abstract class CustomerRole extends Role{
+public class CustomerRole extends Role{
 
     
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account,Restaurant restaurant, Customer customer,DeliveryMan dm, RestaurantDirectory restaurantDirectory, EcoSystem business) {

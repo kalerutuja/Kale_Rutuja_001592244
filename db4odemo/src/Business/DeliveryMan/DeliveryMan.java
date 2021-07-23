@@ -25,7 +25,7 @@ public class DeliveryMan extends Organization{
         this.name = name;
         this.username = username;
     }
-
+    
     public Order getOrder() {
         return order;
     }
@@ -59,6 +59,7 @@ public class DeliveryMan extends Organization{
     @Override
     public ArrayList<Role> getSupportedRole() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    } 
+    }
 
+    
 }

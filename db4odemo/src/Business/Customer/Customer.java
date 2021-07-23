@@ -22,10 +22,15 @@ public class Customer {
     private String Username;
     private List<Order> custOrders;
     
-    public Customer(String name) {
+    public Customer(String name,String Username) {
         this.name = name;
+        this.Username = Username;
     }
-    
+  
+    public Customer(String name){
+    this.name = name;
+    }
+
     public String getName() {
         return name;
     }

@@ -32,7 +32,7 @@ public class Restaurant extends Organization{
         this.restaurantAdminUsername = restaurantAdminUsername;
         this.menu = new ArrayList();
     }
-
+    
     public String getName() {
         return name;
     }
@@ -91,5 +91,5 @@ public class Restaurant extends Organization{
     public ArrayList<Role> getSupportedRole() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
